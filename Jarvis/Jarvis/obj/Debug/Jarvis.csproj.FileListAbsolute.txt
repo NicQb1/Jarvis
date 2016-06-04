@@ -1,0 +1,17 @@
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\bin\Debug\Jarvis.exe.config
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\obj\Debug\Jarvis.csprojResolveAssemblyReference.cache
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\obj\Debug\Jarvis.MainForm.resources
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\obj\Debug\Jarvis.Properties.Resources.resources
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\obj\Debug\Jarvis.csproj.GenerateResource.Cache
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\bin\Debug\Jarvis.exe
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\bin\Debug\Jarvis.pdb
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\bin\Debug\NNBuilder_Install.dll
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\bin\Debug\NNBuilder_Runable.dll
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\bin\Debug\Processor.dll
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\bin\Debug\SpeechProcessor.dll
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\bin\Debug\NNBuilder_Install.pdb
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\bin\Debug\NNBuilder_Runable.pdb
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\bin\Debug\Processor.pdb
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\bin\Debug\SpeechProcessor.pdb
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\obj\Debug\Jarvis.exe
+c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\obj\Debug\Jarvis.pdb

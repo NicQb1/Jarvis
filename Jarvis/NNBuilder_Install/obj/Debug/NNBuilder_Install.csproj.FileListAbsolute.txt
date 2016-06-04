@@ -1,0 +1,5 @@
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\NNBuilder_Install\bin\Debug\NNBuilder_Install.dll
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\NNBuilder_Install\bin\Debug\NNBuilder_Install.pdb
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\NNBuilder_Install\obj\Debug\NNBuilder_Install.csprojResolveAssemblyReference.cache
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\NNBuilder_Install\obj\Debug\NNBuilder_Install.dll
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\NNBuilder_Install\obj\Debug\NNBuilder_Install.pdb

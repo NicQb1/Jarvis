@@ -1,0 +1,4 @@
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Neurons\bin\Debug\Neurons.dll
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Neurons\bin\Debug\Neurons.pdb
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Neurons\obj\Debug\Neurons.dll
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Neurons\obj\Debug\Neurons.pdb

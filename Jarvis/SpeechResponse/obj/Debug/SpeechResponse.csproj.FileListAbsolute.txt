@@ -1,0 +1,8 @@
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechResponse\bin\Debug\SpeechResponse.exe.config
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechResponse\bin\Debug\SpeechResponse.exe
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechResponse\bin\Debug\SpeechResponse.pdb
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.csprojResolveAssemblyReference.cache
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.Properties.Resources.resources
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.csproj.GenerateResource.Cache
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.exe
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.pdb

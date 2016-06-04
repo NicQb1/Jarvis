@@ -1,0 +1,5 @@
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechProcessor\bin\Debug\SpeechProcessor.dll
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechProcessor\bin\Debug\SpeechProcessor.pdb
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechProcessor\obj\Debug\SpeechProcessor.csprojResolveAssemblyReference.cache
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechProcessor\obj\Debug\SpeechProcessor.dll
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechProcessor\obj\Debug\SpeechProcessor.pdb

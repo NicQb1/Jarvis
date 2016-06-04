@@ -1,0 +1,4 @@
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Interfaces\bin\Debug\Interfaces.dll
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Interfaces\bin\Debug\Interfaces.pdb
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Interfaces\obj\Debug\Interfaces.dll
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Interfaces\obj\Debug\Interfaces.pdb

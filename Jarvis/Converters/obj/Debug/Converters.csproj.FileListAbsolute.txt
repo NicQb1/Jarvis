@@ -1,0 +1,4 @@
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Converters\bin\Debug\Converters.dll
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Converters\bin\Debug\Converters.pdb
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Converters\obj\Debug\Converters.dll
+c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Converters\obj\Debug\Converters.pdb
