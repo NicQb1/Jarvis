@@ -87,6 +87,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommandInterfaces\CommandInterfaces.csproj">
+      <Project>{aa4e5507-ddc5-4906-b4b4-63483a3549f5}</Project>
+      <Name>CommandInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{bd1bd8cb-fb67-429c-ae69-d72a114ec743}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InputClasses\InputClasses.csproj">
+      <Project>{e79b804d-3756-4e20-b91b-e42c33b73e4f}</Project>
+      <Name>InputClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Network\Network.csproj">
+      <Project>{54df7f27-ebdf-4221-94cd-1de244724a9f}</Project>
+      <Name>Network</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NNBuilder_Install\NNBuilder_Install.csproj">
       <Project>{7fbd4ffe-17a8-443b-af8a-b5f4971ddfac}</Project>
       <Name>NNBuilder_Install</Name>

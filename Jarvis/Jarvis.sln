@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransformer", "DataTran
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Network", "Network\Network.csproj", "{54DF7F27-EBDF-4221-94CD-1DE244724A9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputClasses", "InputClasses\InputClasses.csproj", "{E79B804D-3756-4E20-B91B-E42C33B73E4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{BD1BD8CB-FB67-429C-AE69-D72A114EC743}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +97,14 @@ Global
 		{54DF7F27-EBDF-4221-94CD-1DE244724A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54DF7F27-EBDF-4221-94CD-1DE244724A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54DF7F27-EBDF-4221-94CD-1DE244724A9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E79B804D-3756-4E20-B91B-E42C33B73E4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E79B804D-3756-4E20-B91B-E42C33B73E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E79B804D-3756-4E20-B91B-E42C33B73E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E79B804D-3756-4E20-B91B-E42C33B73E4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD1BD8CB-FB67-429C-AE69-D72A114EC743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD1BD8CB-FB67-429C-AE69-D72A114EC743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD1BD8CB-FB67-429C-AE69-D72A114EC743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1BD8CB-FB67-429C-AE69-D72A114EC743}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

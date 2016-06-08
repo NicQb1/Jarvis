@@ -61,6 +61,7 @@
             this.btnBuildNetwork.TabIndex = 2;
             this.btnBuildNetwork.Text = "Build Network";
             this.btnBuildNetwork.UseVisualStyleBackColor = true;
+            this.btnBuildNetwork.Click += new System.EventHandler(this.btnBuildNetwork_Click);
             // 
             // txtRecognizedSpeech
             // 
