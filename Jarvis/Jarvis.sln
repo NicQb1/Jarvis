@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jarvis", "Jarvis\Jarvis.csproj", "{E5EACD31-7B72-4FFA-97B5-E6609F637554}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neurons", "Neurons\Neurons.csproj", "{5AB9D4EE-7C47-4DF3-A935-54A4531DF89E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neurons", "Neurons\Neurons.csproj", "{4B2FB1C2-56AC-4CC2-B208-AE642BB5178D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Processor", "Processor\Processor.csproj", "{E1F2A6BD-5B34-4D66-99DF-91F133FA2435}"
 EndProject
@@ -25,6 +25,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechResponse", "SpeechRes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinectSensorInterface", "KinectSensorInterface\KinectSensorInterface.csproj", "{296D1986-0D82-471A-88A7-6ABA5EAE5916}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutputClasses", "OutputClasses\OutputClasses.csproj", "{91DC9994-1D5C-4E4D-B0DE-7C2EEB31896C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransformer", "DataTransformer\DataTransformer.csproj", "{15271DA3-1DA1-4AFC-86E2-A8955AB97E16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Network", "Network\Network.csproj", "{54DF7F27-EBDF-4221-94CD-1DE244724A9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +41,10 @@ Global
 		{E5EACD31-7B72-4FFA-97B5-E6609F637554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5EACD31-7B72-4FFA-97B5-E6609F637554}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5EACD31-7B72-4FFA-97B5-E6609F637554}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5AB9D4EE-7C47-4DF3-A935-54A4531DF89E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5AB9D4EE-7C47-4DF3-A935-54A4531DF89E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5AB9D4EE-7C47-4DF3-A935-54A4531DF89E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5AB9D4EE-7C47-4DF3-A935-54A4531DF89E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B2FB1C2-56AC-4CC2-B208-AE642BB5178D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B2FB1C2-56AC-4CC2-B208-AE642BB5178D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B2FB1C2-56AC-4CC2-B208-AE642BB5178D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B2FB1C2-56AC-4CC2-B208-AE642BB5178D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E1F2A6BD-5B34-4D66-99DF-91F133FA2435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E1F2A6BD-5B34-4D66-99DF-91F133FA2435}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1F2A6BD-5B34-4D66-99DF-91F133FA2435}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,6 +81,18 @@ Global
 		{296D1986-0D82-471A-88A7-6ABA5EAE5916}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{296D1986-0D82-471A-88A7-6ABA5EAE5916}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{296D1986-0D82-471A-88A7-6ABA5EAE5916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91DC9994-1D5C-4E4D-B0DE-7C2EEB31896C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91DC9994-1D5C-4E4D-B0DE-7C2EEB31896C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91DC9994-1D5C-4E4D-B0DE-7C2EEB31896C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91DC9994-1D5C-4E4D-B0DE-7C2EEB31896C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15271DA3-1DA1-4AFC-86E2-A8955AB97E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15271DA3-1DA1-4AFC-86E2-A8955AB97E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15271DA3-1DA1-4AFC-86E2-A8955AB97E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15271DA3-1DA1-4AFC-86E2-A8955AB97E16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54DF7F27-EBDF-4221-94CD-1DE244724A9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54DF7F27-EBDF-4221-94CD-1DE244724A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54DF7F27-EBDF-4221-94CD-1DE244724A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54DF7F27-EBDF-4221-94CD-1DE244724A9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
