@@ -67,7 +67,7 @@ namespace Network
                         startPoint.Y = ((new_point.Y + origin.Y) / 2);
                         if (Math.Abs(startPoint.X - new_point.X) > 2 && Math.Abs(startPoint.Y - new_point.Y) > 2)
                         {
-                            drawNewSpiral(e, new_point, startPoint, theta + (dtheta), 1, true);
+                            drawNewSpiral( new_point, startPoint, theta + (dtheta), 1, true);
                         }
                         count = 0;
                     }
@@ -103,7 +103,7 @@ namespace Network
                         startPoint.Y = ((new_point.Y + origin.Y) / 2);
                         if (Math.Abs(startPoint.X - new_point.X) > 2 && Math.Abs(startPoint.Y - new_point.Y) > 2)
                         {
-                            drawNewSpiral(e, new_point, startPoint, theta + (dtheta), 1, false);
+                            drawNewSpiral( new_point, startPoint, theta + (dtheta), 1, false);
                         }
                         count = 0;
                     }
@@ -158,7 +158,7 @@ namespace Network
                         startPoint.Y = ((new_point.Y + origin.Y) / 2);
                         if (Math.Abs(startPoint.X - new_point.X) > 2 && Math.Abs(startPoint.Y - new_point.Y) > 2)
                         {
-                            drawNewSpiral(e, new_point, startPoint, theta + (dtheta), level + 1, !reverse);
+                            drawNewSpiral( new_point, startPoint, theta + (dtheta), level + 1, !reverse);
                         }
                         count = 0;
                     }
