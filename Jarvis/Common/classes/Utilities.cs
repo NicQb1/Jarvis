@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace Network
+namespace Common.Classes
 {
     public class Utilities
     {
@@ -158,7 +158,7 @@ namespace Network
                         startPoint.Y = ((new_point.Y + origin.Y) / 2);
                         if (Math.Abs(startPoint.X - new_point.X) > 2 && Math.Abs(startPoint.Y - new_point.Y) > 2)
                         {
-                            drawNewSpiral(new_point, startPoint, theta + (dtheta), (Int16)(level + 1), !reverse);
+                            drawNewSpiral( new_point, startPoint, theta + (dtheta), (Int16)(level + 1), !reverse);
                         }
                         count = 0;
                     }

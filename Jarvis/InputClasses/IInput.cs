@@ -8,5 +8,9 @@ namespace InputClasses
 {
     public interface IInput
     {
+
+         void set_InputLocations(object myData);
+
+        
     }
 }

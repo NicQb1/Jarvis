@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using Common.structs;
 
-namespace Network
+namespace Neurons
 {
     public class Matrix
     {
@@ -40,6 +41,16 @@ namespace Network
 
             }
            
+        }
+
+        internal void Activate(Synapses[] synapses, float coefficient)
+        {
+            foreach(Synapses s in synapses)
+            {
+                mainMatrix[s.neuronPlaces.x].neuronLayer[s.neuronPlaces.y][s.neuronPlaces.z][s.neuronPlaces.t].excite(s.weightCoeficient * coefficient);
+            }
+
+          
         }
     }
 }
