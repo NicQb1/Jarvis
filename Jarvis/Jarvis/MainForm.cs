@@ -11,17 +11,22 @@ using SpeechProcessor;
 using System.Speech.Recognition;
 using Common;
 using InputClasses;
+using NNBuilder_Runable;
+using Common.structs;
+using Neurons;
 
 namespace Jarvis
 {
     public partial class MainForm : Form
     {
         public IInput inPutLayer;
-        public Network.Matrix matrix;
+        public Matrix matrix;
         public SpeechProcessor.SpeechProcessor sp;
+        public SerialStreamingInput ssI;
         public MainForm()
         {
             InitializeComponent();
+           
         }
 
         private void btnStartSpeechProcessor_Click(object sender, EventArgs e)
@@ -35,16 +40,24 @@ namespace Jarvis
         {
 
             txtRecognizedSpeech.Text += txtRecognizedSpeech.Text + e.Result.Text.ToString() + "\r\n";
+            if (matrix != null)
+            {
+                matrix.SpeechInput(e.Result.Text.ToString());
+            }
 
         }
 
         private void btnBuildNetwork_Click(object sender, EventArgs e)
         {
-            int x = 500, y = 500, z = 500, t = 5;
-            matrix = new Network.Matrix(y, x, z, t);
-            Point[] inputPoints = 
+            Int16 x = 500, y = 500, z = 500, t = 5;
+          //  matrix = new Network.Matrix(y, x, z, t);
+          //  Utilities ut = new Utilities();
+            BuildMatrix bm = new BuildMatrix();
+            bm.Build_New_Matrix(y, x, z, t, 8,2);
 
-            inPutLayer = new SerialStreamingInput();
+            List<coordinates[]> inputBytes = bm.inputBytes;
+            List<coordinates[]> outputBytes = bm.outputBytes;
+            matrix = bm.matrix;
 
         }
     }

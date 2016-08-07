@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jarvis", "Jarvis\Jarvis.csproj", "{E5EACD31-7B72-4FFA-97B5-E6609F637554}"
 EndProject
@@ -18,8 +18,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converters", "Converters\Converters.csproj", "{06227EA9-53E5-4350-ABE4-61059F7E6962}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandInterfaces", "CommandInterfaces\CommandInterfaces.csproj", "{AA4E5507-DDC5-4906-B4B4-63483A3549F5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{A745B500-B286-4BB7-B8A6-FE77990CD29C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechResponse", "SpeechResponse\SpeechResponse.csproj", "{05D0F92F-A86A-46B3-8D93-C66DA863641A}"
 EndProject
@@ -73,10 +71,6 @@ Global
 		{AA4E5507-DDC5-4906-B4B4-63483A3549F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA4E5507-DDC5-4906-B4B4-63483A3549F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA4E5507-DDC5-4906-B4B4-63483A3549F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A745B500-B286-4BB7-B8A6-FE77990CD29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A745B500-B286-4BB7-B8A6-FE77990CD29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A745B500-B286-4BB7-B8A6-FE77990CD29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A745B500-B286-4BB7-B8A6-FE77990CD29C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{05D0F92F-A86A-46B3-8D93-C66DA863641A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{05D0F92F-A86A-46B3-8D93-C66DA863641A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05D0F92F-A86A-46B3-8D93-C66DA863641A}.Release|Any CPU.ActiveCfg = Release|Any CPU
