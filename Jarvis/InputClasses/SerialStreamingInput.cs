@@ -9,22 +9,17 @@ namespace InputClasses
     public class SerialStreamingInput : IInput
     {
         private global::Network.Matrix matrix;
-        private global::Network.Matrix matrix1;
-        private global::Network.Matrix matrix2;
-
-        public SerialStreamingInput(ref global::Network.Matrix matrix2)
-        {
-            this.matrix2 = matrix2;
-        }
-
-        public SerialStreamingInput(ref global::Network.Matrix matrix1)
-        {
-            this.matrix1 = matrix1;
-        }
+        private Utilities _utilities = new Utilities();
+        private Int16 bitSize = 8;
 
         public SerialStreamingInput(ref global::Network.Matrix matrix)
         {
             this.matrix = matrix;
+        }
+
+        public void set_InputLocations(object myData)
+        {
+            throw new NotImplementedException();
         }
     }
 }
