@@ -99,9 +99,9 @@
       <Project>{e79b804d-3756-4e20-b91b-e42c33b73e4f}</Project>
       <Name>InputClasses</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Network\Network.csproj">
-      <Project>{54df7f27-ebdf-4221-94cd-1de244724a9f}</Project>
-      <Name>Network</Name>
+    <ProjectReference Include="..\Neurons\Neurons.csproj">
+      <Project>{4b2fb1c2-56ac-4cc2-b208-ae642bb5178d}</Project>
+      <Name>Neurons</Name>
     </ProjectReference>
     <ProjectReference Include="..\NNBuilder_Install\NNBuilder_Install.csproj">
       <Project>{7fbd4ffe-17a8-443b-af8a-b5f4971ddfac}</Project>

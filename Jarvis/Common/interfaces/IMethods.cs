@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InputClasses
+
+namespace Common.Interfaces
 {
-    public interface IInput
+    public interface IMethods
     {
+        void checkFireNeuron();
 
-         void set_InputLocations(object myData);
 
-        
     }
 }

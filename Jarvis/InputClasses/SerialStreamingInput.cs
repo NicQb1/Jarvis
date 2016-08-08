@@ -10,11 +10,18 @@ namespace InputClasses
     {
         private global::Network.Matrix matrix;
 
+
     
      
+
+        private Utilities _utilities = new Utilities();
+        private Int16 bitSize = 8;
+
         public SerialStreamingInput(ref global::Network.Matrix matrix)
         {
             this.matrix = matrix;
         }
+
+
     }
 }

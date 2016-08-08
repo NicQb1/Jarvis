@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NNBuilder_Runable
+
+
+namespace Interfaces
 {
-    public class Class1
+    public interface IMethods
     {
+       
+        void checkFireNeuron();
+
+
     }
 }

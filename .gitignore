@@ -51,3 +51,6 @@ Jarvis/Jarvis.v12.suo
 *.pdb
 Jarvis/CommandInterfaces/bin/Debug/CommandInterfaces.pdb
 *.pdb
+*.cache
+*.cache
+Jarvis/Jarvis/obj/Debug/DesignTimeResolveAssemblyReferences.cache
