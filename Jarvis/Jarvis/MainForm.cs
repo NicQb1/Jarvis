@@ -44,8 +44,9 @@ namespace Jarvis
             matrix = new Network.Matrix(y, x, z, t);
             Point[] inputPoints = 
 
-            inPutLayer = new SerialStreamingInput();
+            inPutLayer = new SerialStreamingInput(ref matrix);
 
         }
+
     }
 }

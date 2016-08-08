@@ -6,3 +6,10 @@ c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechRespo
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.csproj.GenerateResource.Cache
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.exe
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\bin\Debug\SpeechResponse.exe.config
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\bin\Debug\SpeechResponse.exe
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\bin\Debug\SpeechResponse.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.Properties.Resources.resources
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.csproj.GenerateResource.Cache
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.exe
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.pdb

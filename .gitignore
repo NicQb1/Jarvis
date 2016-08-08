@@ -48,3 +48,6 @@ Temporary Items
 *.cache
 Jarvis/Jarvis.v12.suo
 *.cache
+*.pdb
+Jarvis/CommandInterfaces/bin/Debug/CommandInterfaces.pdb
+*.pdb

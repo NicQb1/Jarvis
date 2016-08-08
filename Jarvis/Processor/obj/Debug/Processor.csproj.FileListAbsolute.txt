@@ -3,3 +3,7 @@ c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Processor\b
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Processor\obj\Debug\Processor.csprojResolveAssemblyReference.cache
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Processor\obj\Debug\Processor.dll
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Processor\obj\Debug\Processor.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Processor\bin\Debug\Processor.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Processor\bin\Debug\Processor.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Processor\obj\Debug\Processor.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Processor\obj\Debug\Processor.pdb

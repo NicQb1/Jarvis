@@ -3,3 +3,7 @@ c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\NNBuilder_R
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\NNBuilder_Runable\obj\Debug\NNBuilder_Runable.csprojResolveAssemblyReference.cache
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\NNBuilder_Runable\obj\Debug\NNBuilder_Runable.dll
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\NNBuilder_Runable\obj\Debug\NNBuilder_Runable.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\bin\Debug\NNBuilder_Runable.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\bin\Debug\NNBuilder_Runable.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\obj\Debug\NNBuilder_Runable.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\obj\Debug\NNBuilder_Runable.pdb

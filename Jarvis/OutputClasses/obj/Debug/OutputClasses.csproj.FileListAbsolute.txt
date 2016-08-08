@@ -1,0 +1,4 @@
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\OutputClasses\bin\Debug\OutputClasses.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\OutputClasses\bin\Debug\OutputClasses.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\OutputClasses\obj\Debug\OutputClasses.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\OutputClasses\obj\Debug\OutputClasses.pdb

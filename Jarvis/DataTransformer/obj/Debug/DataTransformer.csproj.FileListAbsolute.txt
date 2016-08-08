@@ -1,0 +1,4 @@
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\DataTransformer\bin\Debug\DataTransformer.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\DataTransformer\bin\Debug\DataTransformer.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\DataTransformer\obj\Debug\DataTransformer.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\DataTransformer\obj\Debug\DataTransformer.pdb

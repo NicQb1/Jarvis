@@ -2,3 +2,7 @@ c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\KinectSenso
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\KinectSensorInterface\bin\Debug\KinectSensorInterface.pdb
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\KinectSensorInterface\obj\Debug\KinectSensorInterface.dll
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\KinectSensorInterface\obj\Debug\KinectSensorInterface.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\KinectSensorInterface\bin\Debug\KinectSensorInterface.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\KinectSensorInterface\bin\Debug\KinectSensorInterface.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\KinectSensorInterface\obj\Debug\KinectSensorInterface.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\KinectSensorInterface\obj\Debug\KinectSensorInterface.pdb
