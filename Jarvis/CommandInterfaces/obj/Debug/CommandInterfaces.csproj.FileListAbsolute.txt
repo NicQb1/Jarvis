@@ -2,3 +2,7 @@ c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\CommandInte
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\CommandInterfaces\bin\Debug\CommandInterfaces.pdb
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\CommandInterfaces\obj\Debug\CommandInterfaces.dll
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\CommandInterfaces\obj\Debug\CommandInterfaces.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\CommandInterfaces\bin\Debug\CommandInterfaces.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\CommandInterfaces\bin\Debug\CommandInterfaces.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\CommandInterfaces\obj\Debug\CommandInterfaces.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\CommandInterfaces\obj\Debug\CommandInterfaces.pdb

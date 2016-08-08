@@ -1,0 +1,7 @@
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Network\bin\Debug\Network.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Network\bin\Debug\Network.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Network\bin\Debug\Neurons.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Network\bin\Debug\Neurons.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Network\obj\Debug\Network.csprojResolveAssemblyReference.cache
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Network\obj\Debug\Network.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Network\obj\Debug\Network.pdb

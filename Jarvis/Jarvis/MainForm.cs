@@ -55,10 +55,15 @@ namespace Jarvis
             BuildMatrix bm = new BuildMatrix();
             bm.Build_New_Matrix(y, x, z, t, 8,2);
 
+<<<<<<< HEAD
+            inPutLayer = new SerialStreamingInput(ref matrix);
+=======
             List<coordinates[]> inputBytes = bm.inputBytes;
             List<coordinates[]> outputBytes = bm.outputBytes;
             matrix = bm.matrix;
+>>>>>>> origin/Input_Classes
 
         }
+
     }
 }
