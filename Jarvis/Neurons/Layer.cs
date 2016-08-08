@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Neurons;
 
-namespace Network
+namespace Neurons
 {
     public class Layer
     {

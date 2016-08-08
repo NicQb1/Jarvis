@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace Neurons
 {
-    public class NeuronInput : NeuronBase
+   public  class NeuronSync : NeuronBase
     {
-        public NeuronInput(ref Matrix _matrix, neuronDirection nd) : base(ref _matrix, nd)
+        public NeuronSync(ref Matrix _matrix, neuronDirection nd) : base(ref _matrix, nd)
         {
             matrix = _matrix;
             Ndirection = nd;
         }
     }
+   
 }
