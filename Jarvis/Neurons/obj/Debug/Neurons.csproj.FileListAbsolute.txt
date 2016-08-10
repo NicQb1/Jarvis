@@ -2,3 +2,7 @@ c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Neurons\bin
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Neurons\bin\Debug\Neurons.pdb
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Neurons\obj\Debug\Neurons.dll
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Neurons\obj\Debug\Neurons.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Neurons\bin\Debug\Neurons.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Neurons\bin\Debug\Neurons.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Neurons\obj\Debug\Neurons.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Neurons\obj\Debug\Neurons.pdb

@@ -2,3 +2,7 @@ c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Converters\
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Converters\bin\Debug\Converters.pdb
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Converters\obj\Debug\Converters.dll
 c:\Users\hutch\OneDrive\documents\visual studio 2015\Projects\Jarvis\Converters\obj\Debug\Converters.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Converters\bin\Debug\Converters.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Converters\bin\Debug\Converters.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Converters\obj\Debug\Converters.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Converters\obj\Debug\Converters.pdb

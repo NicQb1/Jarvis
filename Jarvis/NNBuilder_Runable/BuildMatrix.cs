@@ -93,13 +93,13 @@ namespace NNBuilder_Runable
         private void buildProcessingNeuron(coordinates column, neuronDirection direction, Int16 layer)
         {
             coordinates freeLocation = getClosestFreeSpace(column, layer);
-            matrix.mainMatrix[freeLocation.y].neuronLayer[freeLocation.x][freeLocation.z][freeLocation.t] = new Neurons.NeuronExitor(direction);
+            matrix.mainMatrix[freeLocation.y].neuronLayer[freeLocation.x][freeLocation.z][freeLocation.t] = new Neurons.NeuronExitor(direction, ref matrix);
  
             freeLocation = getClosestFreeSpace(freeLocation, layer);
-            matrix.mainMatrix[freeLocation.y].neuronLayer[freeLocation.x][freeLocation.z][freeLocation.t] = new Neurons.NeuronInhibitor(direction);
+            matrix.mainMatrix[freeLocation.y].neuronLayer[freeLocation.x][freeLocation.z][freeLocation.t] = new Neurons.NeuronInhibitor(direction, ref matrix);
 
             freeLocation = getClosestFreeSpace(freeLocation, layer);
-            matrix.mainMatrix[freeLocation.y].neuronLayer[freeLocation.x][freeLocation.z][freeLocation.t] = new Neurons.NeuronExitor(direction);
+            matrix.mainMatrix[freeLocation.y].neuronLayer[freeLocation.x][freeLocation.z][freeLocation.t] = new Neurons.NeuronExitor(direction, ref matrix);
 
 
         }
@@ -310,4 +310,4 @@ namespace NNBuilder_Runable
       
     }
 }
-}
+

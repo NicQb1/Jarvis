@@ -16,3 +16,8 @@ c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\bin\
 c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\obj\Debug\Jarvis.exe
 c:\users\hutch\onedrive\documents\visual studio 2015\Projects\Jarvis\Jarvis\obj\Debug\Jarvis.pdb
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Jarvis.exe.config
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.csprojResolveAssemblyReference.cache
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.MainForm.resources
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.Properties.Resources.resources
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.csproj.GenerateResource.Cache
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Jarvis.exe.config

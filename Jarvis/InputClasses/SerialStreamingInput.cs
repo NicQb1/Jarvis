@@ -9,6 +9,11 @@ namespace InputClasses
     public class SerialStreamingInput : IInput
     {
         private global::Network.Matrix matrix;
+
+
+    
+     
+
         private Utilities _utilities = new Utilities();
         private Int16 bitSize = 8;
 
@@ -17,9 +22,6 @@ namespace InputClasses
             this.matrix = matrix;
         }
 
-        public void set_InputLocations(object myData)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
