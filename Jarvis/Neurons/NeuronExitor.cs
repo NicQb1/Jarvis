@@ -9,7 +9,10 @@ namespace Neurons
 {
     public class NeuronExitor : NeuronBase
     {
-        public NeuronExitor(neuronDirection nd)
+        private neuronDirection direction;
+
+       
+        public NeuronExitor(neuronDirection nd, ref Matrix _matrix) :base( nd, ref _matrix)
         {
             this.Ndirection = nd;
         }

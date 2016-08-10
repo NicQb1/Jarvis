@@ -19,7 +19,7 @@ namespace Neurons
         public Matrix matrix;
 
 
-        public NeuronBase(ref Matrix _matrix, neuronDirection nd)
+        public NeuronBase(neuronDirection nd, ref Matrix _matrix)
         {
             matrix = _matrix;
             Ndirection = nd;
@@ -40,6 +40,11 @@ namespace Neurons
             {
                 fire();
             }
+        }
+
+        public neuronDirection getDirection()
+        {
+            return Ndirection;
         }
 
 

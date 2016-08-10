@@ -16,8 +16,10 @@ namespace Neurons
 
         void excite(float excitationValue);
 
+        neuronDirection getDirection();
 
-       
+
+
     }
 }
 
