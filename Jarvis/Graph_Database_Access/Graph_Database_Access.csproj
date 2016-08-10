@@ -106,8 +106,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessClasses\BaseAccess.cs" />
+    <Compile Include="AccessClasses\CommandAccess.cs" />
+    <Compile Include="AccessClasses\IGDBAccess.cs" />
+    <Compile Include="AccessClasses\PhraseAccess.cs" />
+    <Compile Include="AccessClasses\WordAccess.cs" />
+    <Compile Include="BusinessObjects\BOBase.cs" />
+    <Compile Include="BusinessObjects\Command.cs" />
+    <Compile Include="BusinessObjects\Phrase.cs" />
+    <Compile Include="BusinessObjects\Word.cs" />
     <Compile Include="GraphDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relationships\PhraseCommandRelationship.cs" />
+    <Compile Include="Relationships\WordPhraseRelationship.cs" />
+    <Compile Include="Relationships\WordToWordRelationship.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -117,6 +129,10 @@
     <Content Include="Neo4jServerHost.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{bd1bd8cb-fb67-429c-ae69-d72a114ec743}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{a745b500-b286-4bb7-b8a6-fe77990cd29c}</Project>
       <Name>Interfaces</Name>

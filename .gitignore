@@ -45,12 +45,3 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-*.cache
-Jarvis/Jarvis.v12.suo
-*.cache
-*.pdb
-Jarvis/CommandInterfaces/bin/Debug/CommandInterfaces.pdb
-*.pdb
-*.cache
-*.cache
-Jarvis/Jarvis/obj/Debug/DesignTimeResolveAssemblyReferences.cache

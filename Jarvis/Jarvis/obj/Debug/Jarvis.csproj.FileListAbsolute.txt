@@ -20,3 +20,4 @@ C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.cspro
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.MainForm.resources
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.Properties.Resources.resources
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.csproj.GenerateResource.Cache
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Jarvis.exe.config

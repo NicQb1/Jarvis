@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using
 using Common.enums;
 
 namespace Neurons
 {
     public class NeuronInhibitor : NeuronBase
     {
-        public NeuronInhibitor(neuronDirection nd)
+        private neuronDirection direction;
+
+       
+
+        public NeuronInhibitor(neuronDirection nd, ref Matrix _matrix) :base( nd, ref _matrix)
         {
             this.Ndirection = nd;
         }

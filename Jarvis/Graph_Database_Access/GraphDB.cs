@@ -8,6 +8,8 @@ using Neurons;
 using Net.Graph;
 using Net.Graph.Neo4JD;
 using Neo4jClient;
+using Graph_Database_Access.Relationships;
+using Graph_Database_Access.BusinessObjects;
 
 namespace Graph_Database_Access
 {
@@ -15,18 +17,9 @@ namespace Graph_Database_Access
     {
        
 
-        public void InsertNode(INeuron myNeuron)
-        {
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
-           client.Connect();
-            switch(myNeuron.GetType().Name)
-            {
-                case "Neurons.NeuronExitor":
-                    var refA = client.Create(new NeuronExitor() { Direction = myNeuron. });
-            }
-           
-        }
+     
 
+       
        public void fireNode(INeuron myNeuron)
         {
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
