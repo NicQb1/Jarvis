@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\Utilities.cs" />
+    <Compile Include="enums\CommandTypeEnum.cs" />
     <Compile Include="enums\InputLayerTypeEnum.cs" />
     <Compile Include="enums\PartsOfSpeechEnum.cs" />
     <Compile Include="interfaces\IMethods.cs" />

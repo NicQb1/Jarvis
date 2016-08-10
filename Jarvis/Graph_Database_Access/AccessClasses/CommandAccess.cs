@@ -24,13 +24,15 @@ namespace Graph_Database_Access.AccessClasses
             return result;
         }
 
-        public NodeReference<Command> InsertNode(Command myCommand)
+        public NodeReference<Command> InsertNode(Command myCommand, Dictionary<string, object> myDictionary)
         {
             var myNodeReference = client.Create(myCommand);
             PhraseAccess pa = new PhraseAccess();
-            var phrasenode = pa.InsertNode(pa.GetObjectClass(myCommand.phrase));
-
-            client.CreateRelationship((NodeReference<Command>)myNodeReference, new PhraseCommandRelationship(phrasenode));
+            var phrasenode = pa.InsertNode(pa.GetObjectClass(myCommand.phrase), myDictionary);
+            AddEdge(myNodeReference.Id, PhraseCommandRelationship.TypeKey, phrasenode.Id, myDictionary);
+            //RelationshipReference rr = client.CreateRelationship((NodeReference<Command>)myNodeReference, new PhraseCommandRelationship(phrasenode));
+           
+            
             return myNodeReference;
         }
         

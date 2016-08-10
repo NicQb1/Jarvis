@@ -26,7 +26,7 @@ namespace Graph_Database_Access.AccessClasses
             return result;
         }
 
-        public NodeReference<Phrase> InsertNode(Phrase phrase)
+        public NodeReference<Phrase> InsertNode(Phrase phrase, Dictionary<string, object> myDictionary)
         {
             List<NodeReference<Word>> nodeReferences = new List<NodeReference<Word>>();
             string[] words = phrase.phrase.Split(' ');
@@ -42,7 +42,8 @@ namespace Graph_Database_Access.AccessClasses
                 nodeReferences.Add(myNodeReference);
                 if (i > 0)
                 {
-                    client.CreateRelationship((NodeReference<Word>)nodeReferences[i - 1], new WordToWordRelationship(myNodeReference));
+                    AddEdge(nodeReferences[i - 1].Id, PhraseCommandRelationship.TypeKey, myNodeReference.Id, myDictionary);
+                   // client.CreateRelationship((NodeReference<Word>)nodeReferences[i - 1], new WordToWordRelationship(myNodeReference));
 
                 }
                 i++;

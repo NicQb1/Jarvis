@@ -10,21 +10,29 @@ using Net.Graph.Neo4JD;
 using Neo4jClient;
 using Graph_Database_Access.Relationships;
 using Graph_Database_Access.BusinessObjects;
+using Graph_Database_Access.AccessClasses;
 
 namespace Graph_Database_Access
 {
     public class GraphDB
     {
        
-
-     
-
-       
-       public void fireNode(INeuron myNeuron)
+        public void CreateIndexes()
         {
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
-           client.Connect();
-           
+
+        }
+
+        public void SendPhrase(string phrase)
+        {
+            var phr = new Phrase();
+            phr.phrase = phrase;
+            PhraseAccess pa = new PhraseAccess();
+           var phraseList =  pa.getMatchingNodes(phr);
+            if(phraseList.Count == 0)
+            {
+                pa.InsertNode(phr, new Dictionary<string, object>());
+            }
+
         }
     }
 }

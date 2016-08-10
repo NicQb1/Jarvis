@@ -26,6 +26,19 @@ namespace Graph_Database_Access.AccessClasses
             }
            
         }
+        
+
+        public   void AddEdge(long node1Id, string relatioinship, long node2Id, Dictionary<string, object> myDictionary, bool directed = false)
+        {
+             client.Cypher
+                    .Match("(n1)", "(n2)")
+                    .Where((T n1) => n1.Id == node1Id)
+                    .AndWhere((T n2) => n2.Id == node2Id)
+                    .CreateUnique("n1-[:{" + relatioinship + "}]->n2")
+                    .WithParams(myDictionary)
+                    .ExecuteWithoutResultsAsync();
+            //return node1Id;
+        }
 
         public virtual bool exciteNode(NodeReference<T> nodeRef, int exitationAmount)
         {
@@ -46,6 +59,29 @@ namespace Graph_Database_Access.AccessClasses
             {
                 return false;
             }
+        }
+
+        public virtual List<T> getMatchingNodes(T node,Dictionary<string,object> myDictionary)
+        {
+            List<T> results  = client.Cypher.Match("(t:T)")
+                 .Where((T t) => t.Id == node.Id)
+                 .WithParams(myDictionary)
+                 .Return(command => command.As<T>())
+                 .Results
+                 .ToList();
+          
+            return results;
+        }
+
+        public virtual List<T> getMatchingNodes(T node)
+        {
+            List<T> results = client.Cypher.Match("(t:T)")
+                .Where((T t) => t.Id == node.Id)
+                .Return(command => command.As<T>())
+                .Results
+                .ToList();
+
+            return results;
         }
 
         public virtual List<Node> getChildNodes(NodeReference<T> nodeRef)

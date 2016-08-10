@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace Graph_Database_Access.BusinessObjects
     {
         public string name;
         public string phrase;
+        public CommandTypeEnum cmndType;
         public Dictionary<string, string> commandArgs;
     }
 }
