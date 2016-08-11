@@ -2,3 +2,7 @@ C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\DataTransformer\bin\Debug\Dat
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\DataTransformer\bin\Debug\DataTransformer.pdb
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\DataTransformer\obj\Debug\DataTransformer.dll
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\DataTransformer\obj\Debug\DataTransformer.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\DataTransformer\bin\Debug\DataTransformer.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\DataTransformer\bin\Debug\DataTransformer.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\DataTransformer\obj\Debug\DataTransformer.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\DataTransformer\obj\Debug\DataTransformer.pdb

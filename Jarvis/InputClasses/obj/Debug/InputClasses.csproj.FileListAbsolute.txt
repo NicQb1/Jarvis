@@ -7,3 +7,14 @@ C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\Networ
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\Neurons.pdb
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\InputClasses\obj\Debug\InputClasses.dll
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\InputClasses\obj\Debug\InputClasses.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\InputClasses.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\InputClasses.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\Network.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\Neurons.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\obj\Debug\InputClasses.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\obj\Debug\InputClasses.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\Network.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\Neurons.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\obj\Debug\InputClasses.csprojResolveAssemblyReference.cache
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\Common.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\Common.pdb

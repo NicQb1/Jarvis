@@ -22,6 +22,9 @@ namespace InputClasses
             this.matrix = matrix;
         }
 
-
+        public void set_InputLocations(object myData)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace Neurons
 {
     public class NeuronTransfer : NeuronBase
     {
-        public NeuronTransfer(ref Matrix _matrix, neuronDirection nd) : base(ref _matrix, nd)
+        public NeuronTransfer(ref Matrix _matrix, neuronDirection nd) : base(nd, ref _matrix)
         {
             matrix = _matrix;
             Ndirection = nd;

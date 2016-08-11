@@ -6,3 +6,7 @@ C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\KinectSensorInterface\bin\Deb
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\KinectSensorInterface\bin\Debug\KinectSensorInterface.pdb
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\KinectSensorInterface\obj\Debug\KinectSensorInterface.dll
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\KinectSensorInterface\obj\Debug\KinectSensorInterface.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\KinectSensorInterface\bin\Debug\KinectSensorInterface.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\KinectSensorInterface\bin\Debug\KinectSensorInterface.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\KinectSensorInterface\obj\Debug\KinectSensorInterface.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\KinectSensorInterface\obj\Debug\KinectSensorInterface.pdb

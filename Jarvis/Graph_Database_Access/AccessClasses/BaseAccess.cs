@@ -17,10 +17,12 @@ namespace Graph_Database_Access.AccessClasses
             {
                 if (_client == null)
                 {
-                    _client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+                    _client = new GraphClient(new Uri("http://localhost:7474/db/data"),"neo4j","Maiya581321");
                 }
                 if (!_client.IsConnected)
+                {
                     _client.Connect();
+                }
                 return _client;
 
             }
@@ -82,6 +84,11 @@ namespace Graph_Database_Access.AccessClasses
                 .ToList();
 
             return results;
+        }
+
+        public virtual List<T> nodeExists(T node)
+        {
+            throw new NotImplementedException();
         }
 
         public virtual List<Node> getChildNodes(NodeReference<T> nodeRef)

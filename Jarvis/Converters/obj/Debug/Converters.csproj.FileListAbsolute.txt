@@ -6,3 +6,7 @@ C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Converters\bin\Debug\Converte
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Converters\bin\Debug\Converters.pdb
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Converters\obj\Debug\Converters.dll
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Converters\obj\Debug\Converters.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Converters\bin\Debug\Converters.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Converters\bin\Debug\Converters.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Converters\obj\Debug\Converters.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Converters\obj\Debug\Converters.pdb

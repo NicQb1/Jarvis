@@ -95,6 +95,10 @@
       <Project>{bd1bd8cb-fb67-429c-ae69-d72a114ec743}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Graph_Database_Access\Graph_Database_Access.csproj">
+      <Project>{ABAE6140-1DEC-433A-8741-F3BB3DFF4D55}</Project>
+      <Name>Graph_Database_Access</Name>
+    </ProjectReference>
     <ProjectReference Include="..\InputClasses\InputClasses.csproj">
       <Project>{e79b804d-3756-4e20-b91b-e42c33b73e4f}</Project>
       <Name>InputClasses</Name>

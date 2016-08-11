@@ -8,3 +8,8 @@ C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechProcessor\bin\Debug\Spe
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechProcessor\obj\Debug\SpeechProcessor.csprojResolveAssemblyReference.cache
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechProcessor\obj\Debug\SpeechProcessor.dll
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechProcessor\obj\Debug\SpeechProcessor.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SpeechProcessor\bin\Debug\SpeechProcessor.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SpeechProcessor\bin\Debug\SpeechProcessor.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SpeechProcessor\obj\Debug\SpeechProcessor.csprojResolveAssemblyReference.cache
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SpeechProcessor\obj\Debug\SpeechProcessor.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SpeechProcessor\obj\Debug\SpeechProcessor.pdb

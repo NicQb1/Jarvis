@@ -6,3 +6,10 @@ C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Neurons\bin\Debug\Neurons.dll
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Neurons\bin\Debug\Neurons.pdb
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Neurons\obj\Debug\Neurons.dll
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Neurons\obj\Debug\Neurons.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Neurons\obj\Debug\Neurons.csprojResolveAssemblyReference.cache
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Neurons\bin\Debug\Neurons.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Neurons\bin\Debug\Neurons.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Neurons\bin\Debug\Common.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Neurons\bin\Debug\Common.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Neurons\obj\Debug\Neurons.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Neurons\obj\Debug\Neurons.pdb

@@ -11,7 +11,7 @@ namespace Neurons
     {
         private neuronDirection direction;
        
-        public NeuronOutput(ref Matrix _matrix, neuronDirection nd) : base(ref _matrix, nd)
+        public NeuronOutput(ref Matrix _matrix, neuronDirection nd) : base(nd, ref _matrix)
         {
             matrix = _matrix;
             Ndirection = nd;

@@ -17,7 +17,7 @@ namespace Graph_Database_Access.AccessClasses
 
 
             var result =
-              client.Cypher.Match("(command:Command)")
+              client.Cypher.Match("(word:Word)")
                   .Where((Word word) => word.word == (string)value)
                   .Return(word => word.As<Word>())
                   .Results

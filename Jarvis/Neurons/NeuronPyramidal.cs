@@ -10,7 +10,7 @@ namespace Neurons
     public class NeuronPyramidal : NeuronBase
     {
 
-        public NeuronPyramidal(ref Matrix _matrix, neuronDirection nd) : base(ref _matrix, nd)
+        public NeuronPyramidal(ref Matrix _matrix, neuronDirection nd) : base(nd, ref _matrix)
         {
             matrix = _matrix;
             Ndirection = nd;

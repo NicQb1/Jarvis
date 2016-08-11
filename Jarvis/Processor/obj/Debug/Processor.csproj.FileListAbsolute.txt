@@ -7,3 +7,7 @@ C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Processor\bin\Debug\Processor
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Processor\bin\Debug\Processor.pdb
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Processor\obj\Debug\Processor.dll
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Processor\obj\Debug\Processor.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Processor\bin\Debug\Processor.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Processor\bin\Debug\Processor.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Processor\obj\Debug\Processor.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Processor\obj\Debug\Processor.pdb

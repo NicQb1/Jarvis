@@ -2,3 +2,7 @@ C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Common\bin\Debug\Common.dll
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Common\bin\Debug\Common.pdb
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Common\obj\Debug\Common.dll
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Common\obj\Debug\Common.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Common\bin\Debug\Common.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Common\bin\Debug\Common.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Common\obj\Debug\Common.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Common\obj\Debug\Common.pdb

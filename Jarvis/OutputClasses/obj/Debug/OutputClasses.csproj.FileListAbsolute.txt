@@ -2,3 +2,7 @@ C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\OutputClasses\bin\Debug\Outpu
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\OutputClasses\bin\Debug\OutputClasses.pdb
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\OutputClasses\obj\Debug\OutputClasses.dll
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\OutputClasses\obj\Debug\OutputClasses.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\OutputClasses\bin\Debug\OutputClasses.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\OutputClasses\bin\Debug\OutputClasses.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\OutputClasses\obj\Debug\OutputClasses.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\OutputClasses\obj\Debug\OutputClasses.pdb

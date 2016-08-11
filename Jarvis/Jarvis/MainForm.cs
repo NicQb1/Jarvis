@@ -14,6 +14,7 @@ using InputClasses;
 using NNBuilder_Runable;
 using Common.structs;
 using Neurons;
+using Graph_Database_Access;
 
 namespace Jarvis
 {
@@ -54,16 +55,24 @@ namespace Jarvis
           //  Utilities ut = new Utilities();
             BuildMatrix bm = new BuildMatrix();
             bm.Build_New_Matrix(y, x, z, t, 8,2);
+            
+         //   inPutLayer = new SerialStreamingInput(ref matrix);
 
-<<<<<<< HEAD
-            inPutLayer = new SerialStreamingInput(ref matrix);
-=======
             List<coordinates[]> inputBytes = bm.inputBytes;
             List<coordinates[]> outputBytes = bm.outputBytes;
             matrix = bm.matrix;
->>>>>>> origin/Input_Classes
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = ofdDictionaryFile.ShowDialog();
+            if(result== DialogResult.OK)
+            {
+                GraphDB gb = new GraphDB();
+                gb.LoadDictionaryFile(ofdDictionaryFile.FileName);
+            }
+
+        }
     }
 }

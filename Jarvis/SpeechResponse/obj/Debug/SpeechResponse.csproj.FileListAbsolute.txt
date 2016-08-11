@@ -13,3 +13,11 @@ C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\obj\Debug\Spee
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.csproj.GenerateResource.Cache
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.exe
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\bin\Debug\SpeechResponse.exe.config
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\bin\Debug\SpeechResponse.exe
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\bin\Debug\SpeechResponse.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.csprojResolveAssemblyReference.cache
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.Properties.Resources.resources
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.csproj.GenerateResource.Cache
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.exe
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SpeechResponse\obj\Debug\SpeechResponse.pdb
