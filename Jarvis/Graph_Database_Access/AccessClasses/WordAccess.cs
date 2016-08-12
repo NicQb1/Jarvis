@@ -11,7 +11,12 @@ namespace Graph_Database_Access.AccessClasses
 {
     public class WordAccess : BaseAccess<Word>, IGDBAccess<Word>
     {
+        public void createWordDefinitionRelationship(NodeReference<Definition> mdR, NodeReference<Word> mwR)
+        {
+            client.CreateRelationship(mwR, new WordDefinitionRelationship(mdR));
 
+
+        }
         public Word GetObjectClass(object value)
         {
 

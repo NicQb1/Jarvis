@@ -18,3 +18,5 @@ C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\Ne
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\obj\Debug\InputClasses.csprojResolveAssemblyReference.cache
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\Common.dll
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\Common.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\Common.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\InputClasses\bin\Debug\Common.pdb

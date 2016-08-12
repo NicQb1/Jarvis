@@ -26,8 +26,6 @@ namespace Graph_Database_Access
 
         }
 
-
-
         private NodeReference<Word> InsertWord(string word)
         {
             var myword = new Word();
@@ -161,7 +159,71 @@ namespace Graph_Database_Access
 
         private void parseWordXML(string wordXML)
         {
+            string word = getInnerText("ent", wordXML);
+            string hw = getInnerText("hw", wordXML);
+            string pos = getInnerText("pos", wordXML);
+            string pr = getInnerText("pr", wordXML);
+            string def = getInnerText("def", wordXML);
+            string q= getInnerText("q", wordXML);
+            Definition myNewDef = new Definition();
+            myNewDef.currentExitation = 0;
+            myNewDef.definition = def;
+            myNewDef.firePoint = 5;
+            myNewDef.lastFired = DateTime.Now;
+            NodeReference<Definition> mdR = null;
+            NodeReference<Word> mwR = null;
+            if (myNewDef.definition!= string.Empty)
+            {
+                mdR =InsertDefinition(myNewDef);
+            }
+            Word myNewWord = new Word();
+            myNewWord.currentExitation =0;
+            myNewWord.firePoint = 5;
+            myNewWord.hw = hw;
+            myNewWord.lastFired = DateTime.Now;
+            myNewWord.pr = pr;
+            myNewWord.word = word;
+            if (word != string.Empty)
+            {
+                 mwR = InsertWord(myNewWord);
+            }
+            if(mwR != null && mdR != null)
+            {
+                createWordDefinitionRelationship(mdR, mwR);
+            }
             return;
+        }
+
+        private void createWordDefinitionRelationship(NodeReference<Definition> mdR, NodeReference<Word> mwR)
+        {
+            WordAccess wa = new WordAccess();
+            wa.createWordDefinitionRelationship(mdR, mwR);
+            //throw new NotImplementedException();
+        }
+
+        private NodeReference<Definition> InsertDefinition(Definition myNewDef)
+        {
+            DefinitionAccess wa = new DefinitionAccess();
+            List<Definition> wordList = wa.getMatchingNodes(myNewDef);
+            if (wordList == null)
+            {
+                NodeReference<Definition> nr = wa.InsertNode(myNewDef, new Dictionary<string, object>());
+                return nr;
+            }
+
+            return null;
+        }
+
+        private string getInnerText(string v, string wordXML)
+        {
+            int length = ("<" + v + ">").ToString().Length;
+            int i = wordXML.IndexOf("<" + v + ">");
+            int j = wordXML.IndexOf("</" + v + ">");
+            if (i > -1 && j > i)
+            {
+                return wordXML.Substring(i + length, (j - i)-length);
+            }
+            return string.Empty;
         }
     }
 }

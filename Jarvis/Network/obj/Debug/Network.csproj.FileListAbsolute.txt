@@ -14,3 +14,5 @@ C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Network\obj\Debug\Network
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Network\bin\Debug\Common.dll
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Network\bin\Debug\Common.pdb
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Network\obj\Debug\Network.csprojResolveAssemblyReference.cache
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Network\bin\Debug\Common.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Network\bin\Debug\Common.pdb

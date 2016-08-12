@@ -18,3 +18,10 @@ C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\bin\Deb
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\bin\Debug\Neurons.pdb
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\obj\Debug\NNBuilder_Runable.dll
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\obj\Debug\NNBuilder_Runable.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\bin\Debug\Common.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\bin\Debug\Network.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\bin\Debug\Neurons.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\bin\Debug\Common.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\bin\Debug\Network.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\bin\Debug\Neurons.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\NNBuilder_Runable\obj\Debug\NNBuilder_Runable.csprojResolveAssemblyReference.cache
