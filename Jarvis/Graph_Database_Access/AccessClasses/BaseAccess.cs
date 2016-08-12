@@ -28,7 +28,38 @@ namespace Graph_Database_Access.AccessClasses
             }
            
         }
-        
+        public virtual Node<T> InsertNode(T node, Dictionary<string, object> myDictionary)
+        {
+            NodeReference<T> result;
+            if (nodeExists(node))
+            {
+                return null;
+            }
+            else
+            {
+                result = client.Create(node);
+              return client.Get(result);
+           
+            }
+            
+           
+        }
+
+        private T getUniqueNode(T node)
+        {
+            try
+            {
+                List<T> results = client.Cypher.Match("(t:T)")
+                     .Where((T t) => t.Id == node.Id)
+                     .Return(command => command.As<T>())
+                     .Results
+                     .ToList();
+
+                return results.First();
+            }
+            catch { return null; }
+        }
+    
 
         public   void AddEdge(long node1Id, string relatioinship, long node2Id, Dictionary<string, object> myDictionary, bool directed = false)
         {

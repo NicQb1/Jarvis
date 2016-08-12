@@ -26,7 +26,32 @@ namespace Graph_Database_Access.AccessClasses
             return result;
         }
 
-        public NodeReference<Phrase> InsertNode(Phrase phrase, Dictionary<string, object> myDictionary)
+        public NodeReference<Phrase> InsertNode2(Phrase phrase, Dictionary<string, object> myDictionary)
+        {
+            List<NodeReference<Word>> nodeReferences = new List<NodeReference<Word>>();
+            string[] words = phrase.phrase.Split(' ');
+            NodeReference<Phrase> myPhrase = client.Create(new Phrase { phrase = phrase.phrase });
+
+            int i = 0;
+            foreach (string word in words)
+            {
+
+                var myNodeReference = client.Create(new Word { word = word });
+                client.CreateRelationship(myPhrase, new WordPhraseRelationship(myNodeReference));
+
+                nodeReferences.Add(myNodeReference);
+                if (i > 0)
+                {
+                    AddEdge(nodeReferences[i - 1].Id, PhraseCommandRelationship.TypeKey, myNodeReference.Id, myDictionary);
+                    // client.CreateRelationship((NodeReference<Word>)nodeReferences[i - 1], new WordToWordRelationship(myNodeReference));
+
+                }
+                i++;
+            }
+            return myPhrase;
+
+        }
+        public override Node<Phrase> InsertNode(Phrase phrase, Dictionary<string, object> myDictionary)
         {
             List<NodeReference<Word>> nodeReferences = new List<NodeReference<Word>>();
             string[] words = phrase.phrase.Split(' ');
@@ -48,7 +73,10 @@ namespace Graph_Database_Access.AccessClasses
                 }
                 i++;
             }
-            return myPhrase;
+            return client.Get(myPhrase);
+             
         }
+
+        
     }
 }

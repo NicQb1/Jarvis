@@ -30,16 +30,24 @@ namespace Graph_Database_Access.AccessClasses
             return result;
         }
 
+        internal PartOfSpeech GetPartOfSpeech(string word)
+        {
+            throw new NotImplementedException();
+        }
 
-
-        public NodeReference<Word> InsertNode(Word myWord, Dictionary<string, object> myDictionary)
+        public override Node<Word> InsertNode(Word myWord, Dictionary<string, object> myDictionary)
         {
 
             var myNodeReference = client.Create(myWord);
-            //PhraseAccess pa = new PhraseAccess();
-            //var phrasenode = pa.InsertNode(pa.GetObjectClass(myWord.word), myDictionary);
+            return client.Get(myNodeReference);
+           
+        }
+        public NodeReference<Word> InsertNode2(Word myWord, Dictionary<string, object> myDictionary)
+        {
 
+            var myNodeReference = client.Create(myWord);
             return myNodeReference;
+
         }
     }
 }
