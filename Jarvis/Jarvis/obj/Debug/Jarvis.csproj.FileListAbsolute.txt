@@ -57,3 +57,5 @@ C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.P
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.csproj.GenerateResource.Cache
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.exe
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.exe
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.pdb
