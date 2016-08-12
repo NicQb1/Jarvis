@@ -11,7 +11,10 @@ using Neo4jClient;
 using Graph_Database_Access.Relationships;
 using Graph_Database_Access.BusinessObjects;
 using Graph_Database_Access.AccessClasses;
+using System.Xml;
 using System.IO;
+using System.Text;
+
 
 namespace Graph_Database_Access
 {
@@ -25,7 +28,7 @@ namespace Graph_Database_Access
 
 
 
-        private void EnterWord(string word)
+        private NodeReference<Word> InsertWord(string word)
         {
             var myword = new Word();
             myword.currentExitation = 0;
@@ -33,14 +36,35 @@ namespace Graph_Database_Access
             myword.lastFired = DateTime.Now;
             myword.word = word;
             WordAccess wa = new WordAccess();
-            //if (wa.getMatchingNodes(myword) == null)
-            //{
-            //    wa.InsertNode(myword, new Dictionary<string, object>());
-            //}
-            wa.InsertNode(myword, new Dictionary<string, object>());
+            List<Word> wordList = wa.getMatchingNodes(myword);
+            if (wordList == null)
+            {
+                NodeReference<Word> nr = wa.InsertNode(myword, new Dictionary<string, object>());
+                return nr;
+            }
+           
+                return null ;
+            
+
+           
         }
 
-        public void SendPhrase(string phrase)
+        private NodeReference<Word> InsertWord(Word myword)
+        {
+           
+            WordAccess wa = new WordAccess();
+            List<Word> wordList = wa.getMatchingNodes(myword);
+            if (wordList == null)
+            {
+                NodeReference<Word> nr = wa.InsertNode(myword, new Dictionary<string, object>());
+                return nr;
+            }
+
+            return null;
+
+        }
+
+        public NodeReference<Phrase> InsertPhrase(string phrase)
         {
             var phr = new Phrase();
             phr.phrase = phrase;
@@ -48,31 +72,96 @@ namespace Graph_Database_Access
            var phraseList =  pa.getMatchingNodes(phr);
             if(phraseList.Count == 0)
             {
-                pa.InsertNode(phr, new Dictionary<string, object>());
+                NodeReference<Phrase> nr = pa.InsertNode(phr, new Dictionary<string, object>());
+                return nr;
             }
+            return null;
 
         }
 
-        public void LoadDictionaryFile(string fileName)
+        public string LoadDictionaryFile(string fileName)
         {
+            string xmlString;
+            StringBuilder output = new StringBuilder();
+
             try
             {
                 using (StreamReader sr = new StreamReader(fileName))
                 {
-                    string myword;
-                    while(!sr.EndOfStream)
+                    string wordXML = string.Empty;
+                    while (!sr.EndOfStream)
                     {
-                        myword = sr.ReadLine();
-                        EnterWord(myword);
+                        xmlString = sr.ReadLine();
+                        if (xmlString.Contains("<p><ent>"))
+                        {
+                          
+                            if(wordXML != string.Empty)
+                            {
+                                parseWordXML(wordXML);
+                            }
+                            wordXML = xmlString;
+                        }else
+                        {
+                            wordXML = wordXML+ xmlString;
+                        }
                     }
-                   
+
+
+
                 }
+
+                
+
+                //using (XmlReader reader = XmlReader.Create(new StringReader(xmlString)))
+                //{
+                //    XmlWriterSettings ws = new XmlWriterSettings();
+                //    ws.Indent = true;
+                //    using (XmlWriter writer = XmlWriter.Create(output, ws))
+                //    {
+
+                //        // Parse the file and display each of the nodes.
+                //        while (reader.Read())
+                //        {
+                //            try
+                //            {
+                //                switch (reader.NodeType)
+                //                {
+                //                    case XmlNodeType.Element:
+                //                        writer.WriteStartElement(reader.Name);
+                //                        break;
+                //                    case XmlNodeType.Text:
+                //                        writer.WriteString(reader.Value);
+                //                        break;
+                //                    case XmlNodeType.XmlDeclaration:
+                //                    case XmlNodeType.ProcessingInstruction:
+                //                        writer.WriteProcessingInstruction(reader.Name, reader.Value);
+                //                        break;
+                //                    case XmlNodeType.Comment:
+                //                        writer.WriteComment(reader.Value);
+                //                        break;
+                //                    case XmlNodeType.EndElement:
+                //                        writer.WriteFullEndElement();
+                //                        break;
+                //                }
+                //            }catch { }
+                //        }
+                //        string results = output.ToString();
+                //        return results;
+
+                //    }
+                //}
             }
             catch (Exception ex)
             {
                
             }
+            return null;
             
+        }
+
+        private void parseWordXML(string wordXML)
+        {
+            return;
         }
     }
 }

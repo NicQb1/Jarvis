@@ -65,6 +65,7 @@ namespace Graph_Database_Access.AccessClasses
 
         public virtual List<T> getMatchingNodes(T node,Dictionary<string,object> myDictionary)
         {
+            try { 
             List<T> results  = client.Cypher.Match("(t:T)")
                  .Where((T t) => t.Id == node.Id)
                  .WithParams(myDictionary)
@@ -73,20 +74,25 @@ namespace Graph_Database_Access.AccessClasses
                  .ToList();
           
             return results;
+        }catch { return null; }
         }
 
         public virtual List<T> getMatchingNodes(T node)
         {
-            List<T> results = client.Cypher.Match("(t:T)")
-                .Where((T t) => t.Id == node.Id)
-                .Return(command => command.As<T>())
-                .Results
-                .ToList();
+            try
+            {
+                List<T> results = client.Cypher.Match("(t:T)")
+                    .Where((T t) => t.Id == node.Id)
+                    .Return(command => command.As<T>())
+                    .Results
+                    .ToList();
 
-            return results;
+
+                return results;
+            }catch { return null; }
         }
 
-        public virtual List<T> nodeExists(T node)
+        public virtual bool nodeExists(T node)
         {
             throw new NotImplementedException();
         }
