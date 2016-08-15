@@ -80,8 +80,8 @@ namespace Graph_Database_Access.AccessClasses
             {
                 var results = client.Cypher
                     .Match("(pos:PartOfSpeech)")
-                    .Where((PartOfSpeech c) => c.pos == node.pos)
-                    .Return(c => c.As<PartOfSpeech>())
+                    .Where((PartOfSpeech pos) => pos.pos == node.pos)
+                    .Return(pos => pos.As<PartOfSpeech>())
                     .Results
                     .Any();
 
@@ -102,6 +102,26 @@ namespace Graph_Database_Access.AccessClasses
         #endregion
 
         #region Insert Methods
+
+        public virtual IEnumerable<PartOfSpeech> CreateNode(PartOfSpeech node, Dictionary<string, object> myDictionary)
+        {
+            try
+            {
+
+                var results = client.Cypher
+                     .Create("(pos:PartOfSpeech {pos})")
+                     .WithParam("pos", node)
+                     .Return(pos => pos.As<PartOfSpeech>())
+                     .Results;
+
+                return results;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
         public override NodeReference<PartOfSpeech> InsertNodeGetReference(PartOfSpeech node, Dictionary<string, object> myDictionary)
         {
             NodeReference<PartOfSpeech> result;

@@ -57,7 +57,8 @@ namespace Graph_Database_Access.AccessClasses
 
             try
             {
-                var results = client.Cypher.Match("(word:Word)")
+                var results = client.Cypher
+                    .Match("(word:Word)")
                .Where((Word word) => word.word == node.word)
                .Return(word => word.As<Word>())
                .Results.ToList();
@@ -134,9 +135,9 @@ namespace Graph_Database_Access.AccessClasses
 
 
             var results =client.Cypher
-                .Merge("(word:Word {Id: {myWord2}.Id })")
+                .Merge("(word:Word {word: {myWord}.word })")
                 .OnCreate()
-                .Set("word = {myWord2}")
+                .Set("word = {myWord}")
                 .WithParams(
                             new
                             {

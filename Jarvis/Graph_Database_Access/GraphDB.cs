@@ -242,6 +242,7 @@ namespace Graph_Database_Access
                 }
                 else
                 {
+                    posA.CreateNode(mPOS, new Dictionary<string, object>());
                     posR = posA.InsertNodeGetReference(mPOS, new Dictionary<string, object>());
                 }
             }
@@ -297,6 +298,7 @@ namespace Graph_Database_Access
             List<Definition> wordList = wa.getMatchingNodes(myNewDef);
             if (wordList == null)
             {
+              
                 NodeReference<Definition> nr = wa.InsertNodeGetReference(myNewDef, new Dictionary<string, object>());
                 return nr;
             }
