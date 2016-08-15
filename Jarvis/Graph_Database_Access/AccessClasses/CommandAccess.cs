@@ -28,13 +28,24 @@ namespace Graph_Database_Access.AccessClasses
         {
             var myNodeReference = client.Create(myCommand);
             PhraseAccess pa = new PhraseAccess();
-            var phrasenode = pa.InsertNode(pa.GetObjectClass(myCommand.phrase), myDictionary);
+            var phrasenode = pa.InsertNode2(pa.GetObjectClass(myCommand.phrase), myDictionary);
             AddEdge(myNodeReference.Id, PhraseCommandRelationship.TypeKey, phrasenode.Id, myDictionary);
             //RelationshipReference rr = client.CreateRelationship((NodeReference<Command>)myNodeReference, new PhraseCommandRelationship(phrasenode));
            
             
             return myNodeReference;
         }
-        
+
+        public bool Exists(Command node)
+        {
+
+            return client.Cypher.Match("(command:Command)")
+                 .Where((Command command) => command.name == node.name)
+                 .Return(command => command.As<Command>())
+                 .Results
+                 .Any();
+
+        }
+
     }
 }

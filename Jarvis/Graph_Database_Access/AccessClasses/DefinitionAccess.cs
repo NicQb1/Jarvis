@@ -20,11 +20,22 @@ namespace Graph_Database_Access.AccessClasses
             return result;
         }
 
-        public NodeReference<Definition> InsertNode(Definition node, Dictionary<string, object> myDictionary)
+        public override NodeReference<Definition> InsertNodeGetReference(Definition node, Dictionary<string, object> myDictionary)
         {
             var myNodeReference = client.Create(node);
          
             return myNodeReference;
+        }
+
+        public bool Exists(Definition node)
+        {
+
+            return client.Cypher.Match("(definition:Definition)")
+                 .Where((Definition definition) => definition.definition == node.definition)
+                 .Return(definition => definition.As<Definition>())
+                 .Results
+                 .Any();
+
         }
     }
 }

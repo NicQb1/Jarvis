@@ -22,10 +22,17 @@ namespace Graph_Database_Access
        
         public void CreateIndexes()
         {
-
+            createIndexOnWord();
+        }
+        private void createIndexOnWord()
+        {
+            WordAccess wa = new WordAccess();
+            wa.client.Cypher
+  .Create("INDEX ON :Word(word)")
+  .ExecuteWithoutResults();
         }
 
-        private Node<Word> InsertWord(string word)
+        private Node<Word> InsertWordByStringGetNode(string word)
         {
             var myword = new Word();
             myword.currentExitation = 0;
@@ -36,6 +43,7 @@ namespace Graph_Database_Access
             List<Word> wordList = wa.getMatchingNodes(myword);
             if (wordList == null)
             {
+                var newword = wa.CreateNode(myword, new Dictionary<string, object>());
                 Node<Word> nr = wa.InsertNode(myword, new Dictionary<string, object>());
                 return nr;
             }
@@ -46,7 +54,7 @@ namespace Graph_Database_Access
            
         }
 
-        private NodeReference<Word> InsertWord2(string word)
+        private NodeReference<Word> InsertWordGetNodeReferenceByString(string word)
         {
             var myword = new Word();
             myword.currentExitation = 0;
@@ -67,13 +75,15 @@ namespace Graph_Database_Access
 
         }
 
-        private Node<Word> InsertWord(Word myword)
+        private Node<Word> InsertWordByWordGetNode(Word myword)
         {
            
             WordAccess wa = new WordAccess();
             List<Word> wordList = wa.getMatchingNodes(myword);
             if (wordList == null)
             {
+
+                var newword = wa.CreateNode(myword, new Dictionary<string, object>());
                 Node<Word> nr = wa.InsertNode(myword, new Dictionary<string, object>());
                 return nr;
             }
@@ -81,13 +91,15 @@ namespace Graph_Database_Access
             return null;
 
         }
-        private NodeReference<Word> InsertWord3(Word myword)
+        private NodeReference<Word> InsertWordByWordGetNodeReference(Word myword)
         {
 
             WordAccess wa = new WordAccess();
             List<Word> wordList = wa.getMatchingNodes(myword);
             if (wordList == null)
             {
+
+                var newword = wa.CreateNode(myword, new Dictionary<string, object>());
                 var nr = wa.InsertNode2(myword, new Dictionary<string, object>());
                 return nr;
             }
@@ -126,69 +138,27 @@ namespace Graph_Database_Access
                         xmlString = sr.ReadLine();
                         if (xmlString.Contains("<p><ent>"))
                         {
-                          
-                            if(wordXML != string.Empty)
+
+                            if (wordXML != string.Empty)
                             {
                                 parseWordXML(wordXML);
                             }
                             wordXML = xmlString;
-                        }else
+                        }
+                        else
                         {
-                            wordXML = wordXML+ xmlString;
+                            wordXML = wordXML + xmlString;
                         }
                     }
-
-
-
                 }
-
-                
-
-                //using (XmlReader reader = XmlReader.Create(new StringReader(xmlString)))
-                //{
-                //    XmlWriterSettings ws = new XmlWriterSettings();
-                //    ws.Indent = true;
-                //    using (XmlWriter writer = XmlWriter.Create(output, ws))
-                //    {
-
-                //        // Parse the file and display each of the nodes.
-                //        while (reader.Read())
-                //        {
-                //            try
-                //            {
-                //                switch (reader.NodeType)
-                //                {
-                //                    case XmlNodeType.Element:
-                //                        writer.WriteStartElement(reader.Name);
-                //                        break;
-                //                    case XmlNodeType.Text:
-                //                        writer.WriteString(reader.Value);
-                //                        break;
-                //                    case XmlNodeType.XmlDeclaration:
-                //                    case XmlNodeType.ProcessingInstruction:
-                //                        writer.WriteProcessingInstruction(reader.Name, reader.Value);
-                //                        break;
-                //                    case XmlNodeType.Comment:
-                //                        writer.WriteComment(reader.Value);
-                //                        break;
-                //                    case XmlNodeType.EndElement:
-                //                        writer.WriteFullEndElement();
-                //                        break;
-                //                }
-                //            }catch { }
-                //        }
-                //        string results = output.ToString();
-                //        return results;
-
-                //    }
-                //}
+         
             }
             catch (Exception ex)
             {
-               
+                return null;
             }
             return null;
-            
+
         }
 
         private void parseWordXML(string wordXML)
@@ -199,33 +169,65 @@ namespace Graph_Database_Access
             string pr = getInnerText("pr", wordXML);
             string def = getInnerText("def", wordXML);
             string q= getInnerText("q", wordXML);
-            Definition myNewDef = new Definition();
-            myNewDef.currentExitation = 0;
-            myNewDef.definition = def;
-            myNewDef.firePoint = 5;
-            myNewDef.lastFired = DateTime.Now;
+           
+            PartOfSpeechAccess posA = new PartOfSpeechAccess();
+
             NodeReference<Definition> mdR = null;
             NodeReference<Word> mwR = null;
-            if (myNewDef.definition!= string.Empty)
+            PartOfSpeech mPOS = new PartOfSpeech();
+            Definition myNewDef = new Definition();
+            NodeReference<PartOfSpeech> posR = null;
+
+
+            mPOS.pos = pos;
+            if (pos != string.Empty)
             {
-                mdR =InsertDefinition(myNewDef);
+                if (posA.Exists(mPOS))
+                {
+                    posR = posA.getMatchingNodeReference(mPOS, new Dictionary<string, object>());
+                }
+                else
+                {
+                    posR = posA.InsertNodeGetReference(mPOS, new Dictionary<string, object>());
+                }
             }
-            Word myNewWord = new Word();
+
+
+            if (def != string.Empty)
+            {
+                myNewDef.currentExitation = 0;
+                myNewDef.definition = def;
+                myNewDef.firePoint = 5;
+                myNewDef.lastFired = DateTime.Now;
+                mdR = InsertDefinition(myNewDef);
+                
+            }
+            if (word != string.Empty)
+            {
+                Word myNewWord = new Word();
             myNewWord.currentExitation =0;
             myNewWord.firePoint = 5;
             myNewWord.hw = hw;
             myNewWord.lastFired = DateTime.Now;
             myNewWord.pr = pr;
             myNewWord.word = word;
-            if (word != string.Empty)
-            {
-                 mwR = InsertWord3(myNewWord);
+            mwR = InsertWordByWordGetNodeReference(myNewWord);
             }
             if(mwR != null && mdR != null)
             {
                 createWordDefinitionRelationship(mdR, mwR);
             }
+            if (mwR != null && posR != null)
+            {
+                createWordPOSRelationship(posR, mwR);
+            }
             return;
+        }
+
+        private void createWordPOSRelationship(NodeReference<PartOfSpeech> posR, NodeReference<Word> mwR)
+        {
+            WordAccess wa = new WordAccess();
+            wa.createWordPOSRelationship(posR, mwR);
         }
 
         private void createWordDefinitionRelationship(NodeReference<Definition> mdR, NodeReference<Word> mwR)
@@ -241,7 +243,7 @@ namespace Graph_Database_Access
             List<Definition> wordList = wa.getMatchingNodes(myNewDef);
             if (wordList == null)
             {
-                NodeReference<Definition> nr = wa.InsertNode(myNewDef, new Dictionary<string, object>());
+                NodeReference<Definition> nr = wa.InsertNodeGetReference(myNewDef, new Dictionary<string, object>());
                 return nr;
             }
 

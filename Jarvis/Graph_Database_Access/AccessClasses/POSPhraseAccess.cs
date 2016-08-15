@@ -34,6 +34,17 @@ namespace Graph_Database_Access.AccessClasses
             return result;
         }
 
-       
+        public bool Exists(POSPhrase node)
+        {
+
+            return client.Cypher.Match("(phrase:POSPhrase)")
+                 .Where((POSPhrase phrase) => phrase.grammarPhraseString == node.grammarPhraseString)
+                 .Return(phrase => phrase.As<POSPhrase>())
+                 .Results
+                 .Any();
+
+        }
+
+
     }
 }

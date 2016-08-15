@@ -37,7 +37,7 @@ namespace Graph_Database_Access.AccessClasses
             {
 
                 var myNodeReference = client.Create(new Word { word = word });
-                client.CreateRelationship(myPhrase, new WordPhraseRelationship(myNodeReference));
+                client.CreateRelationship(myNodeReference , new WordPhraseRelationship(myPhrase));
 
                 nodeReferences.Add(myNodeReference);
                 if (i > 0)
@@ -62,7 +62,7 @@ namespace Graph_Database_Access.AccessClasses
             {
 
                 var myNodeReference = client.Create(new Word { word = word });
-                client.CreateRelationship(myPhrase, new WordPhraseRelationship(myNodeReference));
+                client.CreateRelationship(myNodeReference, new WordPhraseRelationship(myPhrase));
 
                 nodeReferences.Add(myNodeReference);
                 if (i > 0)
@@ -77,6 +77,15 @@ namespace Graph_Database_Access.AccessClasses
              
         }
 
-        
+        public bool Exists(Phrase node)
+        {
+
+            return client.Cypher.Match("(phrase:Phrase)")
+                 .Where((Phrase phrase) => phrase.phrase == node.phrase)
+                 .Return(phrase => phrase.As<Phrase>())
+                 .Results
+                 .Any();
+
+        }
     }
 }

@@ -28,22 +28,34 @@ namespace Graph_Database_Access.AccessClasses
             }
            
         }
+
+     
         public virtual Node<T> InsertNode(T node, Dictionary<string, object> myDictionary)
         {
             NodeReference<T> result;
-            if (nodeExists(node))
-            {
-                return null;
-            }
-            else
+            result = getMatchingNodeReference(node, new Dictionary<string, object>());
+            if (result == null)
             {
                 result = client.Create(node);
-              return client.Get(result);
-           
             }
-            
-           
+            return client.Get(result);
+
         }
+
+        public virtual NodeReference<T> InsertNodeGetReference(T node, Dictionary<string, object> myDictionary)
+        {
+            NodeReference<T> result;
+            result = getMatchingNodeReference(node, new Dictionary<string, object>());
+          
+            if (result == null)
+            {
+                result = client.Create(node);
+            }
+            return result;
+
+        }
+
+
 
         private T getUniqueNode(T node)
         {
@@ -103,29 +115,44 @@ namespace Graph_Database_Access.AccessClasses
                  .Return(command => command.As<T>())
                  .Results
                  .ToList();
-          
+        
             return results;
-        }catch { return null; }
+        }catch {
+                return null; }
+        }
+        public virtual NodeReference<T> getMatchingNodeReference(T node, Dictionary<string, object> myDictionary)
+        {
+            try
+            {
+                var results = client.Cypher.Match("(t:T)")
+                     .Where((T t) => t.Id == node.Id)
+                     .Return<T>("x");
+                if(results==null)
+                {
+                    return client.Create(node);
+                }
+
+
+            return (NodeReference<T>)results;
+            }
+            catch(Exception ex)
+            { return null; }
         }
 
         public virtual List<T> getMatchingNodes(T node)
         {
+         
             try
             {
-                List<T> results = client.Cypher.Match("(t:T)")
-                    .Where((T t) => t.Id == node.Id)
-                    .Return(command => command.As<T>())
-                    .Results
-                    .ToList();
+                var results = client.Cypher.Match("(t:T)")
+               .Where((T t) => t.Id == node.Id)
+               .Return(t => t.As<T>())
+               .Results.ToList();
 
 
                 return results;
-            }catch { return null; }
-        }
-
-        public virtual bool nodeExists(T node)
-        {
-            throw new NotImplementedException();
+            }catch (Exception ex)
+            { return null; }
         }
 
         public virtual List<Node> getChildNodes(NodeReference<T> nodeRef)

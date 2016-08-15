@@ -73,6 +73,10 @@
             this.txtRecognizedSpeech.Size = new System.Drawing.Size(313, 388);
             this.txtRecognizedSpeech.TabIndex = 3;
             // 
+            // ofdDictionaryFile
+            // 
+            this.ofdDictionaryFile.Multiselect = true;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(32, 124);

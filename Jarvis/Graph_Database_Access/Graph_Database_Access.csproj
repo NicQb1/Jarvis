@@ -126,6 +126,7 @@
     <Compile Include="Relationships\PhraseCommandRelationship.cs" />
     <Compile Include="Relationships\WordDefinitionRelationship.cs" />
     <Compile Include="Relationships\WordPhraseRelationship.cs" />
+    <Compile Include="Relationships\WordToPOSRelationship.cs" />
     <Compile Include="Relationships\WordToWordRelationship.cs" />
   </ItemGroup>
   <ItemGroup>

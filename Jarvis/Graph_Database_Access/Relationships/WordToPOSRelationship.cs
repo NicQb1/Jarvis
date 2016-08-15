@@ -6,17 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Graph_Database_Access.Relationships
 {
-    public class WordPhraseRelationship : Relationship,
-        IRelationshipAllowingSourceNode<Word>,
-        IRelationshipAllowingTargetNode<Phrase>
+  
+    public class WordToPOSRelationship : Relationship,
+     IRelationshipAllowingSourceNode<Word>,
+     IRelationshipAllowingTargetNode<Definition>
     {
 
-        public const string TypeKey = "Word_Is_In_Phrase";
+        public const string TypeKey = "Word_To_POS";
 
-        public  WordPhraseRelationship(NodeReference targetNode) : base(targetNode)
+        public WordToPOSRelationship(NodeReference targetNode) : base(targetNode)
         {
         }
 

@@ -9,5 +9,7 @@ namespace Graph_Database_Access.BusinessObjects
     public class PartOfSpeech : BOBase
     {
         public string pos;
+
+    
     }
 }
