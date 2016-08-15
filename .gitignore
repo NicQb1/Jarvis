@@ -46,3 +46,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.cache
+*.cache
+Jarvis/.vs/Jarvis/v14/.suo
+*.pdb
