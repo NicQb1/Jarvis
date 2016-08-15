@@ -70,6 +70,7 @@ namespace Jarvis
             if(result== DialogResult.OK)
             {
                 GraphDB gb = new GraphDB();
+                gb.CreateIndexes();
                 foreach (string filename in ofdDictionaryFile.FileNames)
                 {
                     gb.LoadDictionaryFile(filename);

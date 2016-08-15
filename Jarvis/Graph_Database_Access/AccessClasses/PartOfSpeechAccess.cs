@@ -10,6 +10,7 @@ namespace Graph_Database_Access.AccessClasses
 {
     public class PartOfSpeechAccess : BaseAccess<PartOfSpeech>, IGDBAccess<PartOfSpeech>
     {
+        #region Get Methods
         public PartOfSpeech GetObjectClass(object value)
         {
             var result = client.Cypher.Match("(partOfSpeech:PartOfSpeech)")
@@ -78,7 +79,7 @@ namespace Graph_Database_Access.AccessClasses
             try
             {
                 var results = client.Cypher
-                    .Match("(c:PartOfSpeech)")
+                    .Match("(pos:PartOfSpeech)")
                     .Where((PartOfSpeech c) => c.pos == node.pos)
                     .Return(c => c.As<PartOfSpeech>())
                     .Results
@@ -98,5 +99,21 @@ namespace Graph_Database_Access.AccessClasses
             }
 
         }
+        #endregion
+
+        #region Insert Methods
+        public override NodeReference<PartOfSpeech> InsertNodeGetReference(PartOfSpeech node, Dictionary<string, object> myDictionary)
+        {
+            NodeReference<PartOfSpeech> result;
+            result = getMatchingNodeReference(node, new Dictionary<string, object>());
+
+            if (result == null)
+            {
+                result = client.Create(node);
+            }
+            return result;
+
+        }
+        #endregion
     }
 }

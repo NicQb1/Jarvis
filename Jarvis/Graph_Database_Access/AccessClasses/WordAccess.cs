@@ -57,7 +57,7 @@ namespace Graph_Database_Access.AccessClasses
 
             try
             {
-                var results = client.Cypher.Match("(Word:word)")
+                var results = client.Cypher.Match("(word:Word)")
                .Where((Word word) => word.word == node.word)
                .Return(word => word.As<Word>())
                .Results.ToList();
@@ -116,28 +116,46 @@ namespace Graph_Database_Access.AccessClasses
             try
             {
 
-                var results =
-
-    client.Cypher
-        .Create("(word:Word {word})")
-        .WithParam("word", node)
-         .Return(word => word.As<Word>())
-        .Results;
-//        .Single();
+                var results = client.Cypher
+                     .Create("(word:Word {word})")
+                     .WithParam("word", node)
+                     .Return(word => word.As<Word>())
+                     .Results;
 
                 return results;
             }catch(Exception ex)
             {
                 return null;
             }
-               // .ExecuteWithoutResults();
 
         }
-        public override Node<Word> InsertNode(Word myWord, Dictionary<string, object> myDictionary)
+        public  Node<Word> InsertNode5(Word myWord, Dictionary<string, object> myDictionary)
         {
 
-            var myNodeReference = client.Create(myWord);
-            return client.Get(myNodeReference);
+
+            var results =client.Cypher
+                .Merge("(word:Word {Id: {myWord2}.Id })")
+                .OnCreate()
+                .Set("word = {myWord2}")
+                .WithParams(
+                            new
+                            {
+                                myWord2 =
+                                        new Word()
+                                        {
+                                            word = myWord.word,
+                                            pr = myWord.pr,
+                                            hw = myWord.hw,
+                                            firePoint = myWord.firePoint,
+                                            currentExitation = 0
+                                        }
+                            })
+                            .Return(word => word.As<Word>())
+                     .Results;
+
+            // var myNodeReference = client.Create(myWord);
+            return client.Get<Word>((NodeReference<Word>)results.First().Id);
+           // return results;
 
         }
         public NodeReference<Word> InsertNode2(Word myWord, Dictionary<string, object> myDictionary)

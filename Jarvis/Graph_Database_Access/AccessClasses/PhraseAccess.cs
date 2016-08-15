@@ -51,7 +51,7 @@ namespace Graph_Database_Access.AccessClasses
             return myPhrase;
 
         }
-        public override Node<Phrase> InsertNode(Phrase phrase, Dictionary<string, object> myDictionary)
+        public  Node<Phrase> InsertNode5(Phrase phrase, Dictionary<string, object> myDictionary)
         {
             List<NodeReference<Word>> nodeReferences = new List<NodeReference<Word>>();
             string[] words = phrase.phrase.Split(' ');

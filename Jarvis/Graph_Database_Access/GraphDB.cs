@@ -23,13 +23,67 @@ namespace Graph_Database_Access
         public void CreateIndexes()
         {
             createIndexOnWord();
+            createIndexOnPartOfSpeech();
+            createIndexOnPOSPhrase();
+            createIndexOnDefinition();
+            createIndexOnPhrase();
+            createIndexOnCommand();
+            createIndexOnPOSPhrase();
         }
         private void createIndexOnWord()
         {
             WordAccess wa = new WordAccess();
             wa.client.Cypher
-  .Create("INDEX ON :Word(word)")
-  .ExecuteWithoutResults();
+            .Create("INDEX ON :Word(word)")
+              .ExecuteWithoutResults();
+        }
+
+        private void createIndexOnPartOfSpeech()
+        {
+            PartOfSpeechAccess wa = new PartOfSpeechAccess();
+            wa.client.Cypher
+            .Create("INDEX ON :PartOfSpeech(pos)")
+            .ExecuteWithoutResults();
+        }
+
+        private void createIndexOnDefinition()
+        {
+            DefinitionAccess wa = new DefinitionAccess();
+            wa.client.Cypher
+            .Create("INDEX ON :Definition(definition)")
+            .ExecuteWithoutResults();
+        }
+
+        private void createIndexOnPhrase()
+        {
+            PhraseAccess wa = new PhraseAccess();
+            wa.client.Cypher
+            .Create("INDEX ON :Phrase(phrase)")
+            .ExecuteWithoutResults();
+        }
+
+        private void createIndexOnCommand()
+        {
+            CommandAccess wa = new CommandAccess();
+            wa.client.Cypher
+            .Create("INDEX ON :Command(name)")
+            .ExecuteWithoutResults();
+
+            wa.client.Cypher
+           .Create("INDEX ON :Command(phrase)")
+           .ExecuteWithoutResults();
+
+            wa.client.Cypher
+           .Create("INDEX ON :Command(cmndType)")
+           .ExecuteWithoutResults();
+        }
+
+        private void createIndexOnPOSPhrase()
+        {
+            POSPhraseAccess wa = new POSPhraseAccess();
+            wa.client.Cypher
+            .Create("INDEX ON :POSPhrase(grammarPhraseString)")
+            .ExecuteWithoutResults();
         }
 
         private Node<Word> InsertWordByStringGetNode(string word)
@@ -44,7 +98,7 @@ namespace Graph_Database_Access
             if (wordList == null)
             {
                 var newword = wa.CreateNode(myword, new Dictionary<string, object>());
-                Node<Word> nr = wa.InsertNode(myword, new Dictionary<string, object>());
+                Node<Word> nr = wa.InsertNode5(myword, new Dictionary<string, object>());
                 return nr;
             }
            
@@ -84,7 +138,7 @@ namespace Graph_Database_Access
             {
 
                 var newword = wa.CreateNode(myword, new Dictionary<string, object>());
-                Node<Word> nr = wa.InsertNode(myword, new Dictionary<string, object>());
+                Node<Word> nr = wa.InsertNode5(myword, new Dictionary<string, object>());
                 return nr;
             }
 
@@ -98,7 +152,7 @@ namespace Graph_Database_Access
             List<Word> wordList = wa.getMatchingNodes(myword);
             if (wordList == null)
             {
-
+                var newWord2 =wa.InsertNode5(myword, new Dictionary<string, object>());
                 var newword = wa.CreateNode(myword, new Dictionary<string, object>());
                 var nr = wa.InsertNode2(myword, new Dictionary<string, object>());
                 return nr;
@@ -116,7 +170,7 @@ namespace Graph_Database_Access
            var phraseList =  pa.getMatchingNodes(phr);
             if(phraseList.Count == 0)
             {
-                Node<Phrase> nr = pa.InsertNode(phr, new Dictionary<string, object>());
+                Node<Phrase> nr = pa.InsertNode5(phr, new Dictionary<string, object>());
                 return nr;
             }
             return null;
