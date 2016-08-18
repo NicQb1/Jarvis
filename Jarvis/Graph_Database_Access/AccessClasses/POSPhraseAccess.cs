@@ -27,7 +27,7 @@ namespace Graph_Database_Access.AccessClasses
         {
             var result =
             client.Cypher.Match("(phrase:POSPhrase)")
-                .Where((POSPhrase phrase) => phrase.grammarPhraseString== (string)value)
+               .Where(" phrase.grammarPhraseString = '" + value+ "'")
                 .Return(phrase => phrase.As<POSPhrase>())
                 .Results
                 .Single();
@@ -38,10 +38,30 @@ namespace Graph_Database_Access.AccessClasses
         {
 
             return client.Cypher.Match("(phrase:POSPhrase)")
-                 .Where((POSPhrase phrase) => phrase.grammarPhraseString == node.grammarPhraseString)
+                .Where(" phrase.grammarPhraseString = '" + node.grammarPhraseString + "'")
                  .Return(phrase => phrase.As<POSPhrase>())
                  .Results
                  .Any();
+
+        }
+
+        public POSPhrase InsertNode(POSPhrase node, Dictionary<string, object> myDictionary)
+        {
+            try
+            {
+
+                var results = client.Cypher
+                     .Create("(posPhrase:POSPhrase {posPhrase})")
+                     .WithParam("posPhrase", node)
+                     .Return(posPhrase => posPhrase.As<POSPhrase>())
+                     .Results;
+
+                return results.First();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
 
         }
 

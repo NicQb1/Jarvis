@@ -39,7 +39,7 @@ namespace Graph_Database_Access.AccessClasses
             {
 
                 var results = client.Cypher.Match("(partOfSpeech:PartOfSpeech)")
-                    .Where((PartOfSpeech partOfSpeech) => partOfSpeech.pos == node.pos)
+                    .Where(" pos.pos = '" + node.pos + "'")
                  .Return<PartOfSpeech>("x");
 
                 if (results == null)
@@ -80,7 +80,7 @@ namespace Graph_Database_Access.AccessClasses
             {
                 var results = client.Cypher
                     .Match("(pos:PartOfSpeech)")
-                    .Where((PartOfSpeech pos) => pos.pos == node.pos)
+                    .Where( " pos.pos = '" + node.pos +"'")
                     .Return(pos => pos.As<PartOfSpeech>())
                     .Results
                     .Any();
@@ -103,7 +103,7 @@ namespace Graph_Database_Access.AccessClasses
 
         #region Insert Methods
 
-        public virtual IEnumerable<PartOfSpeech> CreateNode(PartOfSpeech node, Dictionary<string, object> myDictionary)
+        public virtual PartOfSpeech CreateNode(PartOfSpeech node, Dictionary<string, object> myDictionary)
         {
             try
             {
@@ -114,7 +114,7 @@ namespace Graph_Database_Access.AccessClasses
                      .Return(pos => pos.As<PartOfSpeech>())
                      .Results;
 
-                return results;
+                return results.First();
             }
             catch (Exception ex)
             {
@@ -122,16 +122,66 @@ namespace Graph_Database_Access.AccessClasses
             }
 
         }
-        public override NodeReference<PartOfSpeech> InsertNodeGetReference(PartOfSpeech node, Dictionary<string, object> myDictionary)
+        public  PartOfSpeech InsertNodeGetReference(PartOfSpeech node, Dictionary<string, object> myDictionary)
         {
-            NodeReference<PartOfSpeech> result;
-            result = getMatchingNodeReference(node, new Dictionary<string, object>());
-
-            if (result == null)
+            try
             {
-                result = client.Create(node);
+               // var myNodeReference = client.Create(node);
+               // return myNodeReference;
+                var results = client.Cypher
+                     .Create("(pos:PartOfSpeech {pos})")
+                     .WithParam("pos", node)
+                     .Return(word => word.As<PartOfSpeech>())
+                     .Results;
+
+                return results.First();
             }
-            return result;
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+
+        }
+
+        public NodeReference<PartOfSpeech> InsertNodeGetRef(PartOfSpeech node, Dictionary<string, object> myDictionary)
+        {
+            try
+            {
+
+                var results = client.Cypher
+                     .Create("(pos:PartOfSpeech {pos})")
+                     .WithParam("pos", node)
+                     .Return(pos => pos.As<PartOfSpeech>())
+                     .Results;
+                var x = client.Get<PartOfSpeech>((NodeReference)results.First().Id);
+
+                return x.Reference;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+           
+        }
+
+        public PartOfSpeech InsertNode(PartOfSpeech node, Dictionary<string, object> myDictionary)
+        {
+            try
+            {
+
+                var results = client.Cypher
+                     .Create("(pos:PartOfSpeech {pos})")
+                     .WithParam("pos", node)
+                     .Return(word => word.As<PartOfSpeech>())
+                     .Results;
+
+                return results.First();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
 
         }
         #endregion

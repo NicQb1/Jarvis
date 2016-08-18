@@ -37,7 +37,7 @@ namespace Graph_Database_Access.AccessClasses
             try
             {
                 var results = client.Cypher.Match("(word:word)")
-                     .Where((Word word) => word.word == node.word)
+                      .Where(" word.word = '" + node.word + "'")
                      .Return<Word>("x");
                 if (results == null)
                 {
@@ -59,7 +59,7 @@ namespace Graph_Database_Access.AccessClasses
             {
                 var results = client.Cypher
                     .Match("(word:Word)")
-               .Where((Word word) => word.word == node.word)
+               .Where(" word.word = '" + node.word + "'")
                .Return(word => word.As<Word>())
                .Results.ToList();
 
@@ -75,7 +75,7 @@ namespace Graph_Database_Access.AccessClasses
 
             var result =
               client.Cypher.Match("(word:Word)")
-                  .Where((Word word) => word.word == (string)value)
+                   .Where(" word.word = '" + value + "'")
                   .Return(word => word.As<Word>())
                   .Results
                   .Single();
@@ -102,11 +102,13 @@ namespace Graph_Database_Access.AccessClasses
         public bool Exists(Word node)
         {
 
-            return client.Cypher.Match("(word:Word)")
-                 .Where((Word word) => word.word == node.word)
-                 .Return(word => word.As<Word>())
-                 .Results
-                 .Any();
+
+            return client.Cypher
+                  .Match("(word:Word)")
+                  .Where(" word.word = '" + node.word + "'")
+                  .Return(pos => pos.As<Word>())
+                  .Results
+                  .Any();
 
         }
         #endregion
@@ -130,40 +132,45 @@ namespace Graph_Database_Access.AccessClasses
             }
 
         }
-        public  Node<Word> InsertNode5(Word myWord, Dictionary<string, object> myDictionary)
+
+        public  Word InsertNode(Word node, Dictionary<string, object> myDictionary)
         {
+            try
+            {
 
-
-            var results =client.Cypher
-                .Merge("(word:Word {word: {myWord}.word })")
-                .OnCreate()
-                .Set("word = {myWord}")
-                .WithParams(
-                            new
-                            {
-                                myWord2 =
-                                        new Word()
-                                        {
-                                            word = myWord.word,
-                                            pr = myWord.pr,
-                                            hw = myWord.hw,
-                                            firePoint = myWord.firePoint,
-                                            currentExitation = 0
-                                        }
-                            })
-                            .Return(word => word.As<Word>())
+                var results = client.Cypher
+                     .Create("(word:Word {word})")
+                     .WithParam("word", node)
+                     .Return(word => word.As<Word>())
                      .Results;
 
-            // var myNodeReference = client.Create(myWord);
-            return client.Get<Word>((NodeReference<Word>)results.First().Id);
-           // return results;
+                return results.First();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
 
         }
+       
         public NodeReference<Word> InsertNode2(Word myWord, Dictionary<string, object> myDictionary)
         {
+            try
+            {
 
-            var myNodeReference = client.Create(myWord);
-            return myNodeReference;
+                var results = client.Cypher
+                     .Create("(word:Word {word})")
+                     .WithParam("word", myWord)
+                     .Return(word => word.As<Word>())
+                     .Results;
+                var x = client.Get<Word>((NodeReference)results.First().Id);
+
+                return x.Reference;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
 
         }
         #endregion

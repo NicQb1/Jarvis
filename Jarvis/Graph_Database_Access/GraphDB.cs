@@ -86,7 +86,7 @@ namespace Graph_Database_Access
             .ExecuteWithoutResults();
         }
 
-        private Node<Word> InsertWordByStringGetNode(string word)
+        private Word InsertWordByStringGetNode(string word)
         {
             var myword = new Word();
             myword.currentExitation = 0;
@@ -97,8 +97,8 @@ namespace Graph_Database_Access
             List<Word> wordList = wa.getMatchingNodes(myword);
             if (wordList == null)
             {
-                var newword = wa.CreateNode(myword, new Dictionary<string, object>());
-                Node<Word> nr = wa.InsertNode5(myword, new Dictionary<string, object>());
+               
+                Word nr = wa.InsertNode(myword, new Dictionary<string, object>());
                 return nr;
             }
            
@@ -129,22 +129,7 @@ namespace Graph_Database_Access
 
         }
 
-        private Node<Word> InsertWordByWordGetNode(Word myword)
-        {
-           
-            WordAccess wa = new WordAccess();
-            List<Word> wordList = wa.getMatchingNodes(myword);
-            if (wordList == null)
-            {
-
-                var newword = wa.CreateNode(myword, new Dictionary<string, object>());
-                Node<Word> nr = wa.InsertNode5(myword, new Dictionary<string, object>());
-                return nr;
-            }
-
-            return null;
-
-        }
+      
         private NodeReference<Word> InsertWordByWordGetNodeReference(Word myword)
         {
 
@@ -152,8 +137,8 @@ namespace Graph_Database_Access
             List<Word> wordList = wa.getMatchingNodes(myword);
             if (wordList == null)
             {
-                var newWord2 =wa.InsertNode5(myword, new Dictionary<string, object>());
-                var newword = wa.CreateNode(myword, new Dictionary<string, object>());
+              
+               // var newword = wa.CreateNode(myword, new Dictionary<string, object>());
                 var nr = wa.InsertNode2(myword, new Dictionary<string, object>());
                 return nr;
             }
@@ -170,8 +155,9 @@ namespace Graph_Database_Access
            var phraseList =  pa.getMatchingNodes(phr);
             if(phraseList.Count == 0)
             {
-                Node<Phrase> nr = pa.InsertNode5(phr, new Dictionary<string, object>());
-                return nr;
+                NodeReference<Phrase> nr = pa.InsertNodeGetRef(phr, new Dictionary<string, object>());
+              
+                return pa.client.Get(nr);
             }
             return null;
 
@@ -242,8 +228,8 @@ namespace Graph_Database_Access
                 }
                 else
                 {
-                    posA.CreateNode(mPOS, new Dictionary<string, object>());
-                    posR = posA.InsertNodeGetReference(mPOS, new Dictionary<string, object>());
+                  
+                    posR = posA.InsertNodeGetRef(mPOS, new Dictionary<string, object>());
                 }
             }
 

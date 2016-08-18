@@ -13,25 +13,61 @@ namespace Graph_Database_Access.AccessClasses
         public Definition GetObjectClass(object value)
         {
             var result = client.Cypher.Match("(definition:Definition)")
-                 .Where((Definition definition) => definition.definition == (string)value)
+                 .Where(" definition.definition = '" + value + "'")
                  .Return(definition => definition.As<Definition>())
                  .Results
                  .Single();
             return result;
         }
 
-        public override NodeReference<Definition> InsertNodeGetReference(Definition node, Dictionary<string, object> myDictionary)
+        public NodeReference<Definition> InsertNodeGetReference(Definition node, Dictionary<string, object> myDictionary)
         {
             var myNodeReference = client.Create(node);
-         
+            try
+            {
+
+                var results = client.Cypher
+                     .Create("(definition:Definition {definition})")
+                     .WithParam("definition", node)
+                     .Return(definition => definition.As<Definition>())
+                     .Results;
+                var x = client.Get<Definition>((NodeReference)results.First().Id);
+
+
+                return x.Reference;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
             return myNodeReference;
         }
 
+        public Definition InsertNode(Definition node, Dictionary<string, object> myDictionary)
+        {
+            try
+            {
+
+                var results = client.Cypher
+                     .Create("(definition:Definition {definition})")
+                     .WithParam("definition", node)
+                     .Return(definition => definition.As<Definition>())
+                     .Results;
+
+                return results.First();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+       
         public bool Exists(Definition node)
         {
 
             return client.Cypher.Match("(definition:Definition)")
-                 .Where((Definition definition) => definition.definition == node.definition)
+                 .Where(" definition.definition = '" + node.definition + "'")
                  .Return(definition => definition.As<Definition>())
                  .Results
                  .Any();

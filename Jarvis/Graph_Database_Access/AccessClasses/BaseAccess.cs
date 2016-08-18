@@ -29,34 +29,6 @@ namespace Graph_Database_Access.AccessClasses
            
         }
 
-     
-        public virtual Node<T> InsertNode(T node, Dictionary<string, object> myDictionary)
-        {
-            NodeReference<T> result;
-            result = getMatchingNodeReference(node, new Dictionary<string, object>());
-            if (result == null)
-            {
-                result = client.Create(node);
-            }
-            return client.Get(result);
-
-        }
-
-        public virtual NodeReference<T> InsertNodeGetReference(T node, Dictionary<string, object> myDictionary)
-        {
-            NodeReference<T> result;
-            result = getMatchingNodeReference(node, new Dictionary<string, object>());
-          
-            if (result == null)
-            {
-                result = client.Create(node);
-            }
-            return result;
-
-        }
-
-
-
         private T getUniqueNode(T node)
         {
             try

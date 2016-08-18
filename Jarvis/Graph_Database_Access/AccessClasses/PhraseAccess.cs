@@ -19,7 +19,7 @@ namespace Graph_Database_Access.AccessClasses
            
            var result =
              client.Cypher.Match("(phrase:Phrase)")
-                 .Where((Phrase phrase) => phrase.phrase == (string)value)
+                 .Where(" phrase.phrase = '" + value + "'")
                  .Return(phrase => phrase.As<Phrase>())
                  .Results
                  .Single();
@@ -51,7 +51,7 @@ namespace Graph_Database_Access.AccessClasses
             return myPhrase;
 
         }
-        public  Node<Phrase> InsertNode5(Phrase phrase, Dictionary<string, object> myDictionary)
+        public  Node<Phrase> InsertNode3(Phrase phrase, Dictionary<string, object> myDictionary)
         {
             List<NodeReference<Word>> nodeReferences = new List<NodeReference<Word>>();
             string[] words = phrase.phrase.Split(' ');
@@ -86,6 +86,48 @@ namespace Graph_Database_Access.AccessClasses
                  .Results
                  .Any();
 
+        }
+
+      
+        public Phrase  InsertNode(Phrase node, Dictionary<string, object> myDictionary)
+        {
+            try
+            {
+
+                var results = client.Cypher
+                     .Create("(phrase:Phrase {phrase})")
+                     .WithParam("phrase", node)
+                     .Return(word => word.As<Phrase>())
+                     .Results;
+                var x = client.Get<Phrase>((NodeReference)results.First().Id);
+
+                return results.First();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            throw new NotImplementedException();
+        }
+        public NodeReference<Phrase> InsertNodeGetRef(Phrase node, Dictionary<string, object> myDictionary)
+        {
+            try
+            {
+
+                var results = client.Cypher
+                     .Create("(phrase:Phrase {phrase})")
+                     .WithParam("phrase", node)
+                     .Return(phrase => phrase.As<Phrase>())
+                     .Results;
+                var x = client.Get<Phrase>((NodeReference)results.First().Id);
+
+                return x.Reference;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            throw new NotImplementedException();
         }
     }
 }

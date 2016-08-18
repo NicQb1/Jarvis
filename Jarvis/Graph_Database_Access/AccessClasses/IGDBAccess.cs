@@ -10,7 +10,7 @@ namespace Graph_Database_Access.AccessClasses
 {
     public interface IGDBAccess<Tout> where Tout : class
     {
-        Node<Tout> InsertNode(Tout node, Dictionary<string,object> myDictionary);
+        Tout InsertNode(Tout node, Dictionary<string,object> myDictionary);
 
        
 

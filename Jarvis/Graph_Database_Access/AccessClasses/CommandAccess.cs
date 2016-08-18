@@ -17,35 +17,74 @@ namespace Graph_Database_Access.AccessClasses
         public Command GetObjectClass(object value)
         {
             var result =client.Cypher.Match("(command:Command)")
-                  .Where((Command command) => command.name == (string)value)
+                  .Where(" command.name = '" + value+ "'")
                   .Return(command => command.As<Command>())
                   .Results
                   .Single();
             return result;
         }
 
-        public NodeReference<Command> InsertNode(Command myCommand, Dictionary<string, object> myDictionary)
+        public NodeReference<Command> InsertNodeGetRef(Command myCommand, Dictionary<string, object> myDictionary)
         {
-            var myNodeReference = client.Create(myCommand);
+            var myNode = CreateNode(myCommand, new Dictionary<string, object>());
+            var myNodeReference = client.Get<NodeReference<Command>>((NodeReference < Command >) myNode.Id);
+        
             PhraseAccess pa = new PhraseAccess();
-            var phrasenode = pa.InsertNode2(pa.GetObjectClass(myCommand.phrase), myDictionary);
-            AddEdge(myNodeReference.Id, PhraseCommandRelationship.TypeKey, phrasenode.Id, myDictionary);
+            var phrasenode = client.Create(new Command { name = myCommand.name });
+
+            AddEdge(myNodeReference.Data.Id, PhraseCommandRelationship.TypeKey, phrasenode.Id, myDictionary);
             //RelationshipReference rr = client.CreateRelationship((NodeReference<Command>)myNodeReference, new PhraseCommandRelationship(phrasenode));
            
             
-            return myNodeReference;
+            return myNodeReference.Data;
+        }
+
+        public Command InsertNode(Command myCommand, Dictionary<string, object> myDictionary)
+        {
+            var myNode = CreateNode(myCommand, new Dictionary<string, object>());
+            var myNodeReference = client.Get<NodeReference<Command>>((NodeReference<Command>)myNode.Id);
+
+            PhraseAccess pa = new PhraseAccess();
+            var phrasenode = client.Create(new Command { name = myCommand.name });
+
+            AddEdge(myNodeReference.Data.Id, PhraseCommandRelationship.TypeKey, phrasenode.Id, myDictionary);
+            //RelationshipReference rr = client.CreateRelationship((NodeReference<Command>)myNodeReference, new PhraseCommandRelationship(phrasenode));
+
+
+            return myNode;
+        }
+
+        public virtual Command CreateNode(Command node, Dictionary<string, object> myDictionary)
+        {
+            try
+            {
+
+                var results = client.Cypher
+                     .Create("(command:Command {command})")
+                     .WithParam("command", node)
+                     .Return(command => command.As<Command>())
+                     .Results;
+
+                return results.First();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
         }
 
         public bool Exists(Command node)
         {
 
             return client.Cypher.Match("(command:Command)")
-                 .Where((Command command) => command.name == node.name)
+                 .Where(" command.name = '" + node.name + "'")
                  .Return(command => command.As<Command>())
                  .Results
                  .Any();
 
         }
+        
 
     }
 }
