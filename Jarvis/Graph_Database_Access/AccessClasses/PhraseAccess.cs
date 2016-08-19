@@ -25,6 +25,23 @@ namespace Graph_Database_Access.AccessClasses
                  .Single();
             return result;
         }
+        public override List<Phrase> getMatchingNodes(Phrase node)
+        {
+
+            try
+            {
+                var results = client.Cypher
+                    .Match("(phrase:Phrase)")
+               .Where(" phrase.phrase = '" + node.phrase + "'")
+               .Return(phrase => phrase.As<Phrase>())
+               .Results.ToList();
+
+
+                return results;
+            }
+            catch (Exception ex)
+            { return null; }
+        }
 
         public NodeReference<Phrase> InsertNode2(Phrase phrase, Dictionary<string, object> myDictionary)
         {

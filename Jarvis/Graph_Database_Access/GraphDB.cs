@@ -135,7 +135,7 @@ namespace Graph_Database_Access
 
             WordAccess wa = new WordAccess();
             List<Word> wordList = wa.getMatchingNodes(myword);
-            if (wordList == null)
+            if (wordList == null || wordList.Count==0)
             {
               
                // var newword = wa.CreateNode(myword, new Dictionary<string, object>());
