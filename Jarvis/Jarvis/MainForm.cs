@@ -15,6 +15,9 @@ using NNBuilder_Runable;
 using Common.structs;
 using Neurons;
 using Graph_Database_Access;
+using SQL_Database_Access;
+using Common.DTO;
+using CommandInterfaces;
 
 namespace Jarvis
 {
@@ -43,6 +46,18 @@ namespace Jarvis
             txtRecognizedSpeech.Text += txtRecognizedSpeech.Text + e.Result.Text.ToString() + "\r\n";
             if (matrix != null)
             {
+                CommandProcessor cp = new CommandProcessor();
+                InputLogic il = new InputLogic();
+                PhraseLogic pl = new PhraseLogic();
+
+
+                List<NodeReferenceStats> phRefs = pl.InsertPhraseForStatAnalysis(e.Result.Text.ToString());
+                string results = il.updateStatsFireNodes(phRefs);
+                cp.ExecuteCommand(results);
+
+
+                
+
                 matrix.SpeechInput(e.Result.Text.ToString());
             }
 

@@ -114,6 +114,8 @@
     <Compile Include="AccessClasses\PhraseAccess.cs" />
     <Compile Include="AccessClasses\POSPhraseAccess.cs" />
     <Compile Include="AccessClasses\SemanticPairsAccess.cs" />
+    <Compile Include="AccessClasses\TupleRefAccess.cs" />
+    <Compile Include="AccessClasses\WordTupleAccess.cs" />
     <Compile Include="AccessClasses\WordAccess.cs" />
     <Compile Include="BusinessObjects\BOBase.cs" />
     <Compile Include="BusinessObjects\Command.cs" />
@@ -123,6 +125,8 @@
     <Compile Include="BusinessObjects\POSPhrase.cs" />
     <Compile Include="BusinessObjects\SemanticPairs.cs" />
     <Compile Include="BusinessObjects\Word.cs" />
+    <Compile Include="BusinessObjects\TupleRef.cs" />
+    <Compile Include="BusinessObjects\WordTuple.cs" />
     <Compile Include="GraphDB.cs" />
     <Compile Include="InputLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

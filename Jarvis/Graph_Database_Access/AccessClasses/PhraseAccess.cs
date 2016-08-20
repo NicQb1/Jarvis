@@ -7,6 +7,7 @@ using Graph_Database_Access.BusinessObjects;
 using Neo4jClient;
 using Graph_Database_Access.Relationships;
 using Net.Graph.Neo4JD;
+using Common.DTO;
 
 namespace Graph_Database_Access.AccessClasses
 {
@@ -68,6 +69,12 @@ namespace Graph_Database_Access.AccessClasses
             return myPhrase;
 
         }
+
+        internal void exciteNode(NodeReferenceStats phRef)
+        {
+            throw new NotImplementedException();
+        }
+
         public  Node<Phrase> InsertNode3(Phrase phrase, Dictionary<string, object> myDictionary)
         {
             List<NodeReference<Word>> nodeReferences = new List<NodeReference<Word>>();
@@ -144,6 +151,11 @@ namespace Graph_Database_Access.AccessClasses
             {
                 return null;
             }
+            throw new NotImplementedException();
+        }
+
+        bool IGDBAccess<Phrase>.exciteNode(NodeReferenceStats nRefS)
+        {
             throw new NotImplementedException();
         }
     }

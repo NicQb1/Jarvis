@@ -1,4 +1,5 @@
-﻿using Neo4jClient;
+﻿using Common.DTO;
+using Neo4jClient;
 using Net.Graph.Neo4JD;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Graph_Database_Access.AccessClasses
         bool exciteNode(Tout node, int exitationAmoun);
 
         bool exciteNode(NodeReference<Tout> nodeRef, int exitationAmoun);
+        bool exciteNode(NodeReferenceStats nRefS);
 
         List<Node> getChildNodes(NodeReference<Tout> nodeRef);
 

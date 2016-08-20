@@ -13,7 +13,7 @@ using Graph_Database_Access.BusinessObjects;
 using Graph_Database_Access.AccessClasses;
 using System.Xml;
 using System.IO;
-
+using Common.DTO;
 
 namespace Graph_Database_Access
 {
@@ -61,6 +61,8 @@ namespace Graph_Database_Access
             .Create("INDEX ON :Phrase(phrase)")
             .ExecuteWithoutResults();
         }
+
+      
 
         private void createIndexOnCommand()
         {

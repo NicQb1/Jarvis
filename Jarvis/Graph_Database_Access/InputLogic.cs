@@ -1,4 +1,5 @@
-﻿using Graph_Database_Access.AccessClasses;
+﻿using Common.DTO;
+using Graph_Database_Access.AccessClasses;
 using Graph_Database_Access.BusinessObjects;
 using Neo4jClient;
 using System;
@@ -33,6 +34,48 @@ namespace Graph_Database_Access
             }
             return null;
 
+        }
+
+
+        public string updateStatsFireNodes(List<NodeReferenceStats> phRefs)
+        {
+            foreach (var phRef in phRefs)
+            {
+                switch (phRef.type)
+                {
+                    case "Word":
+                        WordAccess wa = new WordAccess();
+                        wa.exciteNode(phRef);
+                        
+                        break;
+                    case "WordTuple":
+                        WordTupleAccess wt = new WordTupleAccess();
+                        wt.exciteNode(phRef);
+                       
+                        break;
+                    case "Phrase":
+                        PhraseAccess pa = new PhraseAccess();
+                        pa.exciteNode(phRef);
+                      
+                        break;
+                    case "TupleRef":
+                        TupleRefAccess ta = new TupleRefAccess();
+                        ta.exciteNode(phRef);
+                        break;
+                    default:
+                        throw new NotImplementedException();
+
+                }
+            }
+
+            return pollResponse();
+
+
+        }
+
+        private string pollResponse()
+        {
+            throw new NotImplementedException();
         }
     }
 }

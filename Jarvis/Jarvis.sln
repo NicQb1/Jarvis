@@ -1,12 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-<<<<<<< HEAD
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
-=======
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
->>>>>>> origin/Input_Classes
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jarvis", "Jarvis\Jarvis.csproj", "{E5EACD31-7B72-4FFA-97B5-E6609F637554}"
 EndProject
@@ -39,6 +34,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{BD1BD8CB-FB67-429C-AE69-D72A114EC743}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph_Database_Access", "Graph_Database_Access\Graph_Database_Access.csproj", "{ABAE6140-1DEC-433A-8741-F3BB3DFF4D55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL_Database_Access", "SQL_Database_Access\SQL_Database_Access.csproj", "{31F77163-0E66-45F8-AAFD-2F064A79CECA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -110,6 +107,10 @@ Global
 		{ABAE6140-1DEC-433A-8741-F3BB3DFF4D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABAE6140-1DEC-433A-8741-F3BB3DFF4D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABAE6140-1DEC-433A-8741-F3BB3DFF4D55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F77163-0E66-45F8-AAFD-2F064A79CECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F77163-0E66-45F8-AAFD-2F064A79CECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F77163-0E66-45F8-AAFD-2F064A79CECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F77163-0E66-45F8-AAFD-2F064A79CECA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

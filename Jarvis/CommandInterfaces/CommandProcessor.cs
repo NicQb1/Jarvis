@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CommandInterfaces
 {
-    public class Class1
+    public class CommandProcessor
     {
+        public void ExecuteCommand(string results)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

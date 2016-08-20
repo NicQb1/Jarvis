@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Graph_Database_Access.BusinessObjects;
 using Neo4jClient;
 using Graph_Database_Access.Relationships;
+using Common.DTO;
 
 namespace Graph_Database_Access.AccessClasses
 {
@@ -173,8 +174,14 @@ namespace Graph_Database_Access.AccessClasses
             }
 
         }
+
+
         #endregion
 
+        public bool exciteNode(NodeReferenceStats nRefS)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

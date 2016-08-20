@@ -123,6 +123,10 @@
       <Project>{b7c6ac3b-3bba-4dd8-a024-27956cb3d7b8}</Project>
       <Name>SpeechProcessor</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SQL_Database_Access\SQL_Database_Access.csproj">
+      <Project>{31f77163-0e66-45f8-aafd-2f064a79ceca}</Project>
+      <Name>SQL_Database_Access</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
