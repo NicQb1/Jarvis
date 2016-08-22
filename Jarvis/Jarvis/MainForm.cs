@@ -18,6 +18,10 @@ using Graph_Database_Access;
 using SQL_Database_Access;
 using Common.DTO;
 using CommandInterfaces;
+using edu.stanford.nlp.tagger.maxent;
+using java.util;
+using edu.stanford.nlp.ling;
+using java.io;
 
 namespace Jarvis
 {
@@ -33,6 +37,7 @@ namespace Jarvis
            
         }
 
+           
         private void btnStartSpeechProcessor_Click(object sender, EventArgs e)
         {
             sp = new SpeechProcessor.SpeechProcessor();
@@ -107,6 +112,11 @@ namespace Jarvis
                 }
             }
 
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            InsertMissingWordData(txtToSubmit.Text);
         }
     }
 }

@@ -5,3 +5,10 @@ C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SQL_Database_Access\bin\D
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SQL_Database_Access\obj\Debug\SQL_Database_Access.csprojResolveAssemblyReference.cache
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SQL_Database_Access\obj\Debug\SQL_Database_Access.dll
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\SQL_Database_Access\obj\Debug\SQL_Database_Access.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SQL_Database_Access\bin\Debug\SQL_Database_Access.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SQL_Database_Access\bin\Debug\SQL_Database_Access.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SQL_Database_Access\bin\Debug\Common.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SQL_Database_Access\bin\Debug\Common.pdb
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SQL_Database_Access\obj\Debug\SQL_Database_Access.csprojResolveAssemblyReference.cache
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SQL_Database_Access\obj\Debug\SQL_Database_Access.dll
+C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\SQL_Database_Access\obj\Debug\SQL_Database_Access.pdb

@@ -12,10 +12,11 @@ namespace Jarvis
 {
     public class WordWebLogic
     {
+        public string Word;
 
         public List<WordDTO> GetWord(string word)
         {
-
+            Word = word;
             string sURL;
             sURL = "http://www.thesaurus.com/browse/" + word;
 
@@ -37,95 +38,116 @@ namespace Jarvis
         private List<WordDTO> ParseThesaurusPage(string sLine)
         {
             List<WordDTO> results = new List<WordDTO>();
-            //int i = sLine.IndexOf("<div id=\"content\" class=\"direct\">");
-            // int j = sLine.IndexOf( "<div id=\"right - sidebar\">", i);
-            // sLine = sLine.Substring(i, j - i);
             int i = 0;
             List<string> synonymGroups = new List<string>();
             int thisOne = 0;
-            while (sLine.IndexOf("<div id=\"synonyms -" + i.ToString()) > 0)
+            while (sLine.IndexOf("<div id=\"synonyms-" + i.ToString()) > 0)
             {
-                thisOne = sLine.IndexOf("<div id=\"synonyms -" + i.ToString());
-                int next = sLine.IndexOf("</ section >", thisOne);
-                string temp = sLine.Substring(thisOne, next - thisOne);
+                thisOne = sLine.IndexOf("<div id=\"synonyms-" + i.ToString());
+                int next = sLine.IndexOf("</section>", thisOne);
+                string temp = sLine.Substring(thisOne, "</section>".Length + next - thisOne);
                 synonymGroups.Add(temp);
                 i++;
             }
 
             foreach (var syng in synonymGroups)
             {
-
+                WordDTO tmp = parseSynonymSection(syng);
+                tmp.word = Word;
+                results.Add(tmp);
             }
 
             return results;
 
         }
-
-        private WordDTO parseSynonymsHTML(HtmlNode hn, int level)
+        
+        private WordDTO parseSynonymSection(string html)
         {
-            WordDTO result = new WordDTO();
-            result.synonyms = new List<SynonymDTO>();
-            result.antonyms = new List<AntonymDTO>();
-            var tn = hn.ChildNodes[3];
-            var pos = tn.ChildNodes[1].ChildNodes[1].ChildNodes[13].ChildNodes[7].ChildNodes[1].ChildNodes[1].InnerHtml;
+            WordDTO results = new WordDTO();
+            string temp = html;
+            int locationA = 0;
+            int locationB = 0;
+            locationA = temp.IndexOf("<em class");
+            locationA = temp.IndexOf(">", locationA);
+            locationB = temp.IndexOf("<", locationA);
+            string pos = temp.Substring(locationA +1, locationB - locationA -1);
             if (pos == "adj")
                 pos = "Adjective";
             if (pos == "conj")
                 pos = "Conjunction";
+            results.partOfSpeech = pos;
+            results.synonyms = getSynonyms(temp);
+            results.antonyms = getListOfAntonyms(temp);
 
 
-            var sn = tn.ChildNodes[1].ChildNodes[1].ChildNodes[13].ChildNodes[7].ChildNodes[3].ChildNodes[5];
-            result.partOfSpeech = pos;
-            string[] synonyms = tn.ChildNodes[1].ChildNodes[1].ChildNodes[13].ChildNodes[7].ChildNodes[3].ChildNodes[3].ChildNodes[3].InnerText.Split(';');
-            foreach (string syn in synonyms)
-            {
-                SynonymDTO tmp = new SynonymDTO();
-                tmp.complexity = 0;
-                tmp.word = syn;
-                result.synonyms.Add(tmp);
-            }
-            result.synonyms = getListOfSynonyms(sn, level);
-            result.antonyms = getListOfAntonyms(tn, level);
-            return result;
-
-        }
-
-        private List<AntonymDTO> getListOfAntonyms(HtmlNode tn, int level)
-        {
-            List<AntonymDTO> results = new List<AntonymDTO>();
-            var sn = tn.SelectNodes("//*[@id=\"synonyms -" + level.ToString() + "\"]/section/div[2]/ul");
-            foreach (var n in sn)
-            {
-                foreach (var m in n.ChildNodes)
-                {
-                    //each LI in UL
-                    var attributes = m.Attributes;
-
-                    AntonymDTO tmp = new AntonymDTO();
-                    tmp.complexity = int.Parse(attributes["data-complexity"].ToString());
-                    tmp.word = m.ChildNodes[0].InnerText; ;
-                    results.Add(tmp);
-                }
-            }
+          
             return results;
         }
 
-        private List<SynonymDTO> getListOfSynonyms(HtmlNode tn, int level)
+        private List<AntonymDTO> getListOfAntonyms(string temp)
+        {
+            List<AntonymDTO> results = new List<AntonymDTO>();
+            int locationA = 0;
+            int locationB = 0;
+            string ulSubstring = string.Empty;
+
+            locationA = temp.IndexOf("<ul>");
+            locationB = temp.IndexOf("</div>", locationA);
+            ulSubstring = temp.Substring(locationB);
+
+            while (ulSubstring.Contains("data-complexity"))
+            {
+                locationA = ulSubstring.IndexOf("<li>");
+                locationB = ulSubstring.IndexOf("</li>");
+                string li = ulSubstring.Substring(locationA, locationB + 5 - locationA);
+                ulSubstring = ulSubstring.Substring(locationB + 5);
+                locationA = li.IndexOf("data-complexity=");
+                locationA = locationA + "data-complexity=".Length;
+                locationA = li.IndexOf('"', locationA);
+                locationB = li.IndexOf('"', locationA + 1);
+                string complexity = li.Substring(locationA + 1, locationB - locationA - 1);
+                locationA = li.IndexOf("<span class=\"text\">");
+                locationA = locationA + "<span class=\"text\">".Length;
+                locationB = li.IndexOf("<", locationA);
+                string ant = li.Substring(locationA, locationB - locationA);
+                AntonymDTO tmp = new AntonymDTO();
+                tmp.complexity = int.Parse(complexity);
+                tmp.word = ant;
+                results.Add(tmp);
+            }
+
+            return results;
+        }
+
+        private List<SynonymDTO> getSynonyms(string temp)
         {
             List<SynonymDTO> results = new List<SynonymDTO>();
-            var rn = tn.SelectNodes("//ul/");
-            foreach (var n in rn)
-            {
-                foreach (var m in n.ChildNodes)
-                {
-                    //each LI in UL
-                    var attributes = m.Attributes;
+            int locationA = 0;
+            int locationB = 0;
+            string ulSubstring = string.Empty;
 
-                    SynonymDTO tmp = new SynonymDTO();
-                    tmp.complexity = int.Parse(attributes["data-complexity"].ToString());
-                    tmp.word = m.ChildNodes[0].InnerText; ;
-                    results.Add(tmp);
-                }
+                locationA = temp.IndexOf("<ul>");
+                locationB = temp.IndexOf("</div>", locationA);
+               ulSubstring =  temp.Substring(locationA, locationB - locationA);
+            while(ulSubstring.Contains("data-complexity"))
+            {
+                locationA = ulSubstring.IndexOf("<li>");
+                locationB = ulSubstring.IndexOf("</li>");
+                string li = ulSubstring.Substring(locationA, locationB + 5 - locationA);
+                ulSubstring = ulSubstring.Substring(locationB + 5);
+                locationA = li.IndexOf("data-complexity=");
+                locationA = locationA + "data-complexity=".Length;
+                locationA = li.IndexOf('"', locationA);
+                locationB = li.IndexOf('"', locationA + 1);
+                string complexity = li.Substring(locationA + 1, locationB - locationA - 1);
+                locationA = li.IndexOf("<span class=\"text\">");
+                locationA = locationA + "<span class=\"text\">".Length;
+                locationB = li.IndexOf("<", locationA );
+                string syn = li.Substring(locationA, locationB - locationA);
+                SynonymDTO tmp = new SynonymDTO();
+                tmp.complexity = int.Parse(complexity);
+                tmp.word = syn;
+                results.Add(tmp);
             }
 
             return results;
