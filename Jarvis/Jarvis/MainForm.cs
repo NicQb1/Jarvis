@@ -42,25 +42,40 @@ namespace Jarvis
         }
         void sr_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-
-            txtRecognizedSpeech.Text += txtRecognizedSpeech.Text + e.Result.Text.ToString() + "\r\n";
-            if (matrix != null)
-            {
+            string result = e.Result.Text.ToString().ToLower();
+           
                 CommandProcessor cp = new CommandProcessor();
                 InputLogic il = new InputLogic();
                 PhraseLogic pl = new PhraseLogic();
+                InsertMissingWordData(result);
 
-
-                List<NodeReferenceStats> phRefs = pl.InsertPhraseForStatAnalysis(e.Result.Text.ToString());
-                string results = il.updateStatsFireNodes(phRefs);
-                cp.ExecuteCommand(results);
+                pl.InsertPhraseStoredProc(result);
+               // List<NodeReferenceStats> phRefs = pl.InsertPhraseForStatAnalysis(e.Result.Text.ToString());
+               // string results = il.updateStatsFireNodes(phRefs);
+               // cp.ExecuteCommand(results);
 
 
                 
 
-                matrix.SpeechInput(e.Result.Text.ToString());
-            }
+            //    matrix.SpeechInput(e.Result.Text.ToString());
+            //}
 
+        }
+
+        private void InsertMissingWordData(string result)
+        {
+            WordWebLogic wwl = new WordWebLogic();
+            WordLogic wl = new WordLogic();
+            string[] words = result.Split(' ');
+            foreach (string word in words)
+            {
+               var wordData = wwl.GetWord(word);
+                foreach (var wd in wordData)
+                {
+                    wl.InsertWord(wd);
+
+                }
+            }
         }
 
         private void btnBuildNetwork_Click(object sender, EventArgs e)

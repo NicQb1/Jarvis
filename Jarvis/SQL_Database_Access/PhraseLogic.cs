@@ -34,9 +34,10 @@ namespace SQL_Database_Access
             {
                 string[] words = phrase.Split(' ');
                 List<NodeReferenceStats> tupleReferences = new List<NodeReferenceStats>();
-
+               
                 for (int i = 0; i < words.Length - 1; i++)
                 {
+                   
                     tupleReferences.AddRange(UpsertTuple(words[i], words[i + 1]));
                 }
                 for (int i = 0; i < tupleReferences.Count - 1; i++)
@@ -56,6 +57,41 @@ namespace SQL_Database_Access
 
             return results;
 
+        }
+
+        private List<int> getWordID(string word)
+        {
+            List<int> results = new List<int>();
+
+            try
+            {
+                string commandText = "SELECT WordID FROM Word w where w.word = '" + word + "'";
+
+                using (SqlCommand cmd = new SqlCommand(commandText, con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    
+                    if (con.State == ConnectionState.Closed) 
+                    {
+                        con.Open();
+                    }
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        int tmp = (int)rdr["ID"];
+                       
+                        results.Add(tmp);
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                throw;
+            }
+            return results;
         }
 
         private List<NodeReferenceStats> UpsertTupleAssociation(NodeReferenceStats nodeReferenceStats1, NodeReferenceStats nodeReferenceStats2)
@@ -111,7 +147,7 @@ namespace SQL_Database_Access
 
                     cmd.Parameters.Add("@word1", SqlDbType.VarChar).Value = word1;
                     cmd.Parameters.Add("@word2", SqlDbType.VarChar).Value = word2;
-                    if (con.State == ConnectionState.Closed) ;
+                    if (con.State == ConnectionState.Closed) 
                     {
                         con.Open();
                     }
@@ -135,6 +171,37 @@ namespace SQL_Database_Access
             }
             return results;
       
+        }
+
+        public void InsertPhraseStoredProc(string phrase)
+        {
+            List<NodeReferenceStats> results = new List<NodeReferenceStats>();
+
+            try
+            {
+
+
+                using (SqlCommand cmd = new SqlCommand("sp_UpsertPhrase", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@phrase", SqlDbType.VarChar).Value = phrase;
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
+                    cmd.ExecuteNonQuery();
+                  
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                throw;
+            }
+          
         }
     }
 

@@ -10,3 +10,4 @@ C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\CommandInterfaces\bin\Deb
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\CommandInterfaces\bin\Debug\CommandInterfaces.pdb
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\CommandInterfaces\obj\Debug\CommandInterfaces.dll
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\CommandInterfaces\obj\Debug\CommandInterfaces.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\CommandInterfaces\obj\Debug\CommandInterfaces.csprojResolveAssemblyReference.cache

@@ -4,11 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common.DTO;
 
 namespace Graph_Database_Access.AccessClasses
 {
     public class SemanticPairsAccess : BaseAccess<SemanticPairs>, IGDBAccess<SemanticPairs>
     {
+        public bool exciteNode(NodeReferenceStats nRefS)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Exists(SemanticPairs node)
         {
 

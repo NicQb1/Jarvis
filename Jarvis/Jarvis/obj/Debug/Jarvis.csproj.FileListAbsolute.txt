@@ -51,7 +51,6 @@ C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Network.
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Newtonsoft.Json.xml
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Castle.Core.xml
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.csprojResolveAssemblyReference.cache
-C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.csproj.Jarvis.exe.config
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.MainForm.resources
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.Properties.Resources.resources
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.csproj.GenerateResource.Cache
@@ -89,3 +88,8 @@ C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Network.pdb
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Newtonsoft.Json.xml
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Castle.Core.xml
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Jarvis\obj\Debug\Jarvis.csproj.Jarvis.exe.config
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\HtmlAgilityPack.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\SQL_Database_Access.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\SQL_Database_Access.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\HtmlAgilityPack.xml

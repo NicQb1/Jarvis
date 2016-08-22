@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Neo4jClient;
 using Graph_Database_Access.Relationships;
 using Net.Graph.Neo4JD;
+using Common.DTO;
 
 namespace Graph_Database_Access.AccessClasses
 {
@@ -84,7 +85,10 @@ namespace Graph_Database_Access.AccessClasses
                  .Any();
 
         }
-        
 
+        public bool exciteNode(NodeReferenceStats nRefS)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

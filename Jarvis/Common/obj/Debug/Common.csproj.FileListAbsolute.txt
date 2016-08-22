@@ -6,3 +6,4 @@ C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Common\bin\Debug\Common.d
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Common\bin\Debug\Common.pdb
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Common\obj\Debug\Common.dll
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Common\obj\Debug\Common.pdb
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

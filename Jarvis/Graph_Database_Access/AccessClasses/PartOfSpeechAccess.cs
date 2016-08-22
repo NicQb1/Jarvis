@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Neo4jClient;
+using Common.DTO;
 
 namespace Graph_Database_Access.AccessClasses
 {
@@ -183,6 +184,11 @@ namespace Graph_Database_Access.AccessClasses
                 return null;
             }
 
+        }
+
+        public bool exciteNode(NodeReferenceStats nRefS)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }
