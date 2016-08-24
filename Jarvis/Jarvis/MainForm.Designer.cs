@@ -41,7 +41,7 @@
             // btnStartSpeechProcessor
             // 
             this.btnStartSpeechProcessor.Location = new System.Drawing.Point(43, 43);
-            this.btnStartSpeechProcessor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStartSpeechProcessor.Margin = new System.Windows.Forms.Padding(4);
             this.btnStartSpeechProcessor.Name = "btnStartSpeechProcessor";
             this.btnStartSpeechProcessor.Size = new System.Drawing.Size(211, 30);
             this.btnStartSpeechProcessor.TabIndex = 0;
@@ -52,7 +52,7 @@
             // btnCreateNewInstance
             // 
             this.btnCreateNewInstance.Location = new System.Drawing.Point(43, 80);
-            this.btnCreateNewInstance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreateNewInstance.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreateNewInstance.Name = "btnCreateNewInstance";
             this.btnCreateNewInstance.Size = new System.Drawing.Size(211, 28);
             this.btnCreateNewInstance.TabIndex = 1;
@@ -62,7 +62,7 @@
             // btnBuildNetwork
             // 
             this.btnBuildNetwork.Location = new System.Drawing.Point(43, 116);
-            this.btnBuildNetwork.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuildNetwork.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuildNetwork.Name = "btnBuildNetwork";
             this.btnBuildNetwork.Size = new System.Drawing.Size(211, 28);
             this.btnBuildNetwork.TabIndex = 2;
@@ -73,7 +73,7 @@
             // txtRecognizedSpeech
             // 
             this.txtRecognizedSpeech.Location = new System.Drawing.Point(323, 43);
-            this.txtRecognizedSpeech.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRecognizedSpeech.Margin = new System.Windows.Forms.Padding(4);
             this.txtRecognizedSpeech.Multiline = true;
             this.txtRecognizedSpeech.Name = "txtRecognizedSpeech";
             this.txtRecognizedSpeech.Size = new System.Drawing.Size(416, 477);
@@ -86,7 +86,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(43, 153);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(211, 28);
             this.button1.TabIndex = 4;
@@ -124,7 +124,7 @@
             this.Controls.Add(this.btnBuildNetwork);
             this.Controls.Add(this.btnCreateNewInstance);
             this.Controls.Add(this.btnStartSpeechProcessor);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.ResumeLayout(false);

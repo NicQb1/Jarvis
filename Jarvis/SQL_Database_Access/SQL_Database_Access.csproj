@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrownTrainingData.cs" />
+    <Compile Include="PartOfSpeechLogic.cs" />
     <Compile Include="PhraseLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordLogic.cs" />

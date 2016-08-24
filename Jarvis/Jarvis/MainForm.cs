@@ -111,11 +111,15 @@ namespace Jarvis
             DialogResult result = ofdDictionaryFile.ShowDialog();
             if(result== DialogResult.OK)
             {
-                GraphDB gb = new GraphDB();
-                gb.CreateIndexes();
+               // GraphDB gb = new GraphDB();
+               // gb.CreateIndexes();
                 foreach (string filename in ofdDictionaryFile.FileNames)
                 {
-                    gb.LoadDictionaryFile(filename);
+                    // gb.LoadDictionaryFile(filename);
+                    //Load Brown files
+                    BrownTrainingData btd = new BrownTrainingData();
+                    btd.parseBrownText(filename);
+
                 }
             }
 

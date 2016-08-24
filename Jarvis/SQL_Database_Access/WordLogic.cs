@@ -11,7 +11,7 @@ namespace SQL_Database_Access
 {
     public class WordLogic
     {
-        private string _connectionstring = "Data Source=DESKTOP-T3GHSNR;Initial Catalog=NLP_Statistic_db;Integrated Security=True";
+        private string _connectionstring = "Data Source=ITG5CB3083CM3;Initial Catalog=NLP_Statistic_db;Integrated Security=True";
         public string connectionString { get {
                 return _connectionstring;
             }
@@ -120,7 +120,43 @@ namespace SQL_Database_Access
 
 
         }
+        public int InsertWordAndPOS(string wd, int posId)
+        {
+            int wordId = 0;
+            try
+            {
 
+
+                using (SqlCommand cmd = new SqlCommand("sp_insert_word_and_POS", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@word", SqlDbType.VarChar).Value = wd;
+                    cmd.Parameters.Add("@PartOfSpeech", SqlDbType.Int).Value = posId;
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        wordId = (int)rdr[0];
+
+                    }
+                    rdr.Close();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                throw;
+            }
+            return wordId;
+
+
+        }
         private void insertAntonyms(int wordId, AntonymDTO wd)
         {
             try
