@@ -1,7 +1,261 @@
+USE [NLP_Statistic_db]
+GO
+
+/****** Object:  Table [dbo].[Antonym]    Script Date: 8/23/2016 5:33:45 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Antonym](
+	[AntonymID] [int] IDENTITY(1,1) NOT NULL,
+	[WordID] [int] NULL,
+	[complexity] [int] NULL,
+	[word] [nchar](30) NULL,
+ CONSTRAINT [PK_Antonym] PRIMARY KEY CLUSTERED 
+(
+	[AntonymID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+USE [NLP_Statistic_db]
+GO
+
+/****** Object:  Table [dbo].[Definition]    Script Date: 8/23/2016 5:33:50 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Definition](
+	[DefinitionID] [int] IDENTITY(1,1) NOT NULL,
+	[Definition] [text] NOT NULL,
+ CONSTRAINT [PK_Definition] PRIMARY KEY CLUSTERED 
+(
+	[DefinitionID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+
+USE [NLP_Statistic_db]
+GO
+
+/****** Object:  Table [dbo].[PartOfSpeech]    Script Date: 8/23/2016 5:33:55 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[PartOfSpeech](
+	[PartOfSpeechID] [int] IDENTITY(1,1) NOT NULL,
+	[PartOfSpeech] [varchar](15) NULL,
+ CONSTRAINT [PK_PartOfSpeech2_1] PRIMARY KEY CLUSTERED 
+(
+	[PartOfSpeechID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+USE [NLP_Statistic_db]
+GO
+
+/****** Object:  Table [dbo].[POSTupleN2]    Script Date: 8/23/2016 5:33:59 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[POSTupleN2](
+	[POSTupleN2ID] [int] IDENTITY(1,1) NOT NULL,
+	[POS1ID] [int] NOT NULL,
+	[POS2ID] [int] NOT NULL,
+	[count] [int] NOT NULL,
+ CONSTRAINT [PK_POSTupleN2] PRIMARY KEY CLUSTERED 
+(
+	[POSTupleN2ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[POSTupleN2] ADD  CONSTRAINT [DF_POSTupleN2_count]  DEFAULT ((0)) FOR [count]
+GO
+
+
+USE [NLP_Statistic_db]
+GO
+
+/****** Object:  Table [dbo].[POSTupleN2x2]    Script Date: 8/23/2016 5:34:03 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[POSTupleN2x2](
+	[POSTupleN2x2ID] [int] IDENTITY(1,1) NOT NULL,
+	[POSTuple1] [int] NOT NULL,
+	[POSTuple2] [int] NOT NULL,
+	[count] [int] NOT NULL,
+ CONSTRAINT [PK_POSTupleN2x2] PRIMARY KEY CLUSTERED 
+(
+	[POSTupleN2x2ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[POSTupleN2x2] ADD  CONSTRAINT [DF_POSTupleN2x2_count]  DEFAULT ((0)) FOR [count]
+GO
+
+
+USE [NLP_Statistic_db]
+GO
+
+/****** Object:  Table [dbo].[POSTupleN2x3]    Script Date: 8/23/2016 5:34:07 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[POSTupleN2x3](
+	[POSTupleN2x3ID] [int] IDENTITY(1,1) NOT NULL,
+	[POSTuple2_1] [int] NOT NULL,
+	[POSTuple2_2] [int] NOT NULL,
+	[count] [int] NOT NULL,
+ CONSTRAINT [PK_POSTupleN2x3] PRIMARY KEY CLUSTERED 
+(
+	[POSTupleN2x3ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[POSTupleN2x3] ADD  CONSTRAINT [DF_POSTupleN2x3_count]  DEFAULT ((0)) FOR [count]
+GO
+
+
+USE [NLP_Statistic_db]
+GO
+
+/****** Object:  Table [dbo].[POSTupleN2x4]    Script Date: 8/23/2016 5:34:12 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[POSTupleN2x4](
+	[POSTupleN2x4ID] [int] IDENTITY(1,1) NOT NULL,
+	[POSTuple3_1] [int] NOT NULL,
+	[POSTuple3_2] [int] NOT NULL,
+	[count] [int] NOT NULL,
+ CONSTRAINT [PK_POSTupleN2x4] PRIMARY KEY CLUSTERED 
+(
+	[POSTupleN2x4ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[POSTupleN2x4] ADD  CONSTRAINT [DF_POSTupleN2x4_count]  DEFAULT ((0)) FOR [count]
+GO
+
+
+USE [NLP_Statistic_db]
+GO
+
+/****** Object:  Table [dbo].[Synonym]    Script Date: 8/23/2016 5:34:16 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Synonym](
+	[SynonymID] [int] IDENTITY(1,1) NOT NULL,
+	[WordID] [int] NOT NULL,
+	[complexity] [int] NOT NULL,
+	[word] [nchar](30) NULL,
+ CONSTRAINT [PK_Synonym] PRIMARY KEY CLUSTERED 
+(
+	[SynonymID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+USE [NLP_Statistic_db]
+GO
+
+/****** Object:  Table [dbo].[TupleN2]    Script Date: 8/23/2016 5:34:20 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[TupleN2](
+	[TupleN2ID] [int] IDENTITY(1,1) NOT NULL,
+	[word1ID] [int] NOT NULL,
+	[word2ID] [int] NOT NULL,
+	[count] [int] NOT NULL,
+ CONSTRAINT [PK_TupleN2] PRIMARY KEY CLUSTERED 
+(
+	[TupleN2ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[TupleN2] ADD  CONSTRAINT [DF_TupleN2_count]  DEFAULT ((0)) FOR [count]
+GO
+
+
+USE [NLP_Statistic_db]
+GO
+
+/****** Object:  Table [dbo].[TupleN2x3]    Script Date: 8/23/2016 5:34:30 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[TupleN2x3](
+	[TupleN2x3ID] [int] IDENTITY(1,1) NOT NULL,
+	[Tuple2_1] [int] NOT NULL,
+	[Tuple2_2] [int] NOT NULL,
+	[count] [int] NOT NULL,
+ CONSTRAINT [PK_TupleN2x3] PRIMARY KEY CLUSTERED 
+(
+	[TupleN2x3ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[TupleN2x3] ADD  CONSTRAINT [DF_TupleN2x3_count]  DEFAULT ((0)) FOR [count]
+GO
+
+
 USE [master]
 GO
 
-/****** Object:  Database [NLP_Statistic_db]    Script Date: 8/23/2016 1:56:14 PM ******/
+/****** Object:  Database [NLP_Statistic_db]    Script Date: 8/23/2016 2:00:05 PM ******/
 CREATE DATABASE [NLP_Statistic_db]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -138,4 +392,108 @@ GO
 
 ALTER DATABASE [NLP_Statistic_db] SET  READ_WRITE 
 GO
+
+
+USE [NLP_Statistic_db]
+GO
+
+/****** Object:  Table [dbo].[TupleN2x2]    Script Date: 8/23/2016 5:34:24 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[TupleN2x2](
+	[TupleN2x2ID] [int] IDENTITY(1,1) NOT NULL,
+	[Tuple1] [int] NOT NULL,
+	[Tuple2] [int] NOT NULL,
+	[count] [int] NOT NULL,
+ CONSTRAINT [PK_TupleN2x2] PRIMARY KEY CLUSTERED 
+(
+	[TupleN2x2ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[TupleN2x2] ADD  CONSTRAINT [DF_TupleN2x2_count]  DEFAULT ((0)) FOR [count]
+GO
+
+
+USE [NLP_Statistic_db]
+GO
+
+/****** Object:  Table [dbo].[TupleN2x4]    Script Date: 8/23/2016 5:34:36 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[TupleN2x4](
+	[TupleN2x4ID] [int] IDENTITY(1,1) NOT NULL,
+	[Tuple3_1] [int] NOT NULL,
+	[Tuple3_2] [int] NOT NULL,
+	[count] [int] NOT NULL,
+ CONSTRAINT [PK_TupleN2x4] PRIMARY KEY CLUSTERED 
+(
+	[TupleN2x4ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[TupleN2x4] ADD  CONSTRAINT [DF_TupleN2x4_count]  DEFAULT ((0)) FOR [count]
+GO
+
+
+USE [NLP_Statistic_db]
+GO
+
+/****** Object:  Table [dbo].[Word]    Script Date: 8/23/2016 5:34:40 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Word](
+	[WordID] [int] IDENTITY(1,1) NOT NULL,
+	[word] [nchar](20) NOT NULL,
+	[PartOfSpeechID] [int] NOT NULL,
+	[DefinitionID] [int] NULL,
+ CONSTRAINT [PK_Word] PRIMARY KEY CLUSTERED 
+(
+	[WordID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+USE [NLP_Statistic_db]
+GO
+
+/****** Object:  Table [dbo].[WordVector]    Script Date: 8/23/2016 5:34:44 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[WordVector](
+	[WordVectorID] [int] IDENTITY(1,1) NOT NULL,
+	[word1ID] [int] NOT NULL,
+	[word2ID] [int] NOT NULL,
+	[vector] [decimal](10, 10) NULL,
+	[count] [int] NOT NULL,
+ CONSTRAINT [PK_WordVector] PRIMARY KEY CLUSTERED 
+(
+	[WordVectorID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
 
