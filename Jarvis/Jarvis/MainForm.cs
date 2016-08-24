@@ -67,20 +67,27 @@ namespace Jarvis
 
         }
 
-        private void InsertMissingWordData(string result)
+        private List<List<WordDTO>> InsertMissingWordData(string result)
         {
+            List<List<WordDTO>> results = new List<List<WordDTO>>();
             WordWebLogic wwl = new WordWebLogic();
             WordLogic wl = new WordLogic();
             string[] words = result.Split(' ');
             foreach (string word in words)
             {
                var wordData = wwl.GetWord(word);
-                foreach (var wd in wordData)
+               
+                if (wordData != null)
                 {
-                    wl.InsertWord(wd);
+                    foreach (var wd in wordData)
+                    {
+                       wd.ID = wl.InsertWord(wd);
 
+                    }
                 }
+                results.Add(wordData);
             }
+            return results;
         }
 
         private void btnBuildNetwork_Click(object sender, EventArgs e)
@@ -117,6 +124,12 @@ namespace Jarvis
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             InsertMissingWordData(txtToSubmit.Text);
+            CommandProcessor cp = new CommandProcessor();
+            InputLogic il = new InputLogic();
+            PhraseLogic pl = new PhraseLogic();
+           
+
+            pl.InsertPhraseStoredProc(txtToSubmit.Text);
         }
     }
 }

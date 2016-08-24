@@ -16,23 +16,30 @@ namespace Jarvis
 
         public List<WordDTO> GetWord(string word)
         {
-            Word = word;
-            string sURL;
-            sURL = "http://www.thesaurus.com/browse/" + word;
+            try
+            {
+                Word = word;
+                string sURL;
+                sURL = "http://www.thesaurus.com/browse/" + word;
 
-            WebRequest wrGETURL;
-            wrGETURL = WebRequest.Create(sURL);
+                WebRequest wrGETURL;
+                wrGETURL = WebRequest.Create(sURL);
 
 
 
-            Stream objStream;
-            objStream = wrGETURL.GetResponse().GetResponseStream();
+                Stream objStream;
+                objStream = wrGETURL.GetResponse().GetResponseStream();
 
-            StreamReader objReader = new StreamReader(objStream);
+                StreamReader objReader = new StreamReader(objStream);
 
-            string sLine = objReader.ReadToEnd();
+                string sLine = objReader.ReadToEnd();
 
-            return ParseThesaurusPage(sLine);
+                return ParseThesaurusPage(sLine);
+            }catch(Exception ex)
+            {
+                return null;
+            }
+            
         }
 
         private List<WordDTO> ParseThesaurusPage(string sLine)

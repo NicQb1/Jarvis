@@ -11,7 +11,15 @@ namespace SQL_Database_Access
 {
     public class WordLogic
     {
-        public string connectionString { get; private set; }
+        private string _connectionstring = "Data Source=DESKTOP-T3GHSNR;Initial Catalog=NLP_Statistic_db;Integrated Security=True";
+        public string connectionString { get {
+                return _connectionstring;
+            }
+            set
+            {
+                _connectionstring = value;
+            }
+        }
         private SqlConnection _con;
         public SqlConnection con
         {
@@ -65,7 +73,7 @@ namespace SQL_Database_Access
             return results;
         }
 
-        public void InsertWord(WordDTO wd)
+        public int InsertWord(WordDTO wd)
         {
             int wordId = 0;
             try
@@ -88,6 +96,7 @@ namespace SQL_Database_Access
                         wordId = (int)rdr[0];
 
                     }
+                    rdr.Close();
                 }
 
                 foreach (var syn in wd.synonyms)
@@ -107,8 +116,9 @@ namespace SQL_Database_Access
                 string message = ex.Message;
                 throw;
             }
-           
-        
+            return wordId;
+
+
         }
 
         private void insertAntonyms(int wordId, AntonymDTO wd)

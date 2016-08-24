@@ -12,7 +12,18 @@ namespace SQL_Database_Access
 {
     public class PhraseLogic
     {
-        public string connectionString { get; private set; }
+        private string _connectionstring = "Data Source=DESKTOP-T3GHSNR;Initial Catalog=NLP_Statistic_db;Integrated Security=True";
+        public string connectionString
+        {
+            get
+            {
+                return _connectionstring;
+            }
+            set
+            {
+                _connectionstring = value;
+            }
+        }
         private SqlConnection _con;
         public SqlConnection con { get
             {
