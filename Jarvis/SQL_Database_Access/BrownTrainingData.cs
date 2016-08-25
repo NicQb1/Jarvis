@@ -15,35 +15,39 @@ namespace SQL_Database_Access
             string xmlString;
             StringBuilder output = new StringBuilder();
 
-            try
-            {
+          
                 using (StreamReader sr = new StreamReader(filename))
+                {
+                try
                 {
                     PartOfSpeechLogic posL = new PartOfSpeechLogic();
                     TupleLogic tl = new TupleLogic();
-                    List<int> wordIds = new List<int>();
-                    List<int> POSwordIds = new List<int>();
-                    List<int> tuple1Ids = new List<int>();
-                    List<int> POStuple1Ids = new List<int>();
-                    List<int> tuple2Ids = new List<int>();
-                    List<int> POStuple2Ids = new List<int>();
-                    List<int> tuple3Ids = new List<int>();
-                    List<int> POStuple3Ids = new List<int>();
-                    List<int> tuple4Ids = new List<int>();
-                    List<int> POStuple4Ids = new List<int>();
+                  
                     while (!sr.EndOfStream)
                     {
+                        List<int> wordIds = new List<int>();
+                        List<int> POSwordIds = new List<int>();
+                        List<int> tuple1Ids = new List<int>();
+                        List<int> POStuple1Ids = new List<int>();
+                        List<int> tuple2Ids = new List<int>();
+                        List<int> POStuple2Ids = new List<int>();
+                        List<int> tuple3Ids = new List<int>();
+                        List<int> POStuple3Ids = new List<int>();
+                        List<int> tuple4Ids = new List<int>();
+                        List<int> POStuple4Ids = new List<int>();
                         xmlString = sr.ReadLine();
                         string[] words = xmlString.Split(' ');
                         foreach (var wordPOS in words)
                         {
                             string[] wordPair = wordPOS.Trim().Split('/');
                             PartOfSpeechLogic posl = new PartOfSpeechLogic();
-                            int posId = posl.GetPartOfSpeech(wordPair[1].Trim());
+                            if (wordPair.Length == 2)
+                            {
+                                int posId = posl.GetPartOfSpeech(wordPair[1].Trim());
 
-                            POSwordIds.Add(posId);
-                            wordIds.Add( InsertWordAndPartOfSpeech(wordPair[0], posId));
-
+                                POSwordIds.Add(posId);
+                                wordIds.Add(InsertWordAndPartOfSpeech(wordPair[0].Trim(), posId));
+                            }
                         }
                         for(int i = 0; i < wordIds.Count-1; i++)
                         {
@@ -71,14 +75,13 @@ namespace SQL_Database_Access
                         }
 
                     }
-
                 }
+                catch (Exception ex)
+                {
+                }
+            }
 
-            }
-            catch (Exception ex)
-            {
-                return;
-            }
+            
             return;
         }
 

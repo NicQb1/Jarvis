@@ -12,7 +12,7 @@ namespace SQL_Database_Access
 {
     public class PhraseLogic
     {
-        private string _connectionstring = "Data Source=DESKTOP-T3GHSNR;Initial Catalog=NLP_Statistic_db;Integrated Security=True";
+        private string _connectionstring = "Data Source=ITG5CB3083CM3;Initial Catalog=NLP_Statistic_db;Integrated Security=True";
         public string connectionString
         {
             get
@@ -65,6 +65,10 @@ namespace SQL_Database_Access
                 throw;
 
             }
+            finally
+            {
+                con.Close();
+            }
 
             return results;
 
@@ -94,6 +98,7 @@ namespace SQL_Database_Access
                         results.Add(tmp);
 
                     }
+                    rdr.Close();
                 }
 
             }
@@ -101,6 +106,10 @@ namespace SQL_Database_Access
             {
                 string message = ex.Message;
                 throw;
+            }
+            finally
+            {
+                con.Close();
             }
             return results;
         }
@@ -133,6 +142,7 @@ namespace SQL_Database_Access
                         results.Add(tmp);
 
                     }
+                    rdr.Close();
                 }
 
             }
@@ -140,6 +150,10 @@ namespace SQL_Database_Access
             {
                 string message = ex.Message;
                 throw;
+            }
+            finally
+            {
+                con.Close();
             }
             return results;
         }
@@ -172,6 +186,7 @@ namespace SQL_Database_Access
                         results.Add(tmp);
 
                     }
+                    rdr.Close();
                 }
 
             }
@@ -179,6 +194,10 @@ namespace SQL_Database_Access
             {
                 string message = ex.Message;
                 throw;
+            }
+            finally
+            {
+                con.Close();
             }
             return results;
       
@@ -205,6 +224,7 @@ namespace SQL_Database_Access
                   
 
                 }
+              
 
             }
             catch (Exception ex)
@@ -212,7 +232,11 @@ namespace SQL_Database_Access
                 string message = ex.Message;
                 throw;
             }
-          
+            finally
+            {
+                con.Close();
+            }
+
         }
     }
 
