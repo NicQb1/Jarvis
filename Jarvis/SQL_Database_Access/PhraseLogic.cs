@@ -105,7 +105,7 @@ namespace SQL_Database_Access
             return results;
         }
 
-        private List<NodeReferenceStats> UpsertTupleAssociation(NodeReferenceStats nodeReferenceStats1, NodeReferenceStats nodeReferenceStats2)
+        public List<NodeReferenceStats> UpsertTupleAssociation(NodeReferenceStats nodeReferenceStats1, NodeReferenceStats nodeReferenceStats2)
         {
             List<NodeReferenceStats> results = new List<NodeReferenceStats>();
 
@@ -144,7 +144,7 @@ namespace SQL_Database_Access
             return results;
         }
 
-        private List<NodeReferenceStats> UpsertTuple(string word1, string word2)
+        public List<NodeReferenceStats> UpsertTuple(string word1, string word2)
         {
             List<NodeReferenceStats> results = new List<NodeReferenceStats>();
            

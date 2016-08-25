@@ -11,7 +11,7 @@ namespace SQL_Database_Access
 {
     public class WordLogic
     {
-        private string _connectionstring = "Data Source=ITG5CB3083CM3;Initial Catalog=NLP_Statistic_db;Integrated Security=True";
+        private string _connectionstring = "Data Source=DESKTOP-T3GHSNR;Initial Catalog=NLP_Statistic_db;Integrated Security=True";
         public string connectionString { get {
                 return _connectionstring;
             }
