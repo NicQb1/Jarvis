@@ -412,5 +412,195 @@ GO
 
 
 
+/****** Object:  Table [dbo].[Subject]    Script Date: 8/26/2016 3:17:36 PM ******/
+DROP TABLE [dbo].[Subject]
+GO
+
+/****** Object:  Table [dbo].[Subject]    Script Date: 8/26/2016 3:17:36 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Subject](
+	[SubjectID] [int] IDENTITY(1,1) NOT NULL,
+	[Subject] [varchar](50) NULL,
+	[tag] [varchar](50) NULL,
+	[lastUpdated] date not null,
+ CONSTRAINT [PK_Subject] PRIMARY KEY CLUSTERED 
+(
+	[SubjectID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+/****** Object:  Table [dbo].[Parameters]    Script Date: 8/26/2016 3:17:30 PM ******/
+DROP TABLE [dbo].[Parameters]
+GO
+
+/****** Object:  Table [dbo].[Parameters]    Script Date: 8/26/2016 3:17:30 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Parameters](
+	[ParameterID] [int] IDENTITY(1,1) NOT NULL,
+	[ParameterName] [varchar](50) NULL,
+	[TableName] [varchar](50) NULL,
+	[CommandID] [int] NOT NULL,
+	[lastUpdated] date not null,
+ CONSTRAINT [PK_Parameters] PRIMARY KEY CLUSTERED 
+(
+	[ParameterID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
+/****** Object:  Table [dbo].[Location]    Script Date: 8/26/2016 3:17:25 PM ******/
+DROP TABLE [dbo].[Location]
+GO
+
+/****** Object:  Table [dbo].[Location]    Script Date: 8/26/2016 3:17:25 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Location](
+	[LocationID] [int] NULL,
+	[LocationName] [varchar](50) NULL,
+	[lastUpdated] date not null,
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+/****** Object:  Table [dbo].[CommandTrainer]    Script Date: 8/26/2016 3:17:20 PM ******/
+DROP TABLE [dbo].[CommandTrainer]
+GO
+
+/****** Object:  Table [dbo].[CommandTrainer]    Script Date: 8/26/2016 3:17:20 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[CommandTrainer](
+	[CommandTrainerID] [int] IDENTITY(1,1) NOT NULL,
+	[CommandID] [int] NULL,
+	[CommandTrainingPhrase] [varchar](max) NULL,
+	[ExpectedOutPut] [varchar](max) NULL,
+	[lastUpdated] date not null,
+ CONSTRAINT [PK_CommandTrainer] PRIMARY KEY CLUSTERED 
+(
+	[CommandTrainerID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+/****** Object:  Table [dbo].[Commands]    Script Date: 8/26/2016 3:17:16 PM ******/
+DROP TABLE [dbo].[Commands]
+GO
+
+/****** Object:  Table [dbo].[Commands]    Script Date: 8/26/2016 3:17:16 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Commands](
+	[CommandID] [int] IDENTITY(1,1) NOT NULL,
+	[CommandName] [varchar](50) NULL,
+ CONSTRAINT [PK_Commands] PRIMARY KEY CLUSTERED 
+(
+	[CommandID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+/****** Object:  Table [dbo].[Action]    Script Date: 8/26/2016 3:17:06 PM ******/
+DROP TABLE [dbo].[Action]
+GO
+
+/****** Object:  Table [dbo].[Action]    Script Date: 8/26/2016 3:17:06 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Action](
+	[ActionID] [int] IDENTITY(1,1) NOT NULL,
+	[ActionName] [varchar](50) NULL,
+	[CommandID] [int] NULL,
+	[sequence] [int] NULL,
+	[ParameterList] [varchar](max) NULL,
+ CONSTRAINT [PK_Action] PRIMARY KEY CLUSTERED 
+(
+	[ActionID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
+
+
+
+
+
+
 
 
