@@ -9,34 +9,9 @@ using Common.DTO;
 
 namespace SQL_Database_Access
 {
-    public class WordLogic
+    public class WordLogic : SQLBaseLogic
     {
-        private string _connectionstring = "Data Source=ITG5CB3083CM3;Initial Catalog=NLP_Statistic_db;Integrated Security=True";
-        public string connectionString { get {
-                return _connectionstring;
-            }
-            set
-            {
-                _connectionstring = value;
-            }
-        }
-        private SqlConnection _con;
-        public SqlConnection con
-        {
-            get
-            {
-                if (_con == null)
-                {
-                    _con = new SqlConnection(connectionString);
-                }
-                return _con;
-            }
-            set
-            {
-                _con = value;
-
-            }
-        }
+      
 
         private List<int> getWordID(string word)
         {

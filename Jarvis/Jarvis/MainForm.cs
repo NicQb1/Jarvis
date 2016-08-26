@@ -22,6 +22,7 @@ using edu.stanford.nlp.tagger.maxent;
 using java.util;
 using edu.stanford.nlp.ling;
 using java.io;
+using System.Threading;
 
 namespace Jarvis
 {
@@ -111,14 +112,55 @@ namespace Jarvis
             DialogResult result = ofdDictionaryFile.ShowDialog();
             if(result== DialogResult.OK)
             {
-               // GraphDB gb = new GraphDB();
-               // gb.CreateIndexes();
+                // GraphDB gb = new GraphDB();
+                // gb.CreateIndexes();
+                int x = 0;
+                List<Thread> activeThreads = new List<Thread>();
+                while (x < ofdDictionaryFile.FileNames.Length)
+                {
+                    while (activeThreads.Count < 5)
+                    {
+                        // gb.LoadDictionaryFile(filename);
+                        //Load Brown files
+                        BrownTrainingData btd = new BrownTrainingData();
+                        btd.filename = ofdDictionaryFile.FileNames[x];
+
+                        x++;
+                        Thread oThread = new Thread(new ThreadStart(btd.parseBrownText));
+
+                        // Start the thread
+                        oThread.Start();
+
+                        activeThreads.Add(oThread);
+                        for (int i = 0; i < activeThreads.Count; i++)
+                        {
+                            if (!activeThreads[i].IsAlive)
+                            {
+                                activeThreads[i].Join();
+                                activeThreads[i].Abort();
+                                activeThreads.RemoveAt(i);
+                                i--;
+                            }
+                        }
+
+
+                    }
+
+                    Thread.Sleep(10000);
+                    for (int i = 0; i < activeThreads.Count; i++)
+                    {
+                        if (!activeThreads[i].IsAlive)
+                        {
+                            activeThreads[i].Join();
+                            activeThreads[i].Abort();
+                            activeThreads.RemoveAt(i);
+                            i--;
+                        }
+                    }
+                }
                 foreach (string filename in ofdDictionaryFile.FileNames)
                 {
-                    // gb.LoadDictionaryFile(filename);
-                    //Load Brown files
-                    BrownTrainingData btd = new BrownTrainingData();
-                    btd.parseBrownText(filename);
+                  
 
                 }
             }

@@ -1,16 +1,17 @@
 USE [NLP_Statistic_db]
 GO
 
-/****** Object:  StoredProcedure [dbo].[sp_insertTupleN2]    Script Date: 8/25/2016 3:58:29 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_insertTupleN2]    Script Date: 8/25/2016 9:16:30 PM ******/
 DROP PROCEDURE [dbo].[sp_insertTupleN2]
 GO
 
-/****** Object:  StoredProcedure [dbo].[sp_insertTupleN2]    Script Date: 8/25/2016 3:58:29 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_insertTupleN2]    Script Date: 8/25/2016 9:16:30 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 
 -- =============================================
@@ -35,15 +36,17 @@ BEGIN
 	INSERT INTO [dbo].TupleN2
            (word1ID
            ,word2ID
-		   ,[count])
+		   ,[count]
+		   ,lastupdated)
      VALUES
            (@wordID1
            ,@wordID2
-           ,1)
+           ,1
+		   ,getdate())
   end
   ELSE
   begin
-	 UPDATE TupleN2 SET [count] = [count] + 1 WHERE word1ID= @wordID1 AND word2ID = @wordID2
+	 UPDATE TupleN2 SET [count] = [count] + 1, lastupdated = getdate() WHERE word1ID= @wordID1 AND word2ID = @wordID2
   end
 
 
@@ -52,6 +55,6 @@ BEGIN
 END
 
 
-GO
 
+GO
 

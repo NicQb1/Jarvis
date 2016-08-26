@@ -10,7 +10,9 @@ namespace SQL_Database_Access
 {
     public class BrownTrainingData
     {
-        public void parseBrownText(string filename)
+        public string filename;
+
+        public void parseBrownText()
         {
             string xmlString;
             StringBuilder output = new StringBuilder();
@@ -41,6 +43,7 @@ namespace SQL_Database_Access
                         {
                             string[] wordPair = wordPOS.Trim().Split('/');
                             PartOfSpeechLogic posl = new PartOfSpeechLogic();
+                            
                             if (wordPair.Length == 2)
                             {
                                 int posId = posl.GetPartOfSpeech(wordPair[1].Trim());

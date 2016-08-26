@@ -8,37 +8,9 @@ using System.Threading.Tasks;
 
 namespace SQL_Database_Access
 {
-    public class PartOfSpeechLogic
+    public class PartOfSpeechLogic : SQLBaseLogic
     {
-        private string _connectionstring = "Data Source=ITG5CB3083CM3;Initial Catalog=NLP_Statistic_db;Integrated Security=True";
-        public string connectionString
-        {
-            get
-            {
-                return _connectionstring;
-            }
-            set
-            {
-                _connectionstring = value;
-            }
-        }
-        private SqlConnection _con;
-        public SqlConnection con
-        {
-            get
-            {
-                if (_con == null)
-                {
-                    _con = new SqlConnection(connectionString);
-                }
-                return _con;
-            }
-            set
-            {
-                _con = value;
-
-            }
-        }
+      
 
         public int GetPartOfSpeech(string pos)
         {

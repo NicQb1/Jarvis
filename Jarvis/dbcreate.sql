@@ -1,7 +1,11 @@
 USE [NLP_Statistic_db]
 GO
 
-/****** Object:  Table [dbo].[Antonym]    Script Date: 8/23/2016 5:33:45 PM ******/
+/****** Object:  Table [dbo].[Antonym]    Script Date: 8/25/2016 8:49:08 PM ******/
+DROP TABLE [dbo].[Antonym]
+GO
+
+/****** Object:  Table [dbo].[Antonym]    Script Date: 8/25/2016 8:49:08 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -13,6 +17,7 @@ CREATE TABLE [dbo].[Antonym](
 	[WordID] [int] NULL,
 	[complexity] [int] NULL,
 	[word] [nchar](30) NULL,
+	[lastUpdated] date not null,
  CONSTRAINT [PK_Antonym] PRIMARY KEY CLUSTERED 
 (
 	[AntonymID] ASC
@@ -20,12 +25,11 @@ CREATE TABLE [dbo].[Antonym](
 ) ON [PRIMARY]
 
 GO
-
-
-USE [NLP_Statistic_db]
+/****** Object:  Table [dbo].[Definition]    Script Date: 8/25/2016 8:49:21 PM ******/
+DROP TABLE [dbo].[Definition]
 GO
 
-/****** Object:  Table [dbo].[Definition]    Script Date: 8/23/2016 5:33:50 PM ******/
+/****** Object:  Table [dbo].[Definition]    Script Date: 8/25/2016 8:49:21 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -35,6 +39,8 @@ GO
 CREATE TABLE [dbo].[Definition](
 	[DefinitionID] [int] IDENTITY(1,1) NOT NULL,
 	[Definition] [text] NOT NULL,
+	[lastUpdated] date not null,
+
  CONSTRAINT [PK_Definition] PRIMARY KEY CLUSTERED 
 (
 	[DefinitionID] ASC
@@ -43,11 +49,11 @@ CREATE TABLE [dbo].[Definition](
 
 GO
 
-
-USE [NLP_Statistic_db]
+/****** Object:  Table [dbo].[PartOfSpeech]    Script Date: 8/25/2016 8:49:42 PM ******/
+DROP TABLE [dbo].[PartOfSpeech]
 GO
 
-/****** Object:  Table [dbo].[PartOfSpeech]    Script Date: 8/23/2016 5:33:55 PM ******/
+/****** Object:  Table [dbo].[PartOfSpeech]    Script Date: 8/25/2016 8:49:42 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -57,6 +63,7 @@ GO
 CREATE TABLE [dbo].[PartOfSpeech](
 	[PartOfSpeechID] [int] IDENTITY(1,1) NOT NULL,
 	[PartOfSpeech] [varchar](15) NULL,
+	[lastUpdated] date not null,
  CONSTRAINT [PK_PartOfSpeech2_1] PRIMARY KEY CLUSTERED 
 (
 	[PartOfSpeechID] ASC
@@ -65,11 +72,14 @@ CREATE TABLE [dbo].[PartOfSpeech](
 
 GO
 
-
-USE [NLP_Statistic_db]
+ALTER TABLE [dbo].[POSTupleN2] DROP CONSTRAINT [DF_POSTupleN2_count]
 GO
 
-/****** Object:  Table [dbo].[POSTupleN2]    Script Date: 8/23/2016 5:33:59 PM ******/
+/****** Object:  Table [dbo].[POSTupleN2]    Script Date: 8/25/2016 8:50:08 PM ******/
+DROP TABLE [dbo].[POSTupleN2]
+GO
+
+/****** Object:  Table [dbo].[POSTupleN2]    Script Date: 8/25/2016 8:50:08 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -81,6 +91,7 @@ CREATE TABLE [dbo].[POSTupleN2](
 	[POS1ID] [int] NOT NULL,
 	[POS2ID] [int] NOT NULL,
 	[count] [int] NOT NULL,
+	[lastUpdated] date not null,
  CONSTRAINT [PK_POSTupleN2] PRIMARY KEY CLUSTERED 
 (
 	[POSTupleN2ID] ASC
@@ -93,10 +104,14 @@ ALTER TABLE [dbo].[POSTupleN2] ADD  CONSTRAINT [DF_POSTupleN2_count]  DEFAULT ((
 GO
 
 
-USE [NLP_Statistic_db]
+ALTER TABLE [dbo].[POSTupleN2x2] DROP CONSTRAINT [DF_POSTupleN2x2_count]
 GO
 
-/****** Object:  Table [dbo].[POSTupleN2x2]    Script Date: 8/23/2016 5:34:03 PM ******/
+/****** Object:  Table [dbo].[POSTupleN2x2]    Script Date: 8/25/2016 8:50:41 PM ******/
+DROP TABLE [dbo].[POSTupleN2x2]
+GO
+
+/****** Object:  Table [dbo].[POSTupleN2x2]    Script Date: 8/25/2016 8:50:41 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -108,6 +123,7 @@ CREATE TABLE [dbo].[POSTupleN2x2](
 	[POSTuple1] [int] NOT NULL,
 	[POSTuple2] [int] NOT NULL,
 	[count] [int] NOT NULL,
+	[lastUpdated] date not null,
  CONSTRAINT [PK_POSTupleN2x2] PRIMARY KEY CLUSTERED 
 (
 	[POSTupleN2x2ID] ASC
@@ -119,11 +135,14 @@ GO
 ALTER TABLE [dbo].[POSTupleN2x2] ADD  CONSTRAINT [DF_POSTupleN2x2_count]  DEFAULT ((0)) FOR [count]
 GO
 
-
-USE [NLP_Statistic_db]
+ALTER TABLE [dbo].[POSTupleN2x3] DROP CONSTRAINT [DF_POSTupleN2x3_count]
 GO
 
-/****** Object:  Table [dbo].[POSTupleN2x3]    Script Date: 8/23/2016 5:34:07 PM ******/
+/****** Object:  Table [dbo].[POSTupleN2x3]    Script Date: 8/25/2016 8:50:55 PM ******/
+DROP TABLE [dbo].[POSTupleN2x3]
+GO
+
+/****** Object:  Table [dbo].[POSTupleN2x3]    Script Date: 8/25/2016 8:50:55 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -135,6 +154,7 @@ CREATE TABLE [dbo].[POSTupleN2x3](
 	[POSTuple2_1] [int] NOT NULL,
 	[POSTuple2_2] [int] NOT NULL,
 	[count] [int] NOT NULL,
+	[lastUpdated] date not null,
  CONSTRAINT [PK_POSTupleN2x3] PRIMARY KEY CLUSTERED 
 (
 	[POSTupleN2x3ID] ASC
@@ -147,10 +167,14 @@ ALTER TABLE [dbo].[POSTupleN2x3] ADD  CONSTRAINT [DF_POSTupleN2x3_count]  DEFAUL
 GO
 
 
-USE [NLP_Statistic_db]
+ALTER TABLE [dbo].[POSTupleN2x4] DROP CONSTRAINT [DF_POSTupleN2x4_count]
 GO
 
-/****** Object:  Table [dbo].[POSTupleN2x4]    Script Date: 8/23/2016 5:34:12 PM ******/
+/****** Object:  Table [dbo].[POSTupleN2x4]    Script Date: 8/25/2016 8:51:15 PM ******/
+DROP TABLE [dbo].[POSTupleN2x4]
+GO
+
+/****** Object:  Table [dbo].[POSTupleN2x4]    Script Date: 8/25/2016 8:51:15 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -162,6 +186,7 @@ CREATE TABLE [dbo].[POSTupleN2x4](
 	[POSTuple3_1] [int] NOT NULL,
 	[POSTuple3_2] [int] NOT NULL,
 	[count] [int] NOT NULL,
+	[lastUpdated] date not null,
  CONSTRAINT [PK_POSTupleN2x4] PRIMARY KEY CLUSTERED 
 (
 	[POSTupleN2x4ID] ASC
@@ -174,10 +199,11 @@ ALTER TABLE [dbo].[POSTupleN2x4] ADD  CONSTRAINT [DF_POSTupleN2x4_count]  DEFAUL
 GO
 
 
-USE [NLP_Statistic_db]
+/****** Object:  Table [dbo].[Synonym]    Script Date: 8/25/2016 8:51:38 PM ******/
+DROP TABLE [dbo].[Synonym]
 GO
 
-/****** Object:  Table [dbo].[Synonym]    Script Date: 8/23/2016 5:34:16 PM ******/
+/****** Object:  Table [dbo].[Synonym]    Script Date: 8/25/2016 8:51:38 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -189,6 +215,7 @@ CREATE TABLE [dbo].[Synonym](
 	[WordID] [int] NOT NULL,
 	[complexity] [int] NOT NULL,
 	[word] [nchar](30) NULL,
+	[lastUpdated] date not null,
  CONSTRAINT [PK_Synonym] PRIMARY KEY CLUSTERED 
 (
 	[SynonymID] ASC
@@ -198,10 +225,14 @@ CREATE TABLE [dbo].[Synonym](
 GO
 
 
-USE [NLP_Statistic_db]
+ALTER TABLE [dbo].[TupleN2] DROP CONSTRAINT [DF_TupleN2_count]
 GO
 
-/****** Object:  Table [dbo].[TupleN2]    Script Date: 8/23/2016 5:34:20 PM ******/
+/****** Object:  Table [dbo].[TupleN2]    Script Date: 8/25/2016 8:51:52 PM ******/
+DROP TABLE [dbo].[TupleN2]
+GO
+
+/****** Object:  Table [dbo].[TupleN2]    Script Date: 8/25/2016 8:51:52 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -213,6 +244,7 @@ CREATE TABLE [dbo].[TupleN2](
 	[word1ID] [int] NOT NULL,
 	[word2ID] [int] NOT NULL,
 	[count] [int] NOT NULL,
+	[lastUpdated] date not null,
  CONSTRAINT [PK_TupleN2] PRIMARY KEY CLUSTERED 
 (
 	[TupleN2ID] ASC
@@ -225,179 +257,14 @@ ALTER TABLE [dbo].[TupleN2] ADD  CONSTRAINT [DF_TupleN2_count]  DEFAULT ((0)) FO
 GO
 
 
-USE [NLP_Statistic_db]
+ALTER TABLE [dbo].[TupleN2x2] DROP CONSTRAINT [DF_TupleN2x2_count]
 GO
 
-/****** Object:  Table [dbo].[TupleN2x3]    Script Date: 8/23/2016 5:34:30 PM ******/
-SET ANSI_NULLS ON
+/****** Object:  Table [dbo].[TupleN2x2]    Script Date: 8/25/2016 8:52:05 PM ******/
+DROP TABLE [dbo].[TupleN2x2]
 GO
 
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE TABLE [dbo].[TupleN2x3](
-	[TupleN2x3ID] [int] IDENTITY(1,1) NOT NULL,
-	[Tuple2_1] [int] NOT NULL,
-	[Tuple2_2] [int] NOT NULL,
-	[count] [int] NOT NULL,
- CONSTRAINT [PK_TupleN2x3] PRIMARY KEY CLUSTERED 
-(
-	[TupleN2x3ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
-ALTER TABLE [dbo].[TupleN2x3] ADD  CONSTRAINT [DF_TupleN2x3_count]  DEFAULT ((0)) FOR [count]
-GO
-
-
-USE [master]
-GO
-
-/****** Object:  Database [NLP_Statistic_db]    Script Date: 8/23/2016 2:00:05 PM ******/
-CREATE DATABASE [NLP_Statistic_db]
- CONTAINMENT = NONE
- ON  PRIMARY 
-( NAME = N'NLP_Statistic_db', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA\NLP_Statistic_db.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
- LOG ON 
-( NAME = N'NLP_Statistic_db_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA\NLP_Statistic_db_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET COMPATIBILITY_LEVEL = 130
-GO
-
-IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
-begin
-EXEC [NLP_Statistic_db].[dbo].[sp_fulltext_database] @action = 'enable'
-end
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET ANSI_NULL_DEFAULT OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET ANSI_NULLS OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET ANSI_PADDING OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET ANSI_WARNINGS OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET ARITHABORT OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET AUTO_CLOSE OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET AUTO_SHRINK OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET AUTO_UPDATE_STATISTICS ON 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET CURSOR_CLOSE_ON_COMMIT OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET CURSOR_DEFAULT  GLOBAL 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET CONCAT_NULL_YIELDS_NULL OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET NUMERIC_ROUNDABORT OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET QUOTED_IDENTIFIER OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET RECURSIVE_TRIGGERS OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET  DISABLE_BROKER 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET DATE_CORRELATION_OPTIMIZATION OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET TRUSTWORTHY OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET ALLOW_SNAPSHOT_ISOLATION OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET PARAMETERIZATION SIMPLE 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET READ_COMMITTED_SNAPSHOT OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET HONOR_BROKER_PRIORITY OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET RECOVERY FULL 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET  MULTI_USER 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET PAGE_VERIFY CHECKSUM  
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET DB_CHAINING OFF 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET TARGET_RECOVERY_TIME = 60 SECONDS 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET DELAYED_DURABILITY = DISABLED 
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET QUERY_STORE = OFF
-GO
-
-USE [NLP_Statistic_db]
-GO
-
-ALTER DATABASE SCOPED CONFIGURATION SET MAXDOP = 0;
-GO
-
-ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET MAXDOP = PRIMARY;
-GO
-
-ALTER DATABASE SCOPED CONFIGURATION SET LEGACY_CARDINALITY_ESTIMATION = OFF;
-GO
-
-ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET LEGACY_CARDINALITY_ESTIMATION = PRIMARY;
-GO
-
-ALTER DATABASE SCOPED CONFIGURATION SET PARAMETER_SNIFFING = ON;
-GO
-
-ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET PARAMETER_SNIFFING = PRIMARY;
-GO
-
-ALTER DATABASE SCOPED CONFIGURATION SET QUERY_OPTIMIZER_HOTFIXES = OFF;
-GO
-
-ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET QUERY_OPTIMIZER_HOTFIXES = PRIMARY;
-GO
-
-ALTER DATABASE [NLP_Statistic_db] SET  READ_WRITE 
-GO
-
-
-USE [NLP_Statistic_db]
-GO
-
-/****** Object:  Table [dbo].[TupleN2x2]    Script Date: 8/23/2016 5:34:24 PM ******/
+/****** Object:  Table [dbo].[TupleN2x2]    Script Date: 8/25/2016 8:52:05 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -409,6 +276,7 @@ CREATE TABLE [dbo].[TupleN2x2](
 	[Tuple1] [int] NOT NULL,
 	[Tuple2] [int] NOT NULL,
 	[count] [int] NOT NULL,
+	[lastUpdated] date not null,
  CONSTRAINT [PK_TupleN2x2] PRIMARY KEY CLUSTERED 
 (
 	[TupleN2x2ID] ASC
@@ -421,10 +289,48 @@ ALTER TABLE [dbo].[TupleN2x2] ADD  CONSTRAINT [DF_TupleN2x2_count]  DEFAULT ((0)
 GO
 
 
-USE [NLP_Statistic_db]
+
+ALTER TABLE [dbo].[TupleN2x3] DROP CONSTRAINT [DF_TupleN2x3_count]
 GO
 
-/****** Object:  Table [dbo].[TupleN2x4]    Script Date: 8/23/2016 5:34:36 PM ******/
+/****** Object:  Table [dbo].[TupleN2x3]    Script Date: 8/25/2016 8:52:18 PM ******/
+DROP TABLE [dbo].[TupleN2x3]
+GO
+
+/****** Object:  Table [dbo].[TupleN2x3]    Script Date: 8/25/2016 8:52:18 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[TupleN2x3](
+	[TupleN2x3ID] [int] IDENTITY(1,1) NOT NULL,
+	[Tuple2_1] [int] NOT NULL,
+	[Tuple2_2] [int] NOT NULL,
+	[count] [int] NOT NULL,
+	[lastUpdated] date not null,
+ CONSTRAINT [PK_TupleN2x3] PRIMARY KEY CLUSTERED 
+(
+	[TupleN2x3ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[TupleN2x3] ADD  CONSTRAINT [DF_TupleN2x3_count]  DEFAULT ((0)) FOR [count]
+GO
+
+
+
+ALTER TABLE [dbo].[TupleN2x4] DROP CONSTRAINT [DF_TupleN2x4_count]
+GO
+
+/****** Object:  Table [dbo].[TupleN2x4]    Script Date: 8/25/2016 8:52:28 PM ******/
+DROP TABLE [dbo].[TupleN2x4]
+GO
+
+/****** Object:  Table [dbo].[TupleN2x4]    Script Date: 8/25/2016 8:52:28 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -436,6 +342,7 @@ CREATE TABLE [dbo].[TupleN2x4](
 	[Tuple3_1] [int] NOT NULL,
 	[Tuple3_2] [int] NOT NULL,
 	[count] [int] NOT NULL,
+	[lastUpdated] date not null,
  CONSTRAINT [PK_TupleN2x4] PRIMARY KEY CLUSTERED 
 (
 	[TupleN2x4ID] ASC
@@ -448,10 +355,12 @@ ALTER TABLE [dbo].[TupleN2x4] ADD  CONSTRAINT [DF_TupleN2x4_count]  DEFAULT ((0)
 GO
 
 
-USE [NLP_Statistic_db]
+
+/****** Object:  Table [dbo].[Word]    Script Date: 8/25/2016 8:52:48 PM ******/
+DROP TABLE [dbo].[Word]
 GO
 
-/****** Object:  Table [dbo].[Word]    Script Date: 8/23/2016 5:34:40 PM ******/
+/****** Object:  Table [dbo].[Word]    Script Date: 8/25/2016 8:52:48 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -460,9 +369,10 @@ GO
 
 CREATE TABLE [dbo].[Word](
 	[WordID] [int] IDENTITY(1,1) NOT NULL,
-	[word] [nchar](20) NOT NULL,
+	[word] [nchar](40) NOT NULL,
 	[PartOfSpeechID] [int] NOT NULL,
 	[DefinitionID] [int] NULL,
+	[lastUpdated] date not null,
  CONSTRAINT [PK_Word] PRIMARY KEY CLUSTERED 
 (
 	[WordID] ASC
@@ -472,10 +382,11 @@ CREATE TABLE [dbo].[Word](
 GO
 
 
-USE [NLP_Statistic_db]
+/****** Object:  Table [dbo].[WordVector]    Script Date: 8/25/2016 8:53:04 PM ******/
+DROP TABLE [dbo].[WordVector]
 GO
 
-/****** Object:  Table [dbo].[WordVector]    Script Date: 8/23/2016 5:34:44 PM ******/
+/****** Object:  Table [dbo].[WordVector]    Script Date: 8/25/2016 8:53:04 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -488,6 +399,8 @@ CREATE TABLE [dbo].[WordVector](
 	[word2ID] [int] NOT NULL,
 	[vector] [decimal](10, 10) NULL,
 	[count] [int] NOT NULL,
+	[lastUpdated] date not null,
+
  CONSTRAINT [PK_WordVector] PRIMARY KEY CLUSTERED 
 (
 	[WordVectorID] ASC
@@ -495,5 +408,9 @@ CREATE TABLE [dbo].[WordVector](
 ) ON [PRIMARY]
 
 GO
+
+
+
+
 
 
