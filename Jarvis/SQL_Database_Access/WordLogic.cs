@@ -65,7 +65,7 @@ namespace SQL_Database_Access
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@word", SqlDbType.VarChar).Value = wd.word;
-                    cmd.Parameters.Add("@PartOfSpeech", SqlDbType.VarChar).Value = wd.partOfSpeech;
+                 //   cmd.Parameters.Add("@PartOfSpeech", SqlDbType.VarChar).Value = wd.partOfSpeech;
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
@@ -204,6 +204,52 @@ namespace SQL_Database_Access
                 string message = ex.Message;
                 throw;
             }
+
+        }
+
+        public List<WordDTO> GetWordsAndIds()
+        {
+            List<WordDTO> results = new List<WordDTO>();
+            try
+            {
+
+
+                using (SqlCommand cmd = new SqlCommand("SELECT   WordID, word, PartOfSpeechID FROM  Word", con))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        WordDTO tmp = new WordDTO();
+
+                        tmp.ID = (int)rdr[0];
+                        tmp.word = rdr[1].ToString();
+                        tmp.partOfSpeechID = int.Parse(rdr[2].ToString());
+                        results.Add(tmp);
+
+                    }
+                    rdr.Close();
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return results;
+
 
         }
     }
