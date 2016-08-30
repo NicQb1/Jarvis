@@ -161,6 +161,7 @@
       <HintPath>..\packages\Stanford.NLP.CoreNLP.3.6.0.0\lib\jollyday.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Neo4jClient, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="stanford-corenlp-3.6.0, Version=3.6.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Stanford.NLP.CoreNLP.3.6.0.0\lib\stanford-corenlp-3.6.0.dll</HintPath>
       <Private>True</Private>

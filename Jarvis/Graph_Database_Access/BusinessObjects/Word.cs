@@ -11,8 +11,8 @@ namespace Graph_Database_Access.BusinessObjects
     {
        
         public string word;
-        public string hw;
-        public string pr;
+      //  public string hw;
+       // public string pr;
 
        
     }

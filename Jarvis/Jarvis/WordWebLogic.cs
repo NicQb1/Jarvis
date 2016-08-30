@@ -82,7 +82,7 @@ namespace Jarvis
                 pos = "Adjective";
             if (pos == "conj")
                 pos = "Conjunction";
-            results.partOfSpeech = pos;
+         //   results.partOfSpeech = pos;
             results.synonyms = getSynonyms(temp);
             results.antonyms = getListOfAntonyms(temp);
 

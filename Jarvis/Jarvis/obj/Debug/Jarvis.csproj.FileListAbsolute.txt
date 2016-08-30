@@ -32,7 +32,6 @@ C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\NNBuilde
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\NNBuilder_Runable.dll
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Processor.dll
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\SpeechProcessor.dll
-C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Neo4jClient.dll
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Net.Graph.Neo4JD.dll
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Network.dll
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Newtonsoft.Json.dll

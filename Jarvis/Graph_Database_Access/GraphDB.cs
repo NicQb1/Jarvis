@@ -88,7 +88,7 @@ namespace Graph_Database_Access
             .ExecuteWithoutResults();
         }
 
-        private Word InsertWordByStringGetNode(string word)
+        public NodeReference< Word> InsertWordByStringGetNode(string word, int ID)
         {
             var myword = new Word();
             myword.currentExitation = 0;
@@ -99,9 +99,12 @@ namespace Graph_Database_Access
             List<Word> wordList = wa.getMatchingNodes(myword);
             if (wordList == null)
             {
+                Dictionary<string, object> dict = new Dictionary<string, object>();
+                dict.Add("ID", ID);
+                dict.Add("word", word);
+               Word nr = wa.InsertNode(myword, dict);
+                return wa.getMatchingNodeReference(nr, dict);
                
-                Word nr = wa.InsertNode(myword, new Dictionary<string, object>());
-                return nr;
             }
            
                 return null ;
@@ -110,6 +113,79 @@ namespace Graph_Database_Access
            
         }
 
+        public NodeReference<PartOfSpeech> InsertPOS(string pos, int ID)
+        {
+            var myPOS = new PartOfSpeech();
+            myPOS.currentExitation = 0;
+            myPOS.firePoint = 5;
+            myPOS.lastFired = DateTime.Now;
+            myPOS.pos = pos;
+            myPOS.Id = ID;
+            PartOfSpeechAccess wa = new PartOfSpeechAccess();
+            List<PartOfSpeech> wordList = wa.getMatchingNodes(myPOS);
+            if (wordList == null)
+            {
+                Dictionary<string, object> dict = new Dictionary<string, object>();
+                dict.Add("ID", ID);
+                dict.Add("pos", pos);
+               PartOfSpeech nr = wa.InsertNode(myPOS, dict);
+            //   var results =  wa.InsertNodeGetRef(myPOS, new Dictionary<string, object>());
+                return null;
+
+
+            }
+
+            return null;
+
+
+
+        }
+
+        public void Insert_POS_Node(string pos, int ID)
+        {
+            var myPOS = new PartOfSpeech();
+            myPOS.currentExitation = 0;
+            myPOS.firePoint = 5;
+            myPOS.lastFired = DateTime.Now;
+            myPOS.pos = pos;
+            
+            PartOfSpeechAccess wa = new PartOfSpeechAccess();
+            List<PartOfSpeech> wordList = wa.getMatchingNodes(myPOS);
+            if (wordList == null || wordList.Count == 0)
+            {
+                Dictionary<string, object> dict = new Dictionary<string, object>();
+                dict.Add("ID", ID);
+                dict.Add("pos", pos);
+                myPOS.propertyValue = myPOS.pos;
+                wa.InsertNode(myPOS, dict, "POS");
+               
+            }
+
+            return ;
+        }
+
+        public void Insert_Word_Node(string word, int ID)
+        {
+            var myPOS = new Word();
+            myPOS.currentExitation = 0;
+            myPOS.firePoint = 5;
+            myPOS.lastFired = DateTime.Now;
+            myPOS.word = word;
+            myPOS.Id = ID;
+
+            WordAccess wa = new WordAccess();
+            List<Word> wordList = wa.getMatchingNodes(myPOS);
+            if (wordList == null || wordList.Count == 0)
+            {
+                Dictionary<string, object> dict = new Dictionary<string, object>();
+                dict.Add("ID", ID);
+                dict.Add("word", word);
+              
+                InsertWordByWordGetNodeReference(myPOS);
+            }
+
+            return;
+        }
         private NodeReference<Word> InsertWordGetNodeReferenceByString(string word)
         {
             var myword = new Word();
@@ -121,7 +197,8 @@ namespace Graph_Database_Access
             List<Word> wordList = wa.getMatchingNodes(myword);
             if (wordList == null)
             {
-                NodeReference<Word> nr = wa.InsertNode2(myword, new Dictionary<string, object>());
+               wa.InsertNode2(myword, new Dictionary<string, object>());
+              var nr =  wa.getMatchingNodeReference(myword, null);
                 return nr;
             }
 
@@ -132,7 +209,7 @@ namespace Graph_Database_Access
         }
 
       
-        private NodeReference<Word> InsertWordByWordGetNodeReference(Word myword)
+        private Word InsertWordByWordGetNodeReference(Word myword)
         {
 
             WordAccess wa = new WordAccess();
@@ -250,11 +327,10 @@ namespace Graph_Database_Access
                 Word myNewWord = new Word();
             myNewWord.currentExitation =0;
             myNewWord.firePoint = 5;
-            myNewWord.hw = hw;
+          
             myNewWord.lastFired = DateTime.Now;
-            myNewWord.pr = pr;
             myNewWord.word = word;
-            mwR = InsertWordByWordGetNodeReference(myNewWord);
+          //  mwR = InsertWordByWordGetNodeReference(myNewWord);
             }
             if(mwR != null && mdR != null)
             {
@@ -267,7 +343,7 @@ namespace Graph_Database_Access
             return;
         }
 
-        private void createWordPOSRelationship(NodeReference<PartOfSpeech> posR, NodeReference<Word> mwR)
+        public void createWordPOSRelationship(NodeReference<PartOfSpeech> posR, NodeReference<Word> mwR)
         {
             WordAccess wa = new WordAccess();
             wa.createWordPOSRelationship(posR, mwR);

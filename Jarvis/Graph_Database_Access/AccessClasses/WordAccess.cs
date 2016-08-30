@@ -123,6 +123,7 @@ namespace Graph_Database_Access.AccessClasses
                 var results = client.Cypher
                      .Create("(word:Word {word})")
                      .WithParam("word", node)
+                     .WithParams(myDictionary)
                      .Return(word => word.As<Word>())
                      .Results;
 
@@ -142,6 +143,7 @@ namespace Graph_Database_Access.AccessClasses
                 var results = client.Cypher
                      .Create("(word:Word {word})")
                      .WithParam("word", node)
+                     .WithParams(myDictionary)
                      .Return(word => word.As<Word>())
                      .Results;
 
@@ -154,19 +156,22 @@ namespace Graph_Database_Access.AccessClasses
 
         }
        
-        public NodeReference<Word> InsertNode2(Word myWord, Dictionary<string, object> myDictionary)
+        public Word InsertNode2(Word myWord, Dictionary<string, object> myDictionary)
         {
             try
             {
+
+
+
 
                 var results = client.Cypher
                      .Create("(word:Word {word})")
                      .WithParam("word", myWord)
                      .Return(word => word.As<Word>())
                      .Results;
-                var x = client.Get<Word>((NodeReference)results.First().Id);
 
-                return x.Reference;
+
+                return results.First();
             }
             catch (Exception ex)
             {

@@ -23,6 +23,8 @@ using java.util;
 using edu.stanford.nlp.ling;
 using java.io;
 using System.Threading;
+using Neo4jClient;
+using Graph_Database_Access.BusinessObjects;
 
 namespace Jarvis
 {
@@ -118,7 +120,7 @@ namespace Jarvis
                 List<Thread> activeThreads = new List<Thread>();
                 while (x < ofdDictionaryFile.FileNames.Length)
                 {
-                    while (activeThreads.Count < 5)
+                    while (activeThreads.Count < 7)
                     {
                         // gb.LoadDictionaryFile(filename);
                         //Load Brown files
@@ -176,6 +178,36 @@ namespace Jarvis
            
 
             pl.InsertPhraseStoredProc(txtToSubmit.Text);
+        }
+
+        private void btnInserPOSandWords_Click(object sender, EventArgs e)
+        {
+            GraphDB gb = new GraphDB();
+            PartOfSpeechLogic posl = new PartOfSpeechLogic();
+            WordLogic wl = new WordLogic();
+            List<PosDTO> poss = new List<PosDTO>();
+            Dictionary<int, NodeReference<PartOfSpeech>> posDictionary = new Dictionary<int, NodeReference<PartOfSpeech>>();
+            List< NodeReference<Graph_Database_Access.BusinessObjects.Word>> wordDictionary = new List<NodeReference<Graph_Database_Access.BusinessObjects.Word>>();
+            poss = posl.GetPOSAndIds();
+            foreach (var pos in poss)
+            {
+                //  posDictionary.Add(pos.ID, gb.InsertPOS(pos.pos, pos.ID));
+                gb.InsertPOS(pos.pos, pos.ID);
+            }
+
+            List<WordDTO> wordList = wl.GetWordsAndIds();
+            foreach(var word in wordList)
+            {
+               // wordDictionary.Add(gb.InsertWordByStringGetNode(word.word, word.ID));
+               // gb.InsertWordByStringGetNode(word.word, word.ID);
+        
+                gb.Insert_Word_Node(word.word, word.ID);
+            }
+           
+              //  gb.createWordPOSRelationship(posDictionary[])
+          
+
+
         }
     }
 }
