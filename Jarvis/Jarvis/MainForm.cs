@@ -188,24 +188,30 @@ namespace Jarvis
             List<PosDTO> poss = new List<PosDTO>();
             Dictionary<int, NodeReference<PartOfSpeech>> posDictionary = new Dictionary<int, NodeReference<PartOfSpeech>>();
             List< NodeReference<Graph_Database_Access.BusinessObjects.Word>> wordDictionary = new List<NodeReference<Graph_Database_Access.BusinessObjects.Word>>();
-            poss = posl.GetPOSAndIds();
-            foreach (var pos in poss)
-            {
-                //  posDictionary.Add(pos.ID, gb.InsertPOS(pos.pos, pos.ID));
-                gb.InsertPOS(pos.pos, pos.ID);
-            }
+            //poss = posl.GetPOSAndIds();
+            //foreach (var pos in poss)
+            //{
+              
+            //    gb.InsertPOS(pos.pos, pos.ID);
+            //}
 
             List<WordDTO> wordList = wl.GetWordsAndIds();
             foreach(var word in wordList)
             {
-               // wordDictionary.Add(gb.InsertWordByStringGetNode(word.word, word.ID));
-               // gb.InsertWordByStringGetNode(word.word, word.ID);
+             
         
                 gb.Insert_Word_Node(word.word, word.ID);
+                var posR = gb.getPartOfspeechByID(word.partOfSpeechID);
+                var mwR = gb.getWordByID(word.ID);
+                if (posR != null && mwR != null)
+                {
+                    gb.createWordPOSRelationship(posR, mwR);
+                }
             }
            
-              //  gb.createWordPOSRelationship(posDictionary[])
-          
+
+         
+
 
 
         }

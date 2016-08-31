@@ -164,7 +164,7 @@ namespace Graph_Database_Access
             return ;
         }
 
-        public void Insert_Word_Node(string word, int ID)
+        public NodeReference<Word> Insert_Word_Node(string word, int ID)
         {
             var myPOS = new Word();
             myPOS.currentExitation = 0;
@@ -181,10 +181,11 @@ namespace Graph_Database_Access
                 dict.Add("ID", ID);
                 dict.Add("word", word);
               
-                InsertWordByWordGetNodeReference(myPOS);
+               return  InsertWordByWordGetNodeReference(myPOS);
             }
+            return wa.getMatchingNodeReference(myPOS, null);
 
-            return;
+          
         }
         private NodeReference<Word> InsertWordGetNodeReferenceByString(string word)
         {
@@ -209,7 +210,7 @@ namespace Graph_Database_Access
         }
 
       
-        private Word InsertWordByWordGetNodeReference(Word myword)
+        private NodeReference<Word> InsertWordByWordGetNodeReference(Word myword)
         {
 
             WordAccess wa = new WordAccess();
@@ -341,6 +342,17 @@ namespace Graph_Database_Access
                 createWordPOSRelationship(posR, mwR);
             }
             return;
+        }
+        public NodeReference<PartOfSpeech> getPartOfspeechByID(int posID)
+        {
+            PartOfSpeechAccess posA = new PartOfSpeechAccess();
+           return posA.getPartOfspeechByID(posID);
+        }
+        public NodeReference<Word> getWordByID(int wordID)
+        {
+            WordAccess wordA = new WordAccess();
+
+            return wordA.getWordByID(wordID);
         }
 
         public void createWordPOSRelationship(NodeReference<PartOfSpeech> posR, NodeReference<Word> mwR)

@@ -37,16 +37,31 @@ namespace Graph_Database_Access.AccessClasses
         {
             try
             {
-                var results = client.Cypher.Match("(word:word)")
-                      .Where(" word.word = '" + node.word + "'")
-                     .Return<Word>("x");
+                //var results = client.Cypher.Match("(word:Word)")
+                //      .Where(" word.word = " + node.word.Trim() + "'")
+                //     .Return<Node<Word>>("word")
+                //     .Results;
+
+          //      var results = client.Cypher
+          // .Match("(word:Word) {word}")
+          // .Where((Word word) => word.Id == node.Id)
+          //.Return<Node<Word>>("word");
+
+                var results = client.Cypher
+                  .Match("(word:Word)")
+                  .Where(" word.Id = " + node.Id.ToString())
+
+                  .Return<Node<Word>>("word")
+
+                 .Results;
+
                 if (results == null)
                 {
                     return client.Create(node);
                 }
 
 
-                return (NodeReference<Word>)results;
+                return results.Single().Reference;
             }
             catch (Exception ex)
             { return null; }
@@ -156,7 +171,7 @@ namespace Graph_Database_Access.AccessClasses
 
         }
        
-        public Word InsertNode2(Word myWord, Dictionary<string, object> myDictionary)
+        public NodeReference<Word> InsertNode2(Word myWord, Dictionary<string, object> myDictionary)
         {
             try
             {
@@ -167,11 +182,11 @@ namespace Graph_Database_Access.AccessClasses
                 var results = client.Cypher
                      .Create("(word:Word {word})")
                      .WithParam("word", myWord)
-                     .Return(word => word.As<Word>())
+                     .Return(word => word.As<Node<Word>>())
                      .Results;
 
 
-                return results.First();
+                return results.Single().Reference;
             }
             catch (Exception ex)
             {
@@ -186,6 +201,28 @@ namespace Graph_Database_Access.AccessClasses
         public bool exciteNode(NodeReferenceStats nRefS)
         {
             throw new NotImplementedException();
+        }
+
+        public NodeReference<Word> getWordByID(int wordID)
+        {
+
+            try
+            {
+                var results = client.Cypher
+              .Match("(word:Word)")
+              .Where(" word.Id = " + wordID.ToString())
+
+              .Return<Node<Word>>("word")
+
+             .Results
+   .Single();
+                // .Return(partOfSpeech => partOfSpeech.As<PartOfSpeech>())
+
+
+                return results.Reference;
+            }
+            catch (Exception ex)
+            { return null; }
         }
 
     }
