@@ -10,7 +10,7 @@ namespace Common.DTO
     {
         public int ID;
         public string word;
-        public int partOfSpeechID;
+        public string partOfSpeech;
         public List<SynonymDTO> synonyms;
         public List<AntonymDTO> antonyms;
 

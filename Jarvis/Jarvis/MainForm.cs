@@ -23,8 +23,6 @@ using java.util;
 using edu.stanford.nlp.ling;
 using java.io;
 using System.Threading;
-using Neo4jClient;
-using Graph_Database_Access.BusinessObjects;
 
 namespace Jarvis
 {
@@ -120,7 +118,6 @@ namespace Jarvis
                 List<Thread> activeThreads = new List<Thread>();
                 while (x < ofdDictionaryFile.FileNames.Length)
                 {
-                    while (activeThreads.Count < 7)
                     {
                         // gb.LoadDictionaryFile(filename);
                         //Load Brown files

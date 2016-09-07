@@ -88,7 +88,7 @@ namespace Graph_Database_Access
             .ExecuteWithoutResults();
         }
 
-        public NodeReference< Word> InsertWordByStringGetNode(string word, int ID)
+        private Word InsertWordByStringGetNode(string word)
         {
             var myword = new Word();
             myword.currentExitation = 0;
@@ -99,12 +99,9 @@ namespace Graph_Database_Access
             List<Word> wordList = wa.getMatchingNodes(myword);
             if (wordList == null)
             {
-                Dictionary<string, object> dict = new Dictionary<string, object>();
-                dict.Add("ID", ID);
-                dict.Add("word", word);
-               Word nr = wa.InsertNode(myword, dict);
-                return wa.getMatchingNodeReference(nr, dict);
                
+                Word nr = wa.InsertNode(myword, new Dictionary<string, object>());
+                return nr;
             }
            
                 return null ;
@@ -198,8 +195,7 @@ namespace Graph_Database_Access
             List<Word> wordList = wa.getMatchingNodes(myword);
             if (wordList == null)
             {
-               wa.InsertNode2(myword, new Dictionary<string, object>());
-              var nr =  wa.getMatchingNodeReference(myword, null);
+                NodeReference<Word> nr = wa.InsertNode2(myword, new Dictionary<string, object>());
                 return nr;
             }
 
@@ -328,10 +324,11 @@ namespace Graph_Database_Access
                 Word myNewWord = new Word();
             myNewWord.currentExitation =0;
             myNewWord.firePoint = 5;
-          
+            myNewWord.hw = hw;
             myNewWord.lastFired = DateTime.Now;
+            myNewWord.pr = pr;
             myNewWord.word = word;
-          //  mwR = InsertWordByWordGetNodeReference(myNewWord);
+            mwR = InsertWordByWordGetNodeReference(myNewWord);
             }
             if(mwR != null && mdR != null)
             {
@@ -352,6 +349,7 @@ namespace Graph_Database_Access
         {
             WordAccess wordA = new WordAccess();
 
+        private void createWordPOSRelationship(NodeReference<PartOfSpeech> posR, NodeReference<Word> mwR)
             return wordA.getWordByID(wordID);
         }
 

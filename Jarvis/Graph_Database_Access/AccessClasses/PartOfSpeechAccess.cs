@@ -151,7 +151,7 @@ namespace Graph_Database_Access.AccessClasses
             {
 
                 var results = client.Cypher
-                     .Create("(pos:PartOfSpeech  {pos})")
+                     .Create("(pos:PartOfSpeech {pos})")
                      .WithParam("pos", node)
                      .Return(pos => pos.As<PartOfSpeech>())
                      .Results;
@@ -174,7 +174,7 @@ namespace Graph_Database_Access.AccessClasses
                 var results = client.Cypher
                      .Create("(pos:PartOfSpeech {pos})")
                      .WithParam("pos", node)
-                     .Return(pos => pos.As<PartOfSpeech>())
+                     .Return(word => word.As<PartOfSpeech>())
                      .Results;
 
                 return results.First();

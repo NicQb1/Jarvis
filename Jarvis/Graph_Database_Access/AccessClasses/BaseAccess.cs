@@ -136,26 +136,6 @@ namespace Graph_Database_Access.AccessClasses
         {
             throw new NotImplementedException();
         }
-
-        public virtual void InsertNode(T newNode, Dictionary<string, object> myDictionary, string label)
-        {
-            try
-            {
-
-                client.Cypher
-                      .Merge("(node:" + label + ")")
-                      .OnCreate()
-                      .Set("node. = {" + newNode.Id + "}")
-                      .WithParams(myDictionary)
-                      .ExecuteWithoutResults();
-
-            }
-            catch (Exception ex)
-            {
-                return;
-            }
-
-        }
         protected BaseAccess()
         {
         }
