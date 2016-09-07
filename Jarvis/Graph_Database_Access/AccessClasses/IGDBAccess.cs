@@ -20,7 +20,7 @@ namespace Graph_Database_Access.AccessClasses
         bool exciteNode(Tout node, int exitationAmoun);
 
         bool exciteNode(NodeReference<Tout> nodeRef, int exitationAmoun);
-        bool exciteNode(NodeReferenceStats nRefS);
+        bool exciteNode(NodeReference<Tout> nRefS);
 
         List<Node> getChildNodes(NodeReference<Tout> nodeRef);
 

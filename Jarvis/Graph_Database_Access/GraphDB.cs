@@ -54,6 +54,11 @@ namespace Graph_Database_Access
             .ExecuteWithoutResults();
         }
 
+        public void createWordSynonymRelationship(NodeReference<Word> wordRef, NodeReference<Word> synRef)
+        {
+            throw new NotImplementedException();
+        }
+
         private void createIndexOnPhrase()
         {
             PhraseAccess wa = new PhraseAccess();
@@ -154,7 +159,7 @@ namespace Graph_Database_Access
                 dict.Add("ID", ID);
                 dict.Add("pos", pos);
                 myPOS.propertyValue = myPOS.pos;
-                wa.InsertNode(myPOS, dict, "POS");
+                wa.InsertNode(myPOS, dict);
                
             }
 
@@ -348,10 +353,9 @@ namespace Graph_Database_Access
         public NodeReference<Word> getWordByID(int wordID)
         {
             WordAccess wordA = new WordAccess();
-
-        private void createWordPOSRelationship(NodeReference<PartOfSpeech> posR, NodeReference<Word> mwR)
             return wordA.getWordByID(wordID);
         }
+
 
         public void createWordPOSRelationship(NodeReference<PartOfSpeech> posR, NodeReference<Word> mwR)
         {
@@ -390,6 +394,11 @@ namespace Graph_Database_Access
                 return wordXML.Substring(i + length, (j - i)-length);
             }
             return string.Empty;
+        }
+
+        public List<WordDTO> getWords(string results)
+        {
+            throw new NotImplementedException();
         }
     }
 }

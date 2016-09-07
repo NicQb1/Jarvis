@@ -13,6 +13,6 @@ namespace Common.DTO
         public string partOfSpeech;
         public List<SynonymDTO> synonyms;
         public List<AntonymDTO> antonyms;
-
+        public int partOfSpeechID;
     }
 }

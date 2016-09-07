@@ -67,6 +67,10 @@ namespace Graph_Database_Access.AccessClasses
             { return null; }
         }
 
+        public NodeReference<Word> getWordRef(WordDTO word)
+        {
+            throw new NotImplementedException();
+        }
 
         public override List<Word> getMatchingNodes(Word node)
         {
@@ -198,7 +202,7 @@ namespace Graph_Database_Access.AccessClasses
 
         #endregion
 
-        public bool exciteNode(NodeReferenceStats nRefS)
+        public bool exciteNode(NodeReference<Word> nRefS)
         {
             throw new NotImplementedException();
         }

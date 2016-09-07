@@ -53,6 +53,11 @@ namespace SQL_Database_Access
             return results;
         }
 
+        public List<WordDTO> GetWord(string word)
+        {
+            throw new NotImplementedException();
+        }
+
         public int InsertWord(WordDTO wd)
         {
             int wordId = 0;

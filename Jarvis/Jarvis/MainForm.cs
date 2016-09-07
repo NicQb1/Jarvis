@@ -23,6 +23,8 @@ using java.util;
 using edu.stanford.nlp.ling;
 using java.io;
 using System.Threading;
+using Graph_Database_Access.BusinessObjects;
+using Neo4jClient;
 
 namespace Jarvis
 {
