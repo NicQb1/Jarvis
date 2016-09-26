@@ -52,3 +52,5 @@ Jarvis/.vs/Jarvis/v14/.suo
 *.dll
 *.pdb
 Jarvis/Jarvis/bin/Debug/Jarvis.exe
+*.cache
+*.suo
