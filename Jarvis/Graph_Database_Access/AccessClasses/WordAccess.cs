@@ -37,21 +37,40 @@ namespace Graph_Database_Access.AccessClasses
         {
             try
             {
-                var results = client.Cypher.Match("(word:word)")
-                      .Where(" word.word = '" + node.word + "'")
-                     .Return<Word>("x");
+                //var results = client.Cypher.Match("(word:Word)")
+                //      .Where(" word.word = " + node.word.Trim() + "'")
+                //     .Return<Node<Word>>("word")
+                //     .Results;
+
+          //      var results = client.Cypher
+          // .Match("(word:Word) {word}")
+          // .Where((Word word) => word.Id == node.Id)
+          //.Return<Node<Word>>("word");
+
+                var results = client.Cypher
+                  .Match("(word:Word)")
+                  .Where(" word.Id = " + node.Id.ToString())
+
+                  .Return<Node<Word>>("word")
+
+                 .Results;
+
                 if (results == null)
                 {
                     return client.Create(node);
                 }
 
 
-                return (NodeReference<Word>)results;
+                return results.Single().Reference;
             }
             catch (Exception ex)
             { return null; }
         }
 
+        public NodeReference<Word> getWordRef(WordDTO word)
+        {
+            throw new NotImplementedException();
+        }
 
         public override List<Word> getMatchingNodes(Word node)
         {
@@ -123,6 +142,7 @@ namespace Graph_Database_Access.AccessClasses
                 var results = client.Cypher
                      .Create("(word:Word {word})")
                      .WithParam("word", node)
+                     .WithParams(myDictionary)
                      .Return(word => word.As<Word>())
                      .Results;
 
@@ -142,6 +162,7 @@ namespace Graph_Database_Access.AccessClasses
                 var results = client.Cypher
                      .Create("(word:Word {word})")
                      .WithParam("word", node)
+                     .WithParams(myDictionary)
                      .Return(word => word.As<Word>())
                      .Results;
 
@@ -159,14 +180,17 @@ namespace Graph_Database_Access.AccessClasses
             try
             {
 
+
+
+
                 var results = client.Cypher
                      .Create("(word:Word {word})")
                      .WithParam("word", myWord)
-                     .Return(word => word.As<Word>())
+                     .Return(word => word.As<Node<Word>>())
                      .Results;
-                var x = client.Get<Word>((NodeReference)results.First().Id);
 
-                return x.Reference;
+
+                return results.Single().Reference;
             }
             catch (Exception ex)
             {
@@ -178,9 +202,31 @@ namespace Graph_Database_Access.AccessClasses
 
         #endregion
 
-        public bool exciteNode(NodeReferenceStats nRefS)
+        public bool exciteNode(NodeReference<Word> nRefS)
         {
             throw new NotImplementedException();
+        }
+
+        public NodeReference<Word> getWordByID(int wordID)
+        {
+
+            try
+            {
+                var results = client.Cypher
+              .Match("(word:Word)")
+              .Where(" word.Id = " + wordID.ToString())
+
+              .Return<Node<Word>>("word")
+
+             .Results
+   .Single();
+                // .Return(partOfSpeech => partOfSpeech.As<PartOfSpeech>())
+
+
+                return results.Reference;
+            }
+            catch (Exception ex)
+            { return null; }
         }
 
     }

@@ -12,5 +12,6 @@ namespace Graph_Database_Access.BusinessObjects
         public int firePoint;
         public DateTime? lastFired;
         public int Id;
+        public string propertyValue;
     }
 }

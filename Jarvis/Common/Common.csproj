@@ -45,6 +45,7 @@
     <Compile Include="classes\Utilities.cs" />
     <Compile Include="DTO\NodeReferenceStats.cs" />
     <Compile Include="DTO\AntonymDTO.cs" />
+    <Compile Include="DTO\PosDTO.cs" />
     <Compile Include="DTO\SynonymDTO.cs" />
     <Compile Include="DTO\WordDTO.cs" />
     <Compile Include="enums\CommandTypeEnum.cs" />

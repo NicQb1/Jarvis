@@ -54,6 +54,11 @@ namespace Graph_Database_Access
             .ExecuteWithoutResults();
         }
 
+        public void createWordSynonymRelationship(NodeReference<Word> wordRef, NodeReference<Word> synRef)
+        {
+            throw new NotImplementedException();
+        }
+
         private void createIndexOnPhrase()
         {
             PhraseAccess wa = new PhraseAccess();
@@ -110,6 +115,80 @@ namespace Graph_Database_Access
            
         }
 
+        public NodeReference<PartOfSpeech> InsertPOS(string pos, int ID)
+        {
+            var myPOS = new PartOfSpeech();
+            myPOS.currentExitation = 0;
+            myPOS.firePoint = 5;
+            myPOS.lastFired = DateTime.Now;
+            myPOS.pos = pos;
+            myPOS.Id = ID;
+            PartOfSpeechAccess wa = new PartOfSpeechAccess();
+            List<PartOfSpeech> wordList = wa.getMatchingNodes(myPOS);
+            if (wordList == null)
+            {
+                Dictionary<string, object> dict = new Dictionary<string, object>();
+                dict.Add("ID", ID);
+                dict.Add("pos", pos);
+               PartOfSpeech nr = wa.InsertNode(myPOS, dict);
+            //   var results =  wa.InsertNodeGetRef(myPOS, new Dictionary<string, object>());
+                return null;
+
+
+            }
+
+            return null;
+
+
+
+        }
+
+        public void Insert_POS_Node(string pos, int ID)
+        {
+            var myPOS = new PartOfSpeech();
+            myPOS.currentExitation = 0;
+            myPOS.firePoint = 5;
+            myPOS.lastFired = DateTime.Now;
+            myPOS.pos = pos;
+            
+            PartOfSpeechAccess wa = new PartOfSpeechAccess();
+            List<PartOfSpeech> wordList = wa.getMatchingNodes(myPOS);
+            if (wordList == null || wordList.Count == 0)
+            {
+                Dictionary<string, object> dict = new Dictionary<string, object>();
+                dict.Add("ID", ID);
+                dict.Add("pos", pos);
+                myPOS.propertyValue = myPOS.pos;
+                wa.InsertNode(myPOS, dict);
+               
+            }
+
+            return ;
+        }
+
+        public NodeReference<Word> Insert_Word_Node(string word, int ID)
+        {
+            var myPOS = new Word();
+            myPOS.currentExitation = 0;
+            myPOS.firePoint = 5;
+            myPOS.lastFired = DateTime.Now;
+            myPOS.word = word;
+            myPOS.Id = ID;
+
+            WordAccess wa = new WordAccess();
+            List<Word> wordList = wa.getMatchingNodes(myPOS);
+            if (wordList == null || wordList.Count == 0)
+            {
+                Dictionary<string, object> dict = new Dictionary<string, object>();
+                dict.Add("ID", ID);
+                dict.Add("word", word);
+              
+               return  InsertWordByWordGetNodeReference(myPOS);
+            }
+            return wa.getMatchingNodeReference(myPOS, null);
+
+          
+        }
         private NodeReference<Word> InsertWordGetNodeReferenceByString(string word)
         {
             var myword = new Word();
@@ -266,8 +345,19 @@ namespace Graph_Database_Access
             }
             return;
         }
+        public NodeReference<PartOfSpeech> getPartOfspeechByID(int posID)
+        {
+            PartOfSpeechAccess posA = new PartOfSpeechAccess();
+           return posA.getPartOfspeechByID(posID);
+        }
+        public NodeReference<Word> getWordByID(int wordID)
+        {
+            WordAccess wordA = new WordAccess();
+            return wordA.getWordByID(wordID);
+        }
 
-        private void createWordPOSRelationship(NodeReference<PartOfSpeech> posR, NodeReference<Word> mwR)
+
+        public void createWordPOSRelationship(NodeReference<PartOfSpeech> posR, NodeReference<Word> mwR)
         {
             WordAccess wa = new WordAccess();
             wa.createWordPOSRelationship(posR, mwR);
@@ -304,6 +394,11 @@ namespace Graph_Database_Access
                 return wordXML.Substring(i + length, (j - i)-length);
             }
             return string.Empty;
+        }
+
+        public List<WordDTO> getWords(string results)
+        {
+            throw new NotImplementedException();
         }
     }
 }

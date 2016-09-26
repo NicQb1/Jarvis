@@ -190,6 +190,44 @@ namespace Graph_Database_Access.AccessClasses
         {
             throw new NotImplementedException();
         }
+
+        public  NodeReference<PartOfSpeech> getPartOfspeechByID(int posID)
+        {
+
+            try
+            {
+                //             var results = client.Cypher.Match("(partOfSpeech:PartOfSpeech)")
+                //.Where((PartOfSpeech partOfSpeech) => partOfSpeech.Id == posID)
+                //.Return<Node<PartOfSpeech>>("partOfSpeech")
+                //.Results;
+                // .Return(partOfSpeech => partOfSpeech.As<PartOfSpeech>())
+
+                var results = client.Cypher
+                    .Match("(pos:PartOfSpeech)")
+                    .Where(" pos.Id = " + posID.ToString())
+
+                    .Return<Node<PartOfSpeech>>("pos")
+                    
+                   .Results;
+                // .Where(" pos.Id = '" + posID + "'")
+
+                // .Return(pos => pos.As<PartOfSpeech>())
+
+                //var results = client.Cypher.Match("(partOfSpeech:PartOfSpeech)")
+                //    .Where((PartOfSpeech partOfSpeech) => partOfSpeech.pos == node.pos)
+                //    .Return(partOfSpeech => partOfSpeech.As<PartOfSpeech>())
+                //    .Results
+                //    .Any();
+
+
+
+
+                return results.Single().Reference;
+            }
+            catch (Exception ex)
+            { return null; }
+        }
+    
         #endregion
     }
 }
