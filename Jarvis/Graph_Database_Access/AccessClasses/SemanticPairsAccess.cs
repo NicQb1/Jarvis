@@ -5,11 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common.DTO;
+using Neo4jClient;
 
 namespace Graph_Database_Access.AccessClasses
 {
     public class SemanticPairsAccess : BaseAccess<SemanticPairs>, IGDBAccess<SemanticPairs>
     {
+        public bool exciteNode(NodeReference<SemanticPairs> nRefS)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool exciteNode(NodeReferenceStats nRefS)
         {
             throw new NotImplementedException();

@@ -90,5 +90,10 @@ namespace Graph_Database_Access.AccessClasses
         {
             throw new NotImplementedException();
         }
+
+        public bool exciteNode(NodeReference<Command> nRefS)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

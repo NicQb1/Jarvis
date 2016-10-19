@@ -109,7 +109,9 @@
     <Compile Include="AccessClasses\BaseAccess.cs" />
     <Compile Include="AccessClasses\CommandAccess.cs" />
     <Compile Include="AccessClasses\DefinitionAccess.cs" />
+    <Compile Include="AccessClasses\HiddenLayerAccess.cs" />
     <Compile Include="AccessClasses\IGDBAccess.cs" />
+    <Compile Include="AccessClasses\OutputNodeAccess.cs" />
     <Compile Include="AccessClasses\PartOfSpeechAccess.cs" />
     <Compile Include="AccessClasses\PhraseAccess.cs" />
     <Compile Include="AccessClasses\POSPhraseAccess.cs" />
@@ -120,6 +122,8 @@
     <Compile Include="BusinessObjects\BOBase.cs" />
     <Compile Include="BusinessObjects\Command.cs" />
     <Compile Include="BusinessObjects\Definition.cs" />
+    <Compile Include="BusinessObjects\HiddenNeuron.cs" />
+    <Compile Include="BusinessObjects\OutputNode.cs" />
     <Compile Include="BusinessObjects\PartOfSpeech.cs" />
     <Compile Include="BusinessObjects\Phrase.cs" />
     <Compile Include="BusinessObjects\POSPhrase.cs" />
@@ -130,7 +134,10 @@
     <Compile Include="GraphDB.cs" />
     <Compile Include="InputLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relationships\HiddenWordRelationship.cs" />
     <Compile Include="Relationships\PhraseCommandRelationship.cs" />
+    <Compile Include="Relationships\POSPhraseToHiddenNeuronRelationship.cs" />
+    <Compile Include="Relationships\POStoPOSPhraseRelationship.cs" />
     <Compile Include="Relationships\WordDefinitionRelationship.cs" />
     <Compile Include="Relationships\WordPhraseRelationship.cs" />
     <Compile Include="Relationships\WordToPOSRelationship.cs" />

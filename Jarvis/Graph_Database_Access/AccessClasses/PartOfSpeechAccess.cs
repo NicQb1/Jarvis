@@ -227,7 +227,12 @@ namespace Graph_Database_Access.AccessClasses
             catch (Exception ex)
             { return null; }
         }
-    
+
+        public bool exciteNode(NodeReference<PartOfSpeech> nRefS)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }

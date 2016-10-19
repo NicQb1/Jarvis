@@ -76,3 +76,4 @@ C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Graph_Database_Access\bin\Deb
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Graph_Database_Access\bin\Debug\Neo4jClient.xml
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Graph_Database_Access\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\nhutchison\Documents\GitHub\Jarvis\Jarvis\Graph_Database_Access\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Graph_Database_Access\bin\Debug\Neo4jClient.pdb

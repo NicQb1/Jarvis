@@ -25,8 +25,7 @@ namespace Graph_Database_Access.AccessClasses
         List<Node> getChildNodes(NodeReference<Tout> nodeRef);
 
         bool Exists(Tout node);
-
-
+        bool exciteNode(NodeReferenceStats nRefS);
     }
         
         

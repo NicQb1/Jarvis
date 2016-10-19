@@ -70,7 +70,7 @@ namespace SQL_Database_Access
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@word", SqlDbType.VarChar).Value = wd.word;
-                 //   cmd.Parameters.Add("@PartOfSpeech", SqlDbType.VarChar).Value = wd.partOfSpeech;
+                  //  cmd.Parameters.Add("@PartOfSpeech", SqlDbType.VarChar).Value = wd.partOfSpeech;
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();

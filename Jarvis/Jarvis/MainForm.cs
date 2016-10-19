@@ -57,13 +57,14 @@ namespace Jarvis
                 PhraseLogic pl = new PhraseLogic();
                 InsertMissingWordData(result);
 
-                pl.InsertPhraseStoredProc(result);
+              //  pl.InsertPhraseStoredProc(result);
+          
                // List<NodeReferenceStats> phRefs = pl.InsertPhraseForStatAnalysis(e.Result.Text.ToString());
                // string results = il.updateStatsFireNodes(phRefs);
-               // cp.ExecuteCommand(results);
+                cp.ExecuteCommand(result);
 
 
-                
+
 
             //    matrix.SpeechInput(e.Result.Text.ToString());
             //}

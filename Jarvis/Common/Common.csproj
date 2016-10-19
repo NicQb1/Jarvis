@@ -54,6 +54,7 @@
     <Compile Include="interfaces\IMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="structs\structs.cs" />
+    <Compile Include="Utilities\WordDataWebUtility.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -165,3 +165,5 @@ C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\stanford
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\xom.dll
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\slf4j-api.dll
 C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\ejml-0.23.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Neo4jClient.dll
+C:\Users\hutch\OneDrive\Documents\GitHub\Jarvis\Jarvis\Jarvis\bin\Debug\Neo4jClient.pdb

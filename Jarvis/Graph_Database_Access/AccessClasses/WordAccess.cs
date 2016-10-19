@@ -29,6 +29,22 @@ namespace Graph_Database_Access.AccessClasses
             client.CreateRelationship(mwR, new WordPhraseRelationship(mdR));
         }
 
+        public void createWordWordRelationship(NodeReference<Word> mdR, NodeReference<Word> mwR)
+        {
+            client.CreateRelationship(mwR, new WordToWordRelationship(mdR));
+        }
+        public void createWordSynonymRelationship(NodeReference<Word> mdR, NodeReference<Word> mwR)
+        {
+            client.CreateRelationship(mwR, new WordToWordRelationship(mdR));
+            client.CreateRelationship(mdR, new WordToWordRelationship(mwR));
+        }
+
+        public void createWordAntonymRelationship(NodeReference<Word> mdR, NodeReference<Word> mwR)
+        {
+            client.CreateRelationship(mwR, new WordToWordRelationship(mdR));
+            client.CreateRelationship(mdR, new WordToWordRelationship(mwR));
+        }
+
 
         #endregion
 
@@ -65,6 +81,11 @@ namespace Graph_Database_Access.AccessClasses
             }
             catch (Exception ex)
             { return null; }
+        }
+
+        internal void CreateWordHiddenLayerRelationship(NodeReference<HiddenNeuron> hnRef)
+        {
+            throw new NotImplementedException();
         }
 
         public NodeReference<Word> getWordRef(WordDTO word)
@@ -229,5 +250,9 @@ namespace Graph_Database_Access.AccessClasses
             { return null; }
         }
 
+        public bool exciteNode(NodeReferenceStats nRefS)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
